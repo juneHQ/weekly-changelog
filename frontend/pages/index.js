@@ -3,16 +3,21 @@ import Articles from "../components/articles";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
+import { Divider, Flex, Stack, Text } from '@chakra-ui/core';
 
 const Home = ({ articles, categories, homepage }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.seo} />
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.hero.title}</h1>
-          <Articles articles={articles} />
-        </div>
+      <div>  
+        <Flex justify='center' alignItems='center' py={8}>
+          <Stack>
+            <Text textAlign='center' color='black' fontSize='5xl' fontWeight='bold'>{homepage.hero.title}</Text>
+            <Text textAlign='center' color='gray.600'>{homepage.hero.subtitle}</Text>
+          </Stack>
+        </Flex>
+        <Divider mb={16}/>
+        <Articles articles={articles} />
       </div>
     </Layout>
   );
