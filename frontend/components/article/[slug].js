@@ -1,15 +1,24 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import React from "react-markdown";
 import Moment from "react-moment";
-import Link from "next/link";
-import { getStrapiMedia } from "../lib/media";
-import { Box, Stack, Divider, Flex, Text, Image, Avatar, Grid } from '@chakra-ui/core';
+import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/layout";
+import Image from "../../components/image";
+import Seo from "../../components/seo";
+import { getStrapiMedia } from "../../lib/media";
 
-const Card = ({ article }) => {
+const Article = ({ article, categories }) => {
+
+  const seo = {
+    metaTitle: article.title,
+    metaDescription: article.description,
+    shareImage: article.image,
+    article: true,
+  };
+
   return (
-    <>
-      
-        <>
+    <Layout categories={categories}>
+      <Seo seo={seo} />
+      <>
         <Flex justify='space-between' direction={{base: 'column', md: 'row'}} p={2} px={4}>
           <Text pb={2} width={'100%'} textDecoration='none' color='gray.600'><Moment format="MMM Do, YYYY">{article.published_at}</Moment></Text>
           <Stack maxWidth={'900px'} width={['100%', 'auto']}>
@@ -46,10 +55,33 @@ const Card = ({ article }) => {
           </Stack>
         </Flex>
         </>
-
-      <Divider mb={16}/>
-    </>
+    </Layout>
   );
 };
 
-export default Card;
+export async function getStaticPaths() {
+  const articles = await fetchAPI("/articles");
+
+  return {
+    paths: articles.map((article) => ({
+      params: {
+        slug: article.slug,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const articles = await fetchAPI(
+    `/articles?slug=${params.slug}&status=published`
+  );
+  const categories = await fetchAPI("/categories");
+
+  return {
+    props: { article: articles[0], categories },
+    revalidate: 1,
+  };
+}
+
+export default Article;
