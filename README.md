@@ -1,6 +1,6 @@
-# Strapi Starter Next Blog
+# Weekly changelog blog
 
-Next starter for creating a blog with Strapi.
+This project allows you to easily create a blog to share what you ship.
 
 ![screenshot image](/screenshot.png)
 
@@ -8,22 +8,21 @@ This starter allows you to try Strapi with Next with the example of a simple blo
 
 ## Features
 
-- 2 Content types: Article, Category
-- 2 Created articles
-- 3 Created categories
-- Responsive design using UIkit
+- A stylish changelog
+- Celebrate your team's achievements - with team credits on each post
+- Easy to use admin panel
 
 Pages:
 
 - "/" to display every articles
-- "/article/:id" to display one article
-- "/category/:id" display articles depending on the category
+- "/changes/:id" to display one article
+- "/category/:id" display changes depending on their category
 
 ## Getting started
 
 The easiest way to try this starter is to run it locally on your computer.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/strapi/strapi-starter-next-blog/generate) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/ferrucc-io/weekly-changelog/generate) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
 ### Backend
 
