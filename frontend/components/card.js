@@ -11,7 +11,7 @@ const Card = ({ article }) => {
       
         <>
         <Flex justify='space-between' direction={{base: 'column', md: 'row'}} p={2} px={4}>
-          <Text pb={2} width={'100%'} textDecoration='none' color='gray.600'><Moment format="MMM Do, YYYY">{article.published_at}</Moment></Text>
+          <Text pb={2} width={'100%'} textDecoration='none' color='gray.600'><Moment format="MMM Do, YYYY">{article.publishedAt}</Moment></Text>
           <Stack maxWidth={'900px'} width={['100%', 'auto']}>
             <div>
               <Image borderRadius='lg' src={getStrapiMedia(article.image)} />
@@ -46,7 +46,6 @@ const Card = ({ article }) => {
           </Stack>
         </Flex>
         </>
-
       <Divider mb={16}/>
     </>
   );
