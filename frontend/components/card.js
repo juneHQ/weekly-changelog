@@ -23,7 +23,7 @@ const Card = ({ article }) => {
             <Box>
               <ReactMarkdown source={article.content} escapeHtml={false} />
             </Box>
-            <Grid templateColumns="repeat(2, 1fr)" py={4}>
+            <Grid templateColumns="repeat(2, 1fr)" py={4} gap={4}>
               {article.authors.map(author => <Flex>
                 <div>
                   {author.picture && (
