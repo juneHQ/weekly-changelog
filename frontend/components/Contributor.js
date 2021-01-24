@@ -1,5 +1,5 @@
 import { getStrapiMedia } from "../lib/media";
-import { Stack, Flex, Avatar } from '@chakra-ui/react';
+import { Stack, Flex, Avatar, Text } from '@chakra-ui/react';
 
 function Contributor({author}){
   return  <Flex>
@@ -10,14 +10,14 @@ function Contributor({author}){
       />
       )}
   </div>
-  <Stack pl={4}>
-      <p className="uk-margin-remove-bottom">
+  <Flex pl={4} direction='column' align='flex-start' justify='center'>
+      <Text fontWeight='medium'>
         {author.name}
-      </p>
-      <p className="uk-text-meta uk-margin-remove-top">
+      </Text>
+      <Text color='gray.600'>
         {author.bio}
-      </p>
-  </Stack>
+      </Text>
+  </Flex>
 </Flex>
 }
 
