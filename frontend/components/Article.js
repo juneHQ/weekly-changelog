@@ -9,7 +9,9 @@ import Link from "next/link";
 
 const renderers = {
   image: image => {
-    return <Image src={image.src} alt={image.alt} maxW={['100%', '700px']} />
+    return <Flex py={2} justify='center'>
+        <Image src={image.src} alt={image.alt} maxW={['100%','700px', '700px','900px']} />
+      </Flex>
   },
 }
 
@@ -27,11 +29,10 @@ const Card = ({ article }) => {
           </Flex>
         </Link>
         <Flex direction='column' align='flex-start' maxWidth={['100%', '60%']} pt={4}>
-          <Flex justify='flex-start' position='relative' height={['300px','400px']} width={['100%','700px']} objectFit='scale-down'>
+          <Flex justify='flex-start' position='relative' height={['200px','400px', '400px', '450px']} width={['100%','700px', '700px','900px']} objectFit='scale-down'>
             <Image objectFit='scale-down' src={getStrapiMedia(article.image)} />
           </Flex>
-          <Stack maxW={['100%', '700px']} px={[2, 0]}>
-
+          <Stack maxW={['100%','700px', '700px','900px']} px={[2, 0]}>
             <Text fontSize='3xl' pt={4}>
               {article.title}
             </Text>
@@ -39,7 +40,7 @@ const Card = ({ article }) => {
             <Box>
               <ReactMarkdown renderers={renderers} source={article.content} escapeHtml={false} />
             </Box>
-            <Grid templateColumns="repeat(2, 1fr)" py={4} gap={4}>
+            <Grid gridTemplateRows='auto' templateColumns={["100%", "repeat(auto-fill, minmax(300px, 1fr))"]} py={4} gap={4}>
               {article.authors.map(author => <Contributor author={author}/>)}
             </Grid>
           </Stack>
