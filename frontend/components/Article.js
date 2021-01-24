@@ -1,9 +1,8 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import Image from "next/image";
 import { getStrapiMedia } from "../lib/media";
-import { Box, Flex, Text, Grid, Stack } from '@chakra-ui/react';
+import { Box, Flex, Text, Grid, Stack, Image } from '@chakra-ui/react';
 import Contributor from './Contributor'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Link from "next/link";
@@ -21,9 +20,9 @@ const Card = ({ article }) => {
             </Text>  
           </Flex>
         </Link>
-        <Flex direction='column' align='flex-start' maxWidth={['100%', '60%']} pt={8}>
+        <Flex direction='column' align='flex-start' maxWidth={['100%', '60%']} pt={4}>
           <Flex justify='flex-start' position='relative' height={['300px','400px']} width={['100%','700px']} objectFit='scale-down'>
-            <Image layout='fill' objectFit='scale-down'  borderRadius='lg' src={getStrapiMedia(article.image)} />
+            <Image objectFit='scale-down' src={getStrapiMedia(article.image)} />
           </Flex>
           <Stack maxW={['100%', '700px']} px={[2, 0]}>
 
