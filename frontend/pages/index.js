@@ -1,15 +1,15 @@
 import React from "react";
-import Articles from "../components/articles";
+import ArticleCards from "../components/ArticleCards";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
-import { Divider, Flex, Stack, Text } from '@chakra-ui/core';
+import { Divider, Flex, Stack, Text } from '@chakra-ui/react';
 
 const Home = ({ articles, categories, homepage }) => {
   return (
-    <Layout categories={categories}>
+    <Layout>
       <Seo seo={homepage.seo} />
-      <div>  
+      <>
         <Flex justify='center' alignItems='center' py={8}>
           <Stack>
             <Text textAlign='center' color='black' fontSize='5xl' fontWeight='bold'>{homepage.hero.title}</Text>
@@ -17,8 +17,8 @@ const Home = ({ articles, categories, homepage }) => {
           </Stack>
         </Flex>
         <Divider mb={16}/>
-        <Articles articles={articles} />
-      </div>
+        <ArticleCards articles={articles} />
+      </>
     </Layout>
   );
 };
