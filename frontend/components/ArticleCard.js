@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
           <Flex position='relative' w={['100%', '600px']} h={['175px', '300px']} objectFit='contain'>
             <Image layout='fill' objectFit='contain' borderRadius='lg' src={getStrapiMedia(article.image)} />
           </Flex>
-          <Flex w={['auto', '600px']} px={[12, 2]} py={2} justify='space-between'>
+          <Flex w={['auto', '600px']} px={[4, 2]} py={2} justify='space-between'>
             <Text w='60%' fontSize='lg' fontWeight='bold'>
               {article.title}
             </Text>
