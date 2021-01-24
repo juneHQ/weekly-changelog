@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Box, Flex, Text } from '@chakra-ui/core';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
-const Nav = ({ categories }) => {
+const Nav = () => {
   return (
     <div>
       <nav data-uk-navbar>
