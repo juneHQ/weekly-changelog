@@ -7,6 +7,12 @@ import Contributor from './Contributor'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Link from "next/link";
 
+const renderers = {
+  image: image => {
+    return <Image src={image.src} alt={image.alt} maxW={['100%', '700px']} />
+  },
+}
+
 
 const Card = ({ article }) => {
   return (
@@ -31,7 +37,7 @@ const Card = ({ article }) => {
             </Text>
             <Text pb={4} width={'100%'} textDecoration='none' color='gray.600'><Moment format="MMM Do, YYYY">{article.publishedAt}</Moment></Text>
             <Box>
-              <ReactMarkdown source={article.content} escapeHtml={false} />
+              <ReactMarkdown renderers={renderers} source={article.content} escapeHtml={false} />
             </Box>
             <Grid templateColumns="repeat(2, 1fr)" py={4} gap={4}>
               {article.authors.map(author => <Contributor author={author}/>)}
