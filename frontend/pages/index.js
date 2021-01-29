@@ -5,7 +5,7 @@ import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import { Button, Divider, Flex, Stack, Text } from '@chakra-ui/react';
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ articles, homepage }) => {
   return (
     <Layout>
       <Seo seo={homepage.seo} />

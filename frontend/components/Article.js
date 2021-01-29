@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { getStrapiMedia } from "../lib/media";
@@ -13,6 +13,10 @@ const renderers = {
         <Image src={image.src} alt={image.alt} h='100%' w={['100%', '100%', '100%', '100%']} maxW={['100%', '100%', '700px', '900px']} />
       </Flex>
   },
+  link: link => {
+    return <a href={link.href} style={{color: '#6868F7'}}>{link.children}</a>
+  }
+  
 }
 
 
