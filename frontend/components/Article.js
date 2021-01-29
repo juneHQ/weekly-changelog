@@ -10,7 +10,7 @@ import Link from "next/link";
 const renderers = {
   image: image => {
     return <Flex py={2} justify='center'>
-        <Image src={image.src} alt={image.alt} maxW={['100%','700px', '700px','900px']} />
+        <Image src={image.src} alt={image.alt} h='100%' w={['100%', '100%', '100%', '100%']} maxW={['100%', '100%', '700px', '900px']} />
       </Flex>
   },
 }
