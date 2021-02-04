@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { getStrapiMedia } from "../lib/media";
