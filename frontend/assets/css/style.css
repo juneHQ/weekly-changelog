@@ -33,6 +33,14 @@ h1 {
   line-height: 1.75;
 }
 
+ul li::before {
+  content: "\2022";
+  color: #6868F7;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 
 img:hover {
   opacity: 1;
