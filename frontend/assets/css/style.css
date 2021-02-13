@@ -33,6 +33,10 @@ h1 {
   line-height: 1.75;
 }
 
+ul {
+  list-style: none;
+}
+
 ul li::before {
   content: "\2022";
   color: #6868F7;
