@@ -1,17 +1,179 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Thin.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Thin.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-ThinItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-ThinItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-ExtraLight.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-ExtraLight.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-ExtraLightItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-ExtraLightItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Light.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Light.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-LightItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-LightItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Regular.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Regular.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Italic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Italic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Medium.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Medium.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-MediumItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-MediumItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-SemiBold.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-SemiBold.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-SemiBoldItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-SemiBoldItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Bold.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Bold.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-BoldItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-BoldItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-ExtraBold.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-ExtraBold.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-ExtraBoldItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-ExtraBoldItalic.woff?v=3.15") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-Black.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-Black.woff?v=3.15") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/font/inter-ui/Inter-BlackItalic.woff2?v=3.15") format("woff2"),
+    url("/font/inter-ui/Inter-BlackItalic.woff?v=3.15") format("woff");
+}
+
+body {
+  font-family: Inter, Lato, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: blue;
+}
+
 a {
   text-decoration: none;
 }
 
 h1 {
-  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", Lato, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 52px;
   font-style: normal;
   font-weight: 800;
-  color: rgb(43, 43, 43);
+  color: blue;
 }
 
 #category {
-  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
 }
 
@@ -39,7 +201,7 @@ ul {
 
 ul li::before {
   content: "\2022";
-  color: #6868F7;
+  color: #6868f7;
   font-weight: bold;
   display: inline-block;
   width: 1em;
