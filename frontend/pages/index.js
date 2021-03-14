@@ -5,6 +5,8 @@ import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import { Button, Divider, Flex, Stack, Text } from "@chakra-ui/react";
 import Nav from "../components/nav";
+import Footer from "../components/Footer";
+import CreateAccountSection from "../components/CreateAccountSection";
 
 const Home = ({ articles, homepage }) => {
   return (
@@ -22,7 +24,7 @@ const Home = ({ articles, homepage }) => {
             >
               {homepage.hero.title}
             </Text>
-            <Text textAlign="center" color="gray.600" fontSize={18}>
+            <Text textAlign="center" color="gray.600" fontSize={"lg"}>
               {homepage.hero.subtitle}
             </Text>
             <Flex
@@ -38,7 +40,7 @@ const Home = ({ articles, homepage }) => {
                 colorScheme="templatePurple"
                 px={[4, 6]}
                 py={6}
-                my={4}
+                my={[2, 4]}
                 mx={2}
                 textAlign="center"
               >
@@ -52,7 +54,7 @@ const Home = ({ articles, homepage }) => {
                 colorScheme="gray"
                 px={[4, 6]}
                 py={6}
-                my={4}
+                my={[2, 4]}
                 mx={2}
                 textAlign="center"
               >
@@ -62,6 +64,8 @@ const Home = ({ articles, homepage }) => {
           </Stack>
         </Flex>
         <ArticleCards articles={articles} />
+        <CreateAccountSection />
+        <Footer />
       </>
     </Layout>
   );
