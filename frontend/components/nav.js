@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
 import HamburgerMenu from "../assets/Hamburger";
 import { motion } from "framer-motion";
-import Icon from "../assets/Icon/index";
+import Icon from "../assets/Icon";
 
 const MotionFlex = motion.custom(Flex);
 
