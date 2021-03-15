@@ -8,13 +8,13 @@ const Articles = ({ articles }) => {
       <Flex justify="center">
         <Grid
           gridTemplateRows="auto"
-          maxWidth={"1250px"}
+          maxWidth={["100%", "75%"]}
           templateColumns={[
             "100%",
             "repeat(auto-fill, minmax(100%, 1fr))",
-            "repeat(auto-fill, minmax(600px, 1fr))"
+            "repeat(auto-fill, minmax(40%, 1fr))"
           ]}
-          gap={4}
+          gap={6}
         >
           {[...articles].reverse().map(article => (
             <ArticleCard article={article} key={article.slug} />

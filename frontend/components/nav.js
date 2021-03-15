@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
 import HamburgerMenu from "../assets/Hamburger";
+import { motion } from "framer-motion";
+import Icon from "../assets/Icon/index";
+
+const MotionFlex = motion.custom(Flex);
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,29 +16,10 @@ const Nav = () => {
   const fSize = 16;
   const fWeight = 600;
   return (
-    /*     <div>
-      <nav data-uk-navbar>
-        <div>
-          <div>
-            <Box p={4}>
-              <Flex>
-                <Link href="https://june.so">
-                  <Text textDecoration='none' color='gray.400'>June</Text>
-                </Link>  
-                <Text px={2}  color='gray.400'>/</Text>
-                <Link href="/">
-                  <Text textDecoration='none' color='black'>Changelog</Text>
-                </Link>
-              </Flex>
-            </Box>
-          </div>
-        </div>
-      </nav>
-    </div> */
     <>
       {/* mobile */}
       <Box
-        w="100%"
+        w="100vw"
         zIndex={15}
         maxWidth="100vw"
         position="absolute"
@@ -47,13 +32,13 @@ const Nav = () => {
             </Flex>
             <Flex p={4}>
               <Box onClick={toggle}>
-                {isOpen ? <HamburgerMenu /> : <HamburgerMenu />}
+                {isOpen ? <Icon h={4} w={4} name="close" /> : <HamburgerMenu />}
               </Box>
             </Flex>
           </Flex>
         </Flex>
       </Box>
-      <Flex
+      <MotionFlex
         px={5}
         py={"30%"}
         h="100vh"
@@ -61,6 +46,14 @@ const Nav = () => {
         direction="column"
         justify="space-between"
         display={isOpen ? "block" : "none"}
+        initial={{
+          y: -100,
+          opacity: 0
+        }}
+        animate={{
+          y: 0,
+          opacity: 1
+        }}
       >
         <Flex width="100%" direction="column" h="40%" justify="space-between">
           <Flex
@@ -104,10 +97,16 @@ const Nav = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Button mt="20%" colorScheme="templatePurple" h={50} borderRadius={6}>
+        <Button
+          mt="20%"
+          colorScheme="templatePurple"
+          h={50}
+          borderRadius={6}
+          bg="#6868F7"
+        >
           Sign up for free
         </Button>
-      </Flex>
+      </MotionFlex>
       {/* desktop */}
       <Box
         position="absolute"

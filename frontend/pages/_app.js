@@ -4,12 +4,15 @@ import "../assets/css/style.css";
 import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
+import { AnimateSharedLayout } from "framer-motion";
+
+import juneTheme from "../lib/theme/juneTheme";
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   const { global } = pageProps;
 
   return (
@@ -17,11 +20,13 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
       </Head>
-      <ChakraProvider>
-        <GlobalContext.Provider value={global}>
-          <Component {...pageProps} />
-        </GlobalContext.Provider>
-      </ChakraProvider>
+      <AnimateSharedLayout>
+        <ChakraProvider theme={juneTheme}>
+          <GlobalContext.Provider value={global}>
+            <Component {...pageProps} />
+          </GlobalContext.Provider>
+        </ChakraProvider>
+      </AnimateSharedLayout>
     </>
   );
 };

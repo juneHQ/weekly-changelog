@@ -158,14 +158,14 @@ function Footer() {
             >
               Manifesto
             </Text>
-            <Text
+{/*             <Text
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
               mb={4}
             >
               We're hiring
-            </Text>
+            </Text> */}
             <Text
               as="a"
               href="mailto:enzo@june.so"
@@ -411,14 +411,14 @@ function Footer() {
             >
               Manifesto
             </Text>
-            <Text
+{/*             <Text
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
               mb={4}
             >
               We're hiring
-            </Text>
+            </Text> */}
             <Text
               as="a"
               href="mailto:enzo@june.so"

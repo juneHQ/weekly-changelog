@@ -15,7 +15,7 @@ const Home = ({ articles, homepage }) => {
       <>
         <Nav />
         <Flex justify="center" alignItems="center" py={32}>
-          <Stack>
+          <Stack mx={[2, 2]}>
             <Text
               textAlign="center"
               color="black"
@@ -39,9 +39,9 @@ const Home = ({ articles, homepage }) => {
                 border="2px solid rgba(36, 31, 71, 0)"
                 colorScheme="templatePurple"
                 px={[4, 6]}
-                py={6}
+                py={[4, 6]}
                 my={[2, 4]}
-                mx={2}
+                mx={[6, 2]}
                 textAlign="center"
               >
                 Sign up for early access
@@ -53,9 +53,9 @@ const Home = ({ articles, homepage }) => {
                 border="2px solid rgba(36, 31, 71, 0.2)"
                 colorScheme="gray"
                 px={[4, 6]}
-                py={6}
+                py={[4, 6]}
                 my={[2, 4]}
-                mx={2}
+                mx={[6, 2]}
                 textAlign="center"
               >
                 Follow us on twitter
