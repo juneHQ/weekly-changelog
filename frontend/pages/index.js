@@ -49,7 +49,7 @@ const Home = ({ articles, homepage }) => {
               <Button
                 bg="#ffffff"
                 as="a"
-                href={`${process.env.JUNE_APP_HOST}/start`}
+                href="https://twitter.com/JuneDotSo"
                 border="2px solid rgba(36, 31, 71, 0.2)"
                 colorScheme="gray"
                 px={[4, 6]}
