@@ -101,6 +101,8 @@ const Nav = () => {
           </Flex>
         </Flex>
         <Button
+          as="a"
+          href="https://app.june.so/start"
           mt="20%"
           colorScheme="templatePurple"
           h={50}
