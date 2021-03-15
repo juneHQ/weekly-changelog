@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
-import HamburgerMenu from "../assets/Hamburger";
+import HamburgerMenu from "./Hamburger";
 import { motion } from "framer-motion";
-import Icon from "../assets/Icon";
+import Icon from "../lib/Icon";
 
 const MotionFlex = motion.custom(Flex);
 
@@ -59,7 +58,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href="/templates"
+            href={`${NEXT_JUNE_MARKETING_HOST}/templates`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -81,7 +80,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href="/pricing"
+            href={`${NEXT_JUNE_MARKETING_HOST}/pricing`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -89,7 +88,11 @@ const Nav = () => {
             </Text>
           </Flex>
 
-          <Flex align="center" as="a" href="/manifesto">
+          <Flex
+            align="center"
+            as="a"
+            href={`${NEXT_JUNE_MARKETING_HOST}/manifesto`}
+          >
             <Flex>
               <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
                 Manifesto{" "}
@@ -127,7 +130,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href="/templates"
+                href={`${NEXT_JUNE_MARKETING_HOST}/templates`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -163,7 +166,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href="/pricing"
+                href={`${NEXT_JUNE_MARKETING_HOST}/pricing`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -181,7 +184,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href="/manifesto"
+                href={`${NEXT_JUNE_MARKETING_HOST}/manifesto`}
               >
                 <Flex>
                   <Text
