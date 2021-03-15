@@ -58,7 +58,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${NEXT_JUNE_MARKETING_HOST}/templates`}
+            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -80,7 +80,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${NEXT_JUNE_MARKETING_HOST}/pricing`}
+            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -91,7 +91,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${NEXT_JUNE_MARKETING_HOST}/manifesto`}
+            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
           >
             <Flex>
               <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -132,7 +132,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${NEXT_JUNE_MARKETING_HOST}/templates`}
+                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -168,7 +168,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${NEXT_JUNE_MARKETING_HOST}/pricing`}
+                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -186,7 +186,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${NEXT_JUNE_MARKETING_HOST}/manifesto`}
+                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
               >
                 <Flex>
                   <Text
