@@ -17,7 +17,7 @@ const Nav = () => {
   const fWeight = 600;
   return (
     <>
-      {/* mobile */}
+      {/* mobile menu */}
       <Box
         w="100vw"
         zIndex={15}
