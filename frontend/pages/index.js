@@ -18,7 +18,7 @@ const Home = ({ articles, homepage }) => {
           <Stack mx={[2, 2]}>
             <Text
               textAlign="center"
-              color="black"
+              color="#000000"
               fontSize={["5xl", "6xl"]}
               fontWeight="bold"
             >
