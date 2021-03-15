@@ -39,5 +39,8 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "2.x",
     "prettier": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=14.15.1"
   }
 }
