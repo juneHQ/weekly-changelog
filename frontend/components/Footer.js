@@ -351,7 +351,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href="/templates"
+              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -371,7 +371,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href="/pricing"
+              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -403,7 +403,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href="/manifesto"
+              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
