@@ -1,5 +1,5 @@
 import { getStrapiMedia } from "../lib/media";
-import { Stack, Flex, Avatar, Text } from "@chakra-ui/react";
+import { Flex, Avatar, Text } from "@chakra-ui/react";
 
 function Contributor({ author }) {
   return (
