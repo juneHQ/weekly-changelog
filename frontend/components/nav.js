@@ -26,7 +26,7 @@ const Nav = () => {
       >
         <Flex direction="column">
           <Flex align="center" justify="space-between">
-            <Flex p={4} as="a" href={process.env.NEXT_JUNE_MARKETING_HOST}>
+            <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
               <Image h={12} src="/June-logo.svg" />
             </Flex>
             <Flex p={4}>
@@ -58,7 +58,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -80,7 +80,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -91,7 +91,7 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
           >
             <Flex>
               <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
@@ -125,7 +125,7 @@ const Nav = () => {
         <Flex px="5vw" py={6} direction="row" justify="space-between">
           <Flex
             as="a"
-            href={`${process.env.NEXT_JUNE_MARKETING_HOST}`}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}`}
             display={["none", "none", "block"]}
           >
             <Image h={12} src="/June-logo.svg" />
@@ -136,7 +136,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
+                href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -172,7 +172,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
+                href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
                 style={{ textDecoration: "none" }}
               >
                 <Text
@@ -190,7 +190,7 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
+                href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
               >
                 <Flex>
                   <Text

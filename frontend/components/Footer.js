@@ -6,7 +6,7 @@ import {
   Text,
   Divider,
   FormControl,
-  Input
+  Input,
 } from "@chakra-ui/react";
 import TeamFooter from "./TeamFooter.js";
 
@@ -99,7 +99,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -119,7 +119,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -150,7 +150,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -158,7 +158,7 @@ function Footer() {
             >
               Manifesto
             </Text>
-{/*             <Text
+            {/*             <Text
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -351,7 +351,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/templates`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -371,7 +371,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/pricing`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -403,7 +403,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href={`${process.env.NEXT_JUNE_MARKETING_HOST}/manifesto`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
@@ -411,7 +411,7 @@ function Footer() {
             >
               Manifesto
             </Text>
-{/*             <Text
+            {/*             <Text
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"

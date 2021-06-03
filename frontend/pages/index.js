@@ -35,7 +35,7 @@ const Home = ({ articles, homepage }) => {
               <Button
                 bg="#6868F7"
                 as="a"
-                href={`${process.env.NEXT_JUNE_APP_HOST}/start`}
+                href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
                 border="2px solid rgba(36, 31, 71, 0)"
                 colorScheme="templatePurple"
                 px={[4, 6]}
