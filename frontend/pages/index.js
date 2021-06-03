@@ -75,12 +75,12 @@ export async function getStaticProps() {
   const [articles, categories, homepage] = await Promise.all([
     fetchAPI("/articles?status=published"),
     fetchAPI("/categories"),
-    fetchAPI("/homepage")
+    fetchAPI("/homepage"),
   ]);
 
   return {
     props: { articles, categories, homepage },
-    revalidate: 1
+    revalidate: 1,
   };
 }
 

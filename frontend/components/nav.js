@@ -26,7 +26,7 @@ const Nav = () => {
       >
         <Flex direction="column">
           <Flex align="center" justify="space-between">
-            <Flex p={4} as="a" href={`${process.env.NEXT_JUNE_MARKETING_HOST}`}>
+            <Flex p={4} as="a" href={process.env.NEXT_JUNE_MARKETING_HOST}>
               <Image h={12} src="/June-logo.svg" />
             </Flex>
             <Flex p={4}>
@@ -47,11 +47,11 @@ const Nav = () => {
         display={isOpen ? "block" : "none"}
         initial={{
           y: -100,
-          opacity: 0
+          opacity: 0,
         }}
         animate={{
           y: 0,
-          opacity: 1
+          opacity: 1,
         }}
       >
         <Flex width="100%" direction="column" h="40%" justify="space-between">
@@ -123,7 +123,11 @@ const Nav = () => {
         mb={8}
       >
         <Flex px="5vw" py={6} direction="row" justify="space-between">
-          <Flex as="a" href={`${process.env.NEXT_JUNE_MARKETING_HOST}`} display={["none", "none", "block"]}>
+          <Flex
+            as="a"
+            href={`${process.env.NEXT_JUNE_MARKETING_HOST}`}
+            display={["none", "none", "block"]}
+          >
             <Image h={12} src="/June-logo.svg" />
           </Flex>
           <Flex justify="center" align="center">

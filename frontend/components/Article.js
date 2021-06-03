@@ -10,22 +10,19 @@ import {
   Stack,
   Image,
   Circle,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
 import Contributor from "./Contributor";
-import { ChevronLeftIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import Nav from "../components/nav";
 import Footer from "../components/Footer";
 import CreateAccountSection from "../components/CreateAccountSection";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 
 const MotionBox = motion.custom(Box);
-const MotionImage = motion.custom(Image);
 
 const renderers = {
-  image: image => {
+  image: (image) => {
     return (
       <Flex py={2} justify="center">
         <Image
@@ -38,13 +35,13 @@ const renderers = {
       </Flex>
     );
   },
-  link: link => {
+  link: (link) => {
     return (
       <a href={link.href} style={{ color: "#6868F7" }}>
         {link.children}
       </a>
     );
-  }
+  },
   /*   text: text => {
     return <p>{text}</p>;
   } */
@@ -52,7 +49,7 @@ const renderers = {
 
 const Card = ({ article }) => {
   const { innerWidth: screenWidth } = global;
-  const [isMobile, setIsMobile] = useState(screenWidth < 425);
+  const [isMobile] = useState(screenWidth < 425);
   return (
     <>
       <Flex w="100%">
@@ -64,23 +61,23 @@ const Card = ({ article }) => {
           opacity: 0,
           x: isMobile ? 0 : 100,
           width: "100vw",
-          height: "100%"
+          height: "100%",
         }}
         animate={{
           opacity: 1,
           x: 0,
           width: "100%vw",
-          height: "100%"
+          height: "100%",
         }}
         exit={{
           x: 100,
           opacity: 0,
           width: "100%",
-          height: "100%"
+          height: "100%",
         }}
         transition={{
           duration: 0.35,
-          ease: "easeOut"
+          ease: "easeOut",
         }}
       >
         <Flex direction="column" pt={["15vh"]} pb={24} px={[4, 32]}>
@@ -169,12 +166,12 @@ const Card = ({ article }) => {
                 gridTemplateRows="auto"
                 templateColumns={[
                   "100%",
-                  "repeat(auto-fill, minmax(300px, 1fr))"
+                  "repeat(auto-fill, minmax(300px, 1fr))",
                 ]}
                 py={4}
                 gap={4}
               >
-                {article.authors.map(author => (
+                {article.authors.map((author) => (
                   <Contributor author={author} />
                 ))}
               </Grid>
