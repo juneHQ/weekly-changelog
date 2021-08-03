@@ -1,85 +1,105 @@
-import React from "react";
+import Head from "next/head";
+import { createContext } from "react";
 import ArticleCards from "../components/ArticleCards";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
-import { Button, Divider, Flex, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Stack, Text } from "@chakra-ui/react";
 import Nav from "../components/nav";
 import Footer from "../components/Footer";
+import { getStrapiMedia } from "../lib/media";
 import CreateAccountSection from "../components/CreateAccountSection";
 
-const Home = ({ articles, homepage }) => {
+export const GlobalContext = createContext({});
+
+const Home = ({ articles, homepage, global }) => {
   return (
-    <Layout>
-      <Seo seo={homepage.seo} />
-      <>
-        <Nav />
-        <Flex justify="center" alignItems="center" py={32}>
-          <Stack mx={[2, 2]}>
-            <Text
-              textAlign="center"
-              color="#000000"
-              fontSize={["5xl", "6xl"]}
-              fontWeight="bold"
-            >
-              {homepage.hero.title}
-            </Text>
-            <Text textAlign="center" color="gray.600" fontSize={"lg"}>
-              {homepage.hero.subtitle}
-            </Text>
-            <Flex
-              direction={["column", "row-reverse"]}
-              justify="space-between"
-              pt={4}
-            >
-              <Button
-                bg="#6868F7"
-                as="a"
-                href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
-                border="2px solid rgba(36, 31, 71, 0)"
-                colorScheme="templatePurple"
-                px={[4, 6]}
-                py={[4, 6]}
-                my={[2, 4]}
-                mx={[6, 2]}
+    <>
+      <Head>
+        <>
+          {global && global.favicon ? (
+            <>
+              <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
+            </>
+          ) : undefined}
+        </>
+      </Head>
+      <Layout>
+        <Seo
+          seo={homepage.seo}
+          defaultSeo={global.defaultSeo}
+          siteName={global.siteName}
+        />
+        <>
+          <Nav />
+          <Flex justify="center" alignItems="center" py={32}>
+            <Stack mx={[2, 2]}>
+              <Text
                 textAlign="center"
+                color="#000000"
+                fontSize={["5xl", "6xl"]}
+                fontWeight="bold"
               >
-                Sign up
-              </Button>
-              <Button
-                bg="#ffffff"
-                as="a"
-                href="https://twitter.com/JuneDotSo"
-                border="2px solid rgba(36, 31, 71, 0.2)"
-                colorScheme="gray"
-                px={[4, 6]}
-                py={[4, 6]}
-                my={[2, 4]}
-                mx={[6, 2]}
-                textAlign="center"
+                {homepage.hero.title}
+              </Text>
+              <Text textAlign="center" color="gray.600" fontSize={"lg"}>
+                {homepage.hero.subtitle}
+              </Text>
+              <Flex
+                direction={["column", "row-reverse"]}
+                justify="space-between"
+                pt={4}
               >
-                Follow us on twitter
-              </Button>
-            </Flex>
-          </Stack>
-        </Flex>
-        <ArticleCards articles={articles} />
-        <CreateAccountSection />
-        <Footer />
-      </>
-    </Layout>
+                <Button
+                  bg="#6868F7"
+                  as="a"
+                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
+                  border="2px solid rgba(36, 31, 71, 0)"
+                  colorScheme="templatePurple"
+                  px={[4, 6]}
+                  py={[4, 6]}
+                  my={[2, 4]}
+                  mx={[6, 2]}
+                  textAlign="center"
+                >
+                  Sign up
+                </Button>
+                <Button
+                  bg="#ffffff"
+                  as="a"
+                  href="https://twitter.com/JuneDotSo"
+                  border="2px solid rgba(36, 31, 71, 0.2)"
+                  colorScheme="gray"
+                  px={[4, 6]}
+                  py={[4, 6]}
+                  my={[2, 4]}
+                  mx={[6, 2]}
+                  textAlign="center"
+                >
+                  Follow us on twitter
+                </Button>
+              </Flex>
+            </Stack>
+          </Flex>
+          <ArticleCards articles={articles} />
+          <CreateAccountSection />
+          <Footer />
+        </>
+      </Layout>
+    </>
   );
 };
 
 export async function getStaticProps() {
-  const [articles, categories, homepage] = await Promise.all([
+  const [articles, categories, homepage, global] = await Promise.all([
     fetchAPI("/articles?status=published"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
+    fetchAPI("/global"),
   ]);
 
   return {
-    props: { articles, categories, homepage },
+    props: { articles, categories, homepage, global },
     revalidate: 1,
   };
 }
