@@ -12,11 +12,11 @@ const Articles = ({ articles }) => {
           templateColumns={[
             "100%",
             "repeat(auto-fill, minmax(100%, 1fr))",
-            "repeat(auto-fill, minmax(40%, 1fr))"
+            "repeat(auto-fill, minmax(40%, 1fr))",
           ]}
           gap={6}
         >
-          {[...articles].reverse().map(article => (
+          {[...articles].map((article) => (
             <ArticleCard article={article} key={article.slug} />
           ))}
         </Grid>
