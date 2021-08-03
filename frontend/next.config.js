@@ -1,11 +1,25 @@
-module.exports = {
-  images: {
-    domains: [process.env.NEXT_PUBLIC_ASSETS_DOMAIN],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-  },
+const withPlugins = require("next-compose-plugins");
+const optimizedImages = require("next-optimized-images");
+
+const nextConfig = {
   env: {
     NEXT_PUBLIC_STRAPI_API_URL: process.env.NEXT_PUBLIC_STRAPI_API_URL,
     NEXT_PUBLIC_MARKETING_HOST: process.env.NEXT_PUBLIC_MARKETING_HOST,
     NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
   },
 };
+
+const config = withPlugins(
+  [
+    [
+      optimizedImages,
+      {
+        // optimisation disabled by default, to enable check https://github.com/cyrilwanner/next-optimized-images
+        optimizeImages: false,
+      },
+    ],
+  ],
+  nextConfig
+);
+
+module.exports = config;
