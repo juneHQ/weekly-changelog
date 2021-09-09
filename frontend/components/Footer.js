@@ -109,7 +109,7 @@ function Footer() {
             </Text>
             <Text
               as="a"
-              href="/changelog"
+              href="https://changelog.june.so"
               fontWeight={500}
               color={newPColor}
               textAlign="left-align"
