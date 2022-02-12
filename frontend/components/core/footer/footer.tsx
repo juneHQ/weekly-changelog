@@ -29,29 +29,61 @@ export function FooterV2(props: Props) {
         <GridItem gridArea="solution">
           <VStack align="start" spacing={gap}>
             <FooterTitle>Solution</FooterTitle>
-            <FooterLink title="Overview" />
-            <FooterLink title="Templates" href="/new-templates" />
-            <FooterLink title="Pricing" href="/new-pricing" />
-            <FooterLink title="Changelog" type="external" href="/changelog" />
+            <FooterLink title="Overview" type="external" href={process.env.NEXT_PUBLIC_MARKETING_HOST} />
+            <FooterLink
+              title="Templates"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
+            />
+            <FooterLink title="Pricing" type="external" href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`} />
+            <FooterLink title="Changelog" href="/" />
             <FooterLink title="Widget for iOS" />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
           <VStack align="start" spacing={gap}>
             <FooterTitle>For</FooterTitle>
-            <FooterLink title="Founders" href="/personas/founders" />
-            <FooterLink title="Product Managers" href="/personas/product-managers" />
-            <FooterLink title="Engineers" href="/personas/engineers" />
-            <FooterLink title="Marketers" href="/personas/marketers" />
-            <FooterLink title="Customer Success" href="/personas/customer-success" />
-            <FooterLink title="Designers" href="/personas/designers" />
+            <FooterLink
+              title="Founders"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/founders`}
+            />
+            <FooterLink
+              title="Product Managers"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/product-managers`}
+            />
+            <FooterLink
+              title="Engineers"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/engineers`}
+            />
+            <FooterLink
+              title="Marketers"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/marketers`}
+            />
+            <FooterLink
+              title="Customer Success"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/customer-success`}
+            />
+            <FooterLink
+              title="Designers"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/designers`}
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="company">
           <VStack align="start" spacing={gap}>
             <FooterTitle>Company</FooterTitle>
             <FooterLink title="Our story" />
-            <FooterLink title="Careers" />
+            <FooterLink
+              title="Careers"
+              type="external"
+              href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
+            />
             <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
             <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
           </VStack>
@@ -59,8 +91,16 @@ export function FooterV2(props: Props) {
         <GridItem gridArea="legal">
           <VStack align="start" spacing={gap}>
             <FooterTitle>Legal</FooterTitle>
-            <FooterLink title="Terms" />
-            <FooterLink title="Privacy" />
+            <FooterLink
+              title="Terms"
+              type="external"
+              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+            />
+            <FooterLink
+              title="Privacy"
+              type="external"
+              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+            />
             <FooterLink title="Copyright © 2022 June" type="text" />
           </VStack>
         </GridItem>

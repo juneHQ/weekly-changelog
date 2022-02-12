@@ -8,11 +8,12 @@ import { DesktopNavItem } from "./desktop-nav-item";
 
 const MOBILE_MENU_COLOR = "#241f47";
 const MOBILE_FONT_WEIGHT = 600;
+
 const ROUTES = [
-  { href: "/solution", title: "Solution", type: "internal-link" },
-  { href: "/new-templates", title: "Templates", type: "internal-link" },
-  { href: "/new-pricing", title: "Pricing", type: "internal-link" },
-  { href: "/vision", title: "Vision", type: "internal-link" },
+  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/solution", title: "Solution", type: "external-link" },
+  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates", title: "Templates", type: "external-link" },
+  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing", title: "Pricing", type: "external-link" },
+  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/vision", title: "Vision", type: "external-link" },
 ] as const;
 
 interface Props {
@@ -146,10 +147,10 @@ export function Navbar(props: Props) {
           </HStack>
           {/* CTAs */}
           <HStack spacing={4} align="center">
-            <Button as="a" size="landingMd" variant="landingOutline" href="https://app.june.so/login">
+            <Button as="a" size="landingMd" variant="landingOutline" href={`${process.env.JUNE_APP_HOST}/log-in`}>
               Login
             </Button>
-            <Button as="a" size="landingMd" variant="landingSolid" href="https://app.june.so/start">
+            <Button as="a" size="landingMd" variant="landingSolid" href={`${process.env.JUNE_APP_HOST}/start`}>
               Sign up
             </Button>
           </HStack>
