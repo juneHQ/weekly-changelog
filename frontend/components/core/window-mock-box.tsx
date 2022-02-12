@@ -17,7 +17,7 @@ export const WindowMockBox = (props: WindowMockBoxProps) => {
       bg="white"
       {...props._wrapper}>
       <Box borderBottom="1px solid #F2F2F2" px={4} py="22px" w="full">
-        <HStack spacing={1.5}>
+        <HStack spacing="6px">
           <Box borderRadius="full" boxSize={2} border="1px solid #858ADF" background="#A7ACFC" />
           <Box borderRadius="full" boxSize={2} border="1px solid #858ADF" background="#A7ACFC" />
           <Box borderRadius="full" boxSize={2} border="1px solid #858ADF" background="#A7ACFC" />
