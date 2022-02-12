@@ -1,9 +1,5 @@
 const colors = {
-  transparent: "transparent",
-  current: "currentColor",
   primary: "#6868F7",
-  black: "#2B2B2B",
-  white: "#fff",
   landing: {
     black: "#000000",
     gray: "#5F5F5F",
