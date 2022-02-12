@@ -1,9 +1,9 @@
-import { CloseIcon } from "@chakra-ui/icons";
 import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
-import HamburgerMenu from "../../Hamburger";
 import { defaultPx } from "../../../lib/utils/default-container-px";
+import { CloseIcon } from "../custom-icons/close-icon";
+import { HamburgerMenu } from "../custom-icons/hamburger-icon";
 import { DesktopNavItem } from "./desktop-nav-item";
 
 const MOBILE_MENU_COLOR = "#241f47";
