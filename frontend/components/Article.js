@@ -19,7 +19,7 @@ import Footer from "../components/Footer";
 import CreateAccountSection from "../components/CreateAccountSection";
 import { motion } from "framer-motion";
 
-const MotionBox = motion.custom(Box);
+const MotionBox = motion(Box);
 
 const renderers = {
   image: (image) => {

@@ -5,15 +5,15 @@ import { Flex, Text, Image, Circle } from "@chakra-ui/react";
 import { getStrapiMedia } from "../lib/media";
 import { motion } from "framer-motion";
 
-const MotionCircle = motion.custom(Circle);
-const MotionFlex = motion.custom(Flex);
-const MotionImage = motion.custom(Image);
+const MotionCircle = motion(Circle);
+const MotionFlex = motion(Flex);
+const MotionImage = motion(Image);
 
 const articleType = Object.freeze({
   feature: { label: "FEATURE", color: "#6868F7" },
   fix: { label: "FIX", color: "#FF937D" },
   template: { label: "TEMPLATE", color: "#C56EEE" },
-  improvement: { label: "IMPROVEMENT", color: "#48A9A6" }
+  improvement: { label: "IMPROVEMENT", color: "#48A9A6" },
 });
 
 const ArticleCard = ({ article }) => {

@@ -19,6 +19,7 @@ import { ArticlesSection } from "../components/articles-section";
 export const GlobalContext = createContext({});
 
 const Home = ({ articles, homepage, global }) => {
+  console.log("🚀 => Home => articles", articles);
   return (
     <>
       <Head>
@@ -31,21 +32,11 @@ const Home = ({ articles, homepage, global }) => {
         </>
       </Head>
       <Layout>
-        <Seo
-          seo={homepage.seo}
-          defaultSeo={global.defaultSeo}
-          siteName={global.siteName}
-        />
+        <Seo seo={homepage.seo} defaultSeo={global.defaultSeo} siteName={global.siteName} />
         <>
           <Navbar />
-          <Box
-            w="100%"
-            maxW="100vw"
-            justify="center"
-            overflow="hidden"
-            zIndex="docked"
-          >
-            <ArticlesSection _wrapper={pageStyles.firstSection} />
+          <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
+            <ArticlesSection articles={articles} _wrapper={pageStyles.firstSection} />
             <TryBanner _wrapper={pageStyles.middleSection} />
             <FooterV2 _wrapper={pageStyles.lastSection} />
           </Box>
