@@ -74,7 +74,7 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
             </Button>
           </Link>
         ) : (
-          <HStack spacing={4}>
+          <HStack justifyContent="center" spacing={4}>
             {props.currentPage > 0 && (
               <Link href={`/page/${props.currentPage - 1}`}>
                 <Button variant="landingOutline" size="landingLg">
