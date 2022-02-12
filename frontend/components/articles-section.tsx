@@ -21,6 +21,7 @@ import { WindowMockBox } from "./core/window-mock-box";
 
 interface ArticlesSectionProps {
   articles: Article[];
+  currentPage?: number;
   _wrapper: ContainerProps;
 }
 
@@ -45,6 +46,7 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
                     borderTopRadius="base"
                     w="full"
                     h="full"
+                    bg="whiteAlpha.500"
                   />
                 </Box>
               </WindowMockBox>
@@ -65,11 +67,28 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
         ))}
       </SimpleGrid>
       <VStack align={["stretch", "stretch", "center"]}>
-        <Link href="/page/1">
-          <Button variant="landingOutline" size="landingLg">
-            Load more
-          </Button>
-        </Link>
+        {props.currentPage === undefined ? (
+          <Link href="/page/1">
+            <Button variant="landingOutline" size="landingLg">
+              Load more
+            </Button>
+          </Link>
+        ) : (
+          <HStack spacing={4}>
+            {props.currentPage > 0 && (
+              <Link href={`/page/${props.currentPage - 1}`}>
+                <Button variant="landingOutline" size="landingLg">
+                  Previous page
+                </Button>
+              </Link>
+            )}
+            <Link href={`/page/${props.currentPage + 1}`}>
+              <Button variant="landingOutline" size="landingLg">
+                Next page
+              </Button>
+            </Link>
+          </HStack>
+        )}
       </VStack>
     </Container>
   );

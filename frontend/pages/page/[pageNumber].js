@@ -1,14 +1,14 @@
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
-import ArticleCards from "../../components/ArticleCards";
+import { ArticlesSection } from "../../components/articles-section";
+import { FooterV2 } from "../../components/core/footer/footer";
+import { Navbar } from "../../components/core/navbar/navbar";
+import { pageStyles } from "../../components/core/page-styles";
+import { TryBanner } from "../../components/core/try-banner";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import { fetchAPI } from "../../lib/api";
-import { Button, Flex, Stack, Text } from "@chakra-ui/react";
-import Nav from "../../components/nav";
-import Footer from "../../components/Footer";
 import { getStrapiMedia } from "../../lib/media";
-import CreateAccountSection from "../../components/CreateAccountSection";
-import Link from "next/link";
 
 const Page = ({ articles, homepage, global, params }) => {
   const seo = {
@@ -16,6 +16,7 @@ const Page = ({ articles, homepage, global, params }) => {
     metaDescription: `Page ${params.pageNumber} of the changelog. ${homepage.seo.metaDescription}`,
     shareImage: homepage.seo.image,
   };
+
   return (
     <>
       <Head>
@@ -34,91 +35,16 @@ const Page = ({ articles, homepage, global, params }) => {
           siteName={global.siteName}
         />
         <>
-          <Nav />
-          <Flex justify="center" alignItems="center" py={32}>
-            <Stack mx={[2, 2]}>
-              <Text
-                textAlign="center"
-                color="#000000"
-                fontSize={["5xl", "6xl"]}
-                fontWeight="bold"
-              >
-                {homepage.hero.title}
-              </Text>
-              <Text textAlign="center" color="gray.600" fontSize={"lg"}>
-                {homepage.hero.subtitle}
-              </Text>
-              <Flex
-                direction={["column", "row-reverse"]}
-                justify="space-between"
-                pt={4}
-              >
-                <Button
-                  bg="#6868F7"
-                  as="a"
-                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
-                  border="2px solid rgba(36, 31, 71, 0)"
-                  colorScheme="templatePurple"
-                  px={[4, 6]}
-                  py={[4, 6]}
-                  my={[2, 4]}
-                  mx={[6, 2]}
-                  textAlign="center"
-                >
-                  Sign up
-                </Button>
-                <Button
-                  bg="#ffffff"
-                  as="a"
-                  href="https://twitter.com/JuneDotSo"
-                  border="2px solid rgba(36, 31, 71, 0.2)"
-                  colorScheme="gray"
-                  px={[4, 6]}
-                  py={[4, 6]}
-                  my={[2, 4]}
-                  mx={[6, 2]}
-                  textAlign="center"
-                >
-                  Follow us on twitter
-                </Button>
-              </Flex>
-            </Stack>
-          </Flex>
-          <ArticleCards articles={articles} />
-          <Flex justify="center" py={4}>
-            {params.pageNumber > 0 ? (
-              <Link href={`/page/${Number(params.pageNumber) - 1}`}>
-                <Button
-                  bg="#ffffff"
-                  border="2px solid rgba(36, 31, 71, 0.2)"
-                  colorScheme="gray"
-                  px={[4, 6]}
-                  py={[4, 6]}
-                  my={[2, 4]}
-                  mx={[6, 2]}
-                  textAlign="center"
-                >
-                  Previous page
-                </Button>
-              </Link>
-            ) : undefined}
-            <Link href={`/page/${Number(params.pageNumber) + 1}`}>
-              <Button
-                bg="#ffffff"
-                border="2px solid rgba(36, 31, 71, 0.2)"
-                colorScheme="gray"
-                px={[4, 6]}
-                py={[4, 6]}
-                my={[2, 4]}
-                mx={[6, 2]}
-                textAlign="center"
-              >
-                Next page
-              </Button>
-            </Link>
-          </Flex>
-          <CreateAccountSection />
-          <Footer />
+          <Navbar />
+          <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
+            <ArticlesSection
+              _wrapper={pageStyles.firstSection}
+              articles={articles}
+              currentPage={Number(params.pageNumber)}
+            />
+            <TryBanner _wrapper={pageStyles.middleSection} />
+            <FooterV2 _wrapper={pageStyles.lastSection} />
+          </Box>
         </>
       </Layout>
     </>
