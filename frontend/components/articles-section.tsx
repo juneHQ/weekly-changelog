@@ -28,8 +28,17 @@ interface ArticlesSectionProps {
 export const ArticlesSection = (props: ArticlesSectionProps) => {
   return (
     <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
-      <PageHeader title="What's new?" description="New updates and improvements to June." />
-      <SimpleGrid columns={[1, 1, 2]} columnGap={6} rowGap={8} mt={[8, 8, 10]} mb={[6, 6, 16]}>
+      <PageHeader
+        title="What's new?"
+        description="New updates and improvements to June."
+      />
+      <SimpleGrid
+        columns={[1, 1, 2]}
+        columnGap={6}
+        rowGap={8}
+        mt={[8, 8, 10]}
+        mb={[6, 6, 16]}
+      >
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" spacing={4} cursor="pointer">
@@ -37,8 +46,9 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
                 <Box
                   h="300px"
                   bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
-                  px={10}
-                  pt="30px">
+                  px={[2, 2, 10]}
+                  pt={[2, 2, "30px"]}
+                >
                   <Image
                     src={getStrapiMedia(article.image)}
                     alt={article.title}
