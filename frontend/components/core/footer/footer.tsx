@@ -1,4 +1,12 @@
-import { Box, Container, ContainerProps, Grid, GridItem, Image, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  ContainerProps,
+  Grid,
+  GridItem,
+  Image,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import { defaultPx } from "../../../lib/utils/default-container-px";
 import { FooterLink } from "./footer-link";
@@ -20,22 +28,38 @@ export function FooterV2(props: Props) {
           "'logo logo' 'solution for' 'company legal'",
           "'logo logo' 'solution for' 'company legal'",
           "'logo solution for company legal'",
-        ]}>
+        ]}
+      >
         <GridItem gridArea="logo">
           <Box flexShrink={0}>
-            <Image src="/june-logo-small.svg" alt="june" width={68} height={68} htmlWidth={68} htmlHeight={68} />
+            <Image
+              src="/june-logo-small.svg"
+              alt="june"
+              width={68}
+              height={68}
+              htmlWidth={68}
+              htmlHeight={68}
+            />
           </Box>
         </GridItem>
         <GridItem gridArea="solution">
           <VStack align="start" spacing={gap}>
             <FooterTitle>Solution</FooterTitle>
-            <FooterLink title="Overview" type="external" href={process.env.NEXT_PUBLIC_MARKETING_HOST} />
+            <FooterLink
+              title="Overview"
+              type="external"
+              href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+            />
             <FooterLink
               title="Templates"
               type="external"
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
             />
-            <FooterLink title="Pricing" type="external" href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`} />
+            <FooterLink
+              title="Pricing"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
+            />
             <FooterLink title="Changelog" href="/" />
             <FooterLink title="Widget for iOS" />
           </VStack>
@@ -84,8 +108,16 @@ export function FooterV2(props: Props) {
               type="external"
               href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
             />
-            <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
-            <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
+            <FooterLink
+              title="Contact"
+              type="external"
+              href="mailto:enzo@june.so"
+            />
+            <FooterLink
+              title="Twitter"
+              type="external"
+              href="https://twitter.com/JuneDotSo"
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="legal">
@@ -94,7 +126,7 @@ export function FooterV2(props: Props) {
             <FooterLink
               title="Terms"
               type="external"
-              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+              href="https://www.notion.so/Terms-of-Service-3a8be1c25dd04cf699800425153a03f8"
             />
             <FooterLink
               title="Privacy"
