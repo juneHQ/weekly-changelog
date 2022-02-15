@@ -4,7 +4,7 @@ import HamburgerMenu from "./Hamburger";
 import { motion } from "framer-motion";
 import Icon from "../lib/Icon";
 
-const MotionFlex = motion.custom(Flex);
+const MotionFlex = motion(Flex);
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);

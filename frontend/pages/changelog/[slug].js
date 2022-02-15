@@ -1,10 +1,15 @@
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import { createContext } from "react";
-import { getStrapiMedia } from "../../lib/media";
-import Article from "../../components/Article";
-import { fetchAPI } from "../../lib/api";
+import { ArticleSection } from "../../components/article-section";
+import { FooterV2 } from "../../components/core/footer/footer";
+import { Navbar } from "../../components/core/navbar/navbar";
+import { pageStyles } from "../../components/core/page-styles";
+import { TryBanner } from "../../components/core/try-banner";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
+import { fetchAPI } from "../../lib/api";
+import { getStrapiMedia } from "../../lib/media";
 
 export const GlobalContext = createContext({});
 
@@ -33,7 +38,17 @@ const ArticlePage = ({ article, global }) => {
           defaultSeo={global.defaultSeo}
           siteName={global.siteName}
         />
-        <Article article={article} />
+        <>
+          <Navbar />
+          <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
+            <ArticleSection
+              _wrapper={pageStyles.firstSection}
+              article={article}
+            />
+            <TryBanner _wrapper={pageStyles.middleSection} />
+            <FooterV2 _wrapper={pageStyles.lastSection} />
+          </Box>
+        </>
       </Layout>
     </GlobalContext.Provider>
   );
