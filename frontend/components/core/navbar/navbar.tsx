@@ -1,4 +1,13 @@
-import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  HStack,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { defaultPx } from "../../../lib/utils/default-container-px";
@@ -10,10 +19,26 @@ const MOBILE_MENU_COLOR = "#241f47";
 const MOBILE_FONT_WEIGHT = 600;
 
 const ROUTES = [
-  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/solution", title: "Solution", type: "external-link" },
-  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates", title: "Templates", type: "external-link" },
-  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing", title: "Pricing", type: "external-link" },
-  { href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/vision", title: "Vision", type: "external-link" },
+  // {
+  //   href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/solution",
+  //   title: "Solution",
+  //   type: "external-link",
+  // },
+  {
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates",
+    title: "Templates",
+    type: "external-link",
+  },
+  {
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
+    title: "Pricing",
+    type: "external-link",
+  },
+  {
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/vision",
+    title: "Vision",
+    type: "external-link",
+  },
 ] as const;
 
 interface Props {
@@ -28,11 +53,16 @@ export function Navbar(props: Props) {
     <>
       {/* Mobile navbar */}
       {isOpen ? (
-        <Box w="100%" maxWidth="100vw" position="fixed" zIndex="overlay" display={["block", "block", "none"]}>
+        <Box
+          w="100%"
+          maxWidth="100vw"
+          position="fixed"
+          zIndex="overlay"
+          display={["block", "block", "none"]}>
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href="/">
-                <Image h={12} src="/June-logo.svg" alt="june-logo" />
+                <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
                 <Box pr={1}>
@@ -43,11 +73,15 @@ export function Navbar(props: Props) {
           </Flex>
         </Box>
       ) : (
-        <Box w="100%" zIndex="overlay" display={["block", "block", "none"]} position="absolute">
+        <Box
+          w="100%"
+          zIndex="overlay"
+          display={["block", "block", "none"]}
+          position="absolute">
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href="/">
-                <Image h={12} src="/June-logo.svg" alt="june-logo" />
+                <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
                 <Box>
@@ -78,13 +112,20 @@ export function Navbar(props: Props) {
               </Text>
             </Flex>
           </Link>
-          <Flex align="center" as="a" href="https://changelog.june.so/" style={{ textDecoration: "none" }}>
+          <Flex
+            align="center"
+            as="a"
+            href="https://changelog.june.so/"
+            style={{ textDecoration: "none" }}>
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Changelog
             </Text>
           </Flex>
           <Link prefetch={false} href="/pricing" passHref>
-            <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
+            <Flex
+              align="center"
+              style={{ textDecoration: "none" }}
+              _hover={{ cursor: "pointer" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Pricing
               </Text>
@@ -93,7 +134,10 @@ export function Navbar(props: Props) {
           <Link prefetch={false} href="/manifesto" passHref>
             <Flex align="center" _hover={{ cursor: "pointer" }}>
               <Flex>
-                <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
+                <Text
+                  fontSize="4xl"
+                  fontWeight="bold"
+                  color={MOBILE_MENU_COLOR}>
                   Manifesto{" "}
                 </Text>{" "}
               </Flex>
@@ -142,15 +186,27 @@ export function Navbar(props: Props) {
           {/* Navigation items */}
           <HStack spacing={[0, 0, 8, 16, 100]} align="center">
             {ROUTES.map((route) => (
-              <DesktopNavItem key={route.href} {...route} isActive={props.activeHref === route.href} />
+              <DesktopNavItem
+                key={route.href}
+                {...route}
+                isActive={props.activeHref === route.href}
+              />
             ))}
           </HStack>
           {/* CTAs */}
           <HStack spacing={4} align="center">
-            <Button as="a" size="landingMd" variant="landingOutline" href={`${process.env.JUNE_APP_HOST}/log-in`}>
+            <Button
+              as="a"
+              size="landingMd"
+              variant="landingOutline"
+              href={`${process.env.JUNE_APP_HOST}/log-in`}>
               Login
             </Button>
-            <Button as="a" size="landingMd" variant="landingSolid" href={`${process.env.JUNE_APP_HOST}/start`}>
+            <Button
+              as="a"
+              size="landingMd"
+              variant="landingSolid"
+              href={`${process.env.JUNE_APP_HOST}/start`}>
               Sign up
             </Button>
           </HStack>
