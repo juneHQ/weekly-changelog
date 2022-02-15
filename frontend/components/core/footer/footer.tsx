@@ -61,7 +61,11 @@ export function FooterV2(props: Props) {
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             />
             <FooterLink title="Changelog" href="/" />
-            <FooterLink title="Widget for iOS" />
+            <FooterLink
+              title="Widget for iOS"
+              type="external"
+              href="https://widgets.june.so/"
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
