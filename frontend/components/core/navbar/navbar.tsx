@@ -105,7 +105,10 @@ export function Navbar(props: Props) {
         overflowY="hidden"
         display={isOpen ? "block" : "none"}>
         <Flex width="100%" direction="column" h="40%" justify="space-between">
-          <Link prefetch={false} href="/templates" passHref>
+          <Link
+            prefetch={false}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
+            passHref>
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Templates
@@ -121,7 +124,10 @@ export function Navbar(props: Props) {
               Changelog
             </Text>
           </Flex>
-          <Link prefetch={false} href="/pricing" passHref>
+          <Link
+            prefetch={false}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
+            passHref>
             <Flex
               align="center"
               style={{ textDecoration: "none" }}
@@ -131,14 +137,17 @@ export function Navbar(props: Props) {
               </Text>
             </Flex>
           </Link>
-          <Link prefetch={false} href="/manifesto" passHref>
+          <Link
+            prefetch={false}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/vision`}
+            passHref>
             <Flex align="center" _hover={{ cursor: "pointer" }}>
               <Flex>
                 <Text
                   fontSize="4xl"
                   fontWeight="bold"
                   color={MOBILE_MENU_COLOR}>
-                  Manifesto{" "}
+                  Vision{" "}
                 </Text>{" "}
               </Flex>
             </Flex>
