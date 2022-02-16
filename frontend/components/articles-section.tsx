@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   ContainerProps,
+  Flex,
   Heading,
   HStack,
   Image,
@@ -42,25 +43,16 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" spacing={4} cursor="pointer">
-              <Box
-                h="300px"
+              <Image
+                src={getStrapiMedia(article.image)}
+                alt={article.title}
+                objectFit="cover"
+                objectPosition="50% 50%"
                 w="full"
-                bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
-                px={[2, 2, 6]}
-                pt={[2, 2, 6]}
-                borderRadius="6px"
-              >
-                <WindowMockBox _wrapper={{ h: "full", borderBottomRadius: 0 }}>
-                  <Image
-                    src={getStrapiMedia(article.image)}
-                    alt={article.title}
-                    borderTopRadius="base"
-                    w="full"
-                    h="full"
-                    bg="whiteAlpha.500"
-                  />
-                </WindowMockBox>
-              </Box>
+                height="368px"
+                borderRadius="10px"
+                shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+              />
               <HStack>
                 <Text fontWeight="bold" fontSize="sm" color="primary">
                   Feature
