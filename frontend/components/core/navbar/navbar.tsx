@@ -229,6 +229,7 @@ export function Navbar(props: Props) {
                       fontWeight="bold"
                       fontSize="lg"
                       lineHeight="30px"
+                      ml={2}
                     >
                       By role
                     </Text>
