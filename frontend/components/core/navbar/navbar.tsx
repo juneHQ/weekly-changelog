@@ -276,7 +276,12 @@ export function Navbar(props: Props) {
                     </VStack>
                   </Box>
                   <Box p={10} bg="gray.50">
-                    <Link href="/templates" passHref>
+                    <Link
+                      href={
+                        process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates"
+                      }
+                      passHref
+                    >
                       <Button
                         leftIcon={<ArrowForwardIcon />}
                         variant="link"
