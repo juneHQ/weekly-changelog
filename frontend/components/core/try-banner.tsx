@@ -1,4 +1,13 @@
-import { Box, Button, Container, ContainerProps, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  ContainerProps,
+  Heading,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 
@@ -58,7 +67,12 @@ export function TryBanner(props: TryBanner) {
           />
         </picture>
         <VStack align="start" spacing={4} pos="relative">
-          <Text fontFamily="landingHeading" fontSize={38} fontWeight="semibold" color="#8588E5" lineHeight="shorter">
+          <Text
+            fontFamily="landingHeading"
+            fontSize={38}
+            fontWeight="semibold"
+            color="#8588E5"
+            lineHeight="shorter">
             {subheading}
           </Text>
           <Heading

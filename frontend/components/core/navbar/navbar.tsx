@@ -187,7 +187,10 @@ export function Navbar(props: Props) {
         px={defaultPx(32)}>
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
-          <Link href="/" passHref prefetch={false}>
+          <Link
+            href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+            passHref
+            prefetch={false}>
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={12} src="/June-logo.svg" alt="june-logo" />
             </Flex>
