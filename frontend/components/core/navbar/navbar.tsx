@@ -220,7 +220,11 @@ export function Navbar(props: Props) {
                 <Text {...defaultNavItemStyle}>Solution</Text>
               </PopoverTrigger>
               <Portal>
-                <PopoverContent>
+                <PopoverContent
+                  boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15);"
+                  borderRadius="10px"
+                  overflow="hidden"
+                >
                   <PopoverArrow />
                   <Box p={10}>
                     <Text
