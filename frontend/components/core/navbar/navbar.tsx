@@ -61,7 +61,7 @@ export function Navbar(props: Props) {
           display={["block", "block", "none"]}>
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="/">
+              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
@@ -80,7 +80,7 @@ export function Navbar(props: Props) {
           position="absolute">
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="/">
+              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
