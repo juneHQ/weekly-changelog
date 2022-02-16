@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   Text,
   VStack,
+  Flex,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { getStrapiMedia } from "lib/media";
@@ -17,7 +18,6 @@ import Link from "next/link";
 import React from "react";
 import { defaultPx } from "../lib/utils/default-container-px";
 import { PageHeader } from "./core/page-header";
-import { WindowMockBox } from "./core/window-mock-box";
 
 interface ArticlesSectionProps {
   articles: Article[];
@@ -37,29 +37,27 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
         columnGap={6}
         rowGap={8}
         mt={[8, 8, 10]}
-        mb={[6, 6, 16]}
-      >
+        mb={[6, 6, 16]}>
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" spacing={4} cursor="pointer">
-              <WindowMockBox _wrapper={{ w: "full" }}>
-                <Box
-                  h="300px"
-                  bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
-                  px={[2, 2, 10]}
-                  pt={[2, 2, "30px"]}
-                >
-                  <Image
-                    src={getStrapiMedia(article.image)}
-                    alt={article.title}
-                    objectFit="cover"
-                    borderTopRadius="base"
-                    w="full"
-                    h="full"
-                    bg="whiteAlpha.500"
-                  />
-                </Box>
-              </WindowMockBox>
+              <Flex
+                flex={1}
+                direction="column"
+                shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+                borderRadius="10px"
+                overflow="hidden"
+                bg="white">
+                <Image
+                  src={getStrapiMedia(article.image)}
+                  alt={article.title}
+                  objectFit="cover"
+                  borderTopRadius="base"
+                  w="full"
+                  h="full"
+                  bg="whiteAlpha.500"
+                />
+              </Flex>
               <HStack>
                 <Text fontWeight="bold" fontSize="sm" color="primary">
                   Feature
