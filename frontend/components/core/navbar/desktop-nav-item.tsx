@@ -1,17 +1,17 @@
-import React from "react";
-import { Flex, Text } from "@chakra-ui/react";
+import { Text, TextProps } from "@chakra-ui/react";
 import Link from "next/link";
+import React from "react";
 
 export interface DesktopNavItemProps {
-  type: "external-link" | "internal-link";
-  href: string;
   title: string;
+  type: "external-link" | "internal-link";
+  href?: string;
   isActive?: boolean;
 }
 
 export function DesktopNavItem(props: DesktopNavItemProps) {
   const Wrapper =
-    props.type === "external-link"
+    props.type !== "internal-link"
       ? React.Fragment
       : (linkProps: { children: React.ReactNode }) => (
           <Link href={props.href} passHref prefetch={false} {...linkProps} />
@@ -19,25 +19,29 @@ export function DesktopNavItem(props: DesktopNavItemProps) {
 
   return (
     <Wrapper>
-      <Flex
+      <Text
+        {...defaultNavItemStyle}
+        color={props.isActive ? "purple.500" : "landing.black"}
         as={props.type === "external-link" ? "a" : "div"}
-        fontSize="sm"
-        align="center"
-        style={{ textDecoration: "none" }}
         {...(props.type === "external-link" && {
           href: props.href,
           rel: "noreferrer noopener",
-        })}>
-        <Text
-          fontFamily="landingHeading"
-          fontWeight="bold"
-          color={props.isActive ? "purple.500" : "landing.black"}
-          textAlign="center"
-          _hover={{ color: "purple.500", cursor: "pointer" }}
-          _active={{ color: "purple.600" }}>
-          {props.title}
-        </Text>
-      </Flex>
+        })}
+      >
+        {props.title}
+      </Text>
     </Wrapper>
   );
 }
+
+export const defaultNavItemStyle: TextProps = {
+  style: { textDecoration: "none" },
+  fontFamily: "landingHeading",
+  fontWeight: "bold",
+  fontSize: "sm",
+  color: "landing.black",
+  textAlign: "center",
+  cursor: "pointer",
+  _hover: { color: "purple.500" },
+  _active: { color: "purple.600" },
+};
