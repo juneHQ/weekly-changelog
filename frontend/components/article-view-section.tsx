@@ -157,6 +157,7 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
                 w="full"
                 // Overflowing window effect
                 minW={["110vw", "110vw", "unset"]}
+                h={["300px", "300px", "unset"]}
                 px={6}
                 pt={6}
                 bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
