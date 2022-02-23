@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import { createContext } from "react";
-import { ArticleSection } from "../../components/article-section";
+import { ArticleViewSection } from "../../components/article-view-section";
 import { FooterV2 } from "../../components/core/footer/footer";
 import { Navbar } from "../../components/core/navbar/navbar";
 import { pageStyles } from "../../components/core/page-styles";
@@ -41,7 +41,7 @@ const ArticlePage = ({ article, global }) => {
         <>
           <Navbar />
           <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
-            <ArticleSection
+            <ArticleViewSection
               _wrapper={pageStyles.firstSection}
               article={article}
             />
