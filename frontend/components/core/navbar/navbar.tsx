@@ -70,7 +70,7 @@ export function Navbar(props: Props) {
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="/">
+              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
@@ -90,7 +90,7 @@ export function Navbar(props: Props) {
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="/">
+              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
@@ -207,7 +207,11 @@ export function Navbar(props: Props) {
       >
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
-          <Link href="/" passHref prefetch={false}>
+          <Link
+            href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+            passHref
+            prefetch={false}
+          >
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={12} src="/June-logo.svg" alt="june-logo" />
             </Flex>
@@ -217,7 +221,7 @@ export function Navbar(props: Props) {
             {/* Solution tab with popup menu */}
             <Popover trigger="hover">
               <PopoverTrigger>
-                <Text {...defaultNavItemStyle}>Solution</Text>
+                <Text {...defaultNavItemStyle}>Use cases</Text>
               </PopoverTrigger>
               <Portal>
                 <PopoverContent
