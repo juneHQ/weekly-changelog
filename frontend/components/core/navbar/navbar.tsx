@@ -66,7 +66,8 @@ export function Navbar(props: Props) {
           maxWidth="100vw"
           position="fixed"
           zIndex="overlay"
-          display={["block", "block", "none"]}>
+          display={["block", "block", "none"]}
+        >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
@@ -85,7 +86,8 @@ export function Navbar(props: Props) {
           w="100%"
           zIndex="overlay"
           display={["block", "block", "none"]}
-          position="absolute">
+          position="absolute"
+        >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
@@ -111,12 +113,14 @@ export function Navbar(props: Props) {
         direction="column"
         justify="space-between"
         overflowY="hidden"
-        display={isOpen ? "block" : "none"}>
+        display={isOpen ? "block" : "none"}
+      >
         <Flex width="100%" direction="column" h="40%" justify="space-between">
           <Link
             prefetch={false}
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
-            passHref>
+            passHref
+          >
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Templates
@@ -127,7 +131,8 @@ export function Navbar(props: Props) {
             align="center"
             as="a"
             href="https://changelog.june.so/"
-            style={{ textDecoration: "none" }}>
+            style={{ textDecoration: "none" }}
+          >
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Changelog
             </Text>
@@ -135,11 +140,13 @@ export function Navbar(props: Props) {
           <Link
             prefetch={false}
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
-            passHref>
+            passHref
+          >
             <Flex
               align="center"
               style={{ textDecoration: "none" }}
-              _hover={{ cursor: "pointer" }}>
+              _hover={{ cursor: "pointer" }}
+            >
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Pricing
               </Text>
@@ -148,13 +155,15 @@ export function Navbar(props: Props) {
           <Link
             prefetch={false}
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/vision`}
-            passHref>
+            passHref
+          >
             <Flex align="center" _hover={{ cursor: "pointer" }}>
               <Flex>
                 <Text
                   fontSize="4xl"
                   fontWeight="bold"
-                  color={MOBILE_MENU_COLOR}>
+                  color={MOBILE_MENU_COLOR}
+                >
                   Vision{" "}
                 </Text>{" "}
               </Flex>
@@ -168,7 +177,8 @@ export function Navbar(props: Props) {
             as="a"
             href={`${process.env.JUNE_APP_HOST}/log-in`}
             borderRadius={6}
-            fontWeight={MOBILE_FONT_WEIGHT}>
+            fontWeight={MOBILE_FONT_WEIGHT}
+          >
             Log in
           </Button>
           <Button
@@ -178,7 +188,8 @@ export function Navbar(props: Props) {
             as="a"
             href={`${process.env.JUNE_APP_HOST}/start`}
             borderRadius={6}
-            fontWeight={MOBILE_FONT_WEIGHT}>
+            fontWeight={MOBILE_FONT_WEIGHT}
+          >
             Sign up
           </Button>
         </Stack>
@@ -192,13 +203,15 @@ export function Navbar(props: Props) {
         zIndex={15}
         overflowX="hidden"
         display={["none", "none", "block"]}
-        px={defaultPx(32)}>
+        px={defaultPx(32)}
+      >
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
           <Link
             href={process.env.NEXT_PUBLIC_MARKETING_HOST}
             passHref
-            prefetch={false}>
+            prefetch={false}
+          >
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={12} src="/June-logo.svg" alt="june-logo" />
             </Flex>
@@ -214,7 +227,8 @@ export function Navbar(props: Props) {
                 <PopoverContent
                   boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15);"
                   borderRadius="10px"
-                  overflow="hidden">
+                  overflow="hidden"
+                >
                   <PopoverArrow />
                   <Box p={10}>
                     <Text
@@ -223,7 +237,8 @@ export function Navbar(props: Props) {
                       fontWeight="bold"
                       fontSize="lg"
                       lineHeight="30px"
-                      ml={2}>
+                      ml={2}
+                    >
                       By role
                     </Text>
                     <VStack align="start" mt={2}>
@@ -274,7 +289,8 @@ export function Navbar(props: Props) {
                       href={
                         process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates"
                       }
-                      passHref>
+                      passHref
+                    >
                       <Button
                         leftIcon={<ArrowForwardIcon />}
                         variant="link"
@@ -283,7 +299,8 @@ export function Navbar(props: Props) {
                         fontSize="lg"
                         fontWeight="bold"
                         _hover={{ color: "purple.500" }}
-                        _active={{ color: "purple.600" }}>
+                        _active={{ color: "purple.600" }}
+                      >
                         Discover 15+ templates
                       </Button>
                     </Link>
@@ -306,14 +323,16 @@ export function Navbar(props: Props) {
               as="a"
               size="landingMd"
               variant="landingOutline"
-              href={`${process.env.JUNE_APP_HOST}/log-in`}>
+              href={`${process.env.JUNE_APP_HOST}/log-in`}
+            >
               Login
             </Button>
             <Button
               as="a"
               size="landingMd"
               variant="landingSolid"
-              href={`${process.env.JUNE_APP_HOST}/start`}>
+              href={`${process.env.JUNE_APP_HOST}/start`}
+            >
               Sign up
             </Button>
           </HStack>
