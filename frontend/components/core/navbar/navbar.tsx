@@ -38,6 +38,11 @@ const ROUTES = [
     type: "external-link",
   },
   {
+    href: "/",
+    title: "Changelog",
+    type: "internal-link",
+  },
+  {
     href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
     title: "Pricing",
     type: "external-link",
