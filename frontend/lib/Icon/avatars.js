@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const iconPaths = {
   anonymous: {
-    viewBox: '0 0 17 14',
+    viewBox: "0 0 17 14",
     path: (
       <path
         d="M15.0517 10.9994C15.0794 11.767 14.8009 12.5143 14.2776 13.0766C13.7543 13.639 13.0291 13.9705 12.2614 13.9981C11.4937 14.0258 10.7465 13.7473 10.1841 13.224C9.62171 12.7007 9.29025 11.9754 9.26261 11.2078C9.12134 11.0408 8.94322 10.9089 8.7423 10.8225C8.54138 10.7361 8.32314 10.6976 8.10478 10.7099C7.88642 10.6976 7.66819 10.7361 7.46727 10.8225C7.26635 10.9089 7.08823 11.0408 6.94696 11.2078C6.88616 11.9033 6.5725 12.5525 6.06534 13.0324C5.55817 13.5122 4.89269 13.7896 4.19483 13.8118C3.49697 13.8341 2.81515 13.5998 2.27841 13.1533C1.74167 12.7067 1.38724 12.0789 1.2822 11.3886C1.17716 10.6984 1.32879 9.99353 1.70841 9.40753C2.08802 8.82153 2.66928 8.39501 3.34218 8.2087C4.01508 8.02239 4.73293 8.0892 5.35988 8.3965C5.98684 8.7038 6.47939 9.23027 6.74434 9.87626C7.17439 9.66302 7.64792 9.55206 8.12794 9.55206C8.60796 9.55206 9.08149 9.66302 9.51154 9.87626C9.77878 9.27363 10.2437 8.78027 10.8294 8.47778C11.4152 8.1753 12.0866 8.08181 12.7327 8.21278C13.3788 8.34375 13.9608 8.69134 14.3825 9.19805C14.8042 9.70475 15.0403 10.3402 15.0517 10.9994ZM11.833 0.816271C11.6766 0.565984 11.4589 0.359693 11.2006 0.216872C10.9423 0.0740513 10.6519 -0.000587148 10.3568 3.47819e-06H5.85281C5.55766 -0.000587148 5.26723 0.0740513 5.00894 0.216872C4.75065 0.359693 4.53301 0.565984 4.37658 0.816271L2.35618 4.0524H13.8534L11.833 0.816271ZM15.6307 4.63131H0.578913C0.425376 4.63131 0.278127 4.6923 0.16956 4.80087C0.0609924 4.90944 0 5.05668 0 5.21022C0 5.36376 0.0609924 5.51101 0.16956 5.61957C0.278127 5.72814 0.425376 5.78913 0.578913 5.78913H15.6307C15.7842 5.78913 15.9314 5.72814 16.04 5.61957C16.1486 5.51101 16.2096 5.36376 16.2096 5.21022C16.2096 5.05668 16.1486 4.90944 16.04 4.80087C15.9314 4.6923 15.7842 4.63131 15.6307 4.63131Z"
@@ -11,7 +11,7 @@ const iconPaths = {
     ),
   },
   alien: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -25,7 +25,7 @@ const iconPaths = {
         enableBackground="new 0 0 421 421"
         xmlSpace="preserve"
       >
-        {' '}
+        {" "}
         <image
           id="image0"
           width="421"
@@ -1097,7 +1097,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   bear: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1123,7 +1123,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   cat: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1149,7 +1149,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   dog: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1175,7 +1175,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   dragon: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1201,7 +1201,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   fox: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1227,7 +1227,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   ghost: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1253,7 +1253,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   koala: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1279,7 +1279,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   monkey: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1305,7 +1305,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   panda: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1331,7 +1331,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   pig: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1357,7 +1357,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   robot: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1383,7 +1383,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   rooster: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1409,7 +1409,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   tiger: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"
@@ -1435,7 +1435,7 @@ dGU6bW9kaWZ5ADIwMjEtMDItMjVUMTM6Mjk6MTArMDM6MDDqm0FtAAAAAElFTkSuQmCC"
     ),
   },
   giraffe: {
-    viewBox: '0 0 421 421',
+    viewBox: "0 0 421 421",
     path: (
       <svg
         version="1.1"

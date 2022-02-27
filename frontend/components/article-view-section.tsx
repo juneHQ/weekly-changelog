@@ -3,14 +3,12 @@ import {
   Container,
   ContainerProps,
   Divider,
-  Flex,
   Grid,
   GridItem,
   Heading,
   Image,
   Stack,
   Text,
-  UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import { PageHeader } from "components/core/page-header";
@@ -20,45 +18,27 @@ import { getStrapiMedia } from "lib/media";
 import { Article } from "lib/models/article";
 import { defaultPx } from "lib/utils/default-container-px";
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Contributor from "./Contributor";
 
 const MotionBox = motion(Box);
 
-const markdownRenderers = {
-  root: ({ children }) => (
-    <Box fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
-      {children}
-    </Box>
+const mdComponents: Components = {
+  h2: ({ node, ...props }) => (
+    <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />
   ),
-  heading: (args) => {
-    return (
-      <Heading as="h2" lineHeight="400%" fontSize="xl">
-        {args.children}
-      </Heading>
-    );
-  },
-  list: UnorderedList,
-  image: (image) => {
-    return (
-      <Flex py={2} justify="center">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          h="100%"
-          w={["100%", "100%", "100%", "100%"]}
-          maxW={["100%", "100%", "700px", "900px"]}
-        />
-      </Flex>
-    );
-  },
-  link: (link) => {
-    return (
-      <a href={link.href} style={{ color: "#6868F7" }}>
-        {link.children}
-      </a>
-    );
-  },
+  p: ({ node, ...props }) => <Text my={6} {...props} />,
+  a: (props) => (
+    <Text
+      as="a"
+      href={props.href}
+      rel="noopener noreferrer"
+      style={{ color: "#6868F7" }}
+    >
+      {props.children}
+    </Text>
+  ),
 };
 
 interface ArticleViewSectionProps {
@@ -71,6 +51,8 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
   const { innerWidth: screenWidth } = global;
 
   const [isMobile] = useState(screenWidth < 425);
+
+  const markdown = article.content.replace(/<br>/gi, "");
 
   return (
     <MotionBox
@@ -123,7 +105,6 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
             "'title-thumbnail' 'type-date'",
             "'type-date title-thumbnail'",
           ]}
-          mb={[4, 4, "67px"]}
           gap={[4, 4, 0]}
         >
           <GridItem gridArea="type-date">
@@ -155,24 +136,27 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
               <Image
                 src={getStrapiMedia(article.image)}
                 alt={article.title}
-                objectFit="cover"
-                objectPosition="50% 50%"
                 w="full"
-                h={["300px", "300px", "unset"]}
-                borderRadius="10px"
-                shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
               />
             </VStack>
           </GridItem>
         </Grid>
         <Grid gridTemplateColumns={["1fr", "1fr", "1fr 3fr"]}>
           <GridItem />
-          <GridItem>
-            <ReactMarkdown
-              renderers={markdownRenderers}
-              source={article.content}
-              escapeHtml={false}
-            />
+          <GridItem mt={[0, 0, 10]}>
+            <Box
+              fontSize="lg"
+              lineHeight="32px"
+              color="landing.almostBlack.500"
+            >
+              <ReactMarkdown
+                skipHtml
+                remarkPlugins={[remarkGfm]}
+                components={mdComponents}
+              >
+                {markdown}
+              </ReactMarkdown>
+            </Box>
             <Divider mt={16} mb={8} />
             <Grid
               gap={4}

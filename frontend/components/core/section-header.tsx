@@ -17,7 +17,12 @@ export function SectionHeader(props: SectionHeaderProps) {
     <VStack align="start" spacing={[4, 4, 8]} {...props._wrapper}>
       <VStack align="start" spacing={4} {...props._headingsWrapper}>
         {props.subtitle && (
-          <Text fontSize={["md", "md", "lg"]} fontWeight="bold" color="primary" {...props._subtitle}>
+          <Text
+            fontSize={["md", "md", "lg"]}
+            fontWeight="bold"
+            color="primary"
+            {...props._subtitle}
+          >
             {props.subtitle}
           </Text>
         )}
@@ -27,7 +32,8 @@ export function SectionHeader(props: SectionHeaderProps) {
           color="landing.almostBlack.500"
           fontFamily="landingHeading"
           lineHeight={1.25}
-          {...props._title}>
+          {...props._title}
+        >
           {props.title}
         </Heading>
       </VStack>

@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import React from "react";
 
-interface TryBanner {
+interface TryBannerProps {
   subheading?: string;
   heading?: string | React.ReactNode;
   description?: string;
@@ -21,7 +21,7 @@ interface TryBanner {
   _wrapper?: ContainerProps;
 }
 
-export function TryBanner(props: TryBanner) {
+export function TryBanner(props: TryBannerProps) {
   const {
     subheading = "Try today",
     heading = (
@@ -49,7 +49,8 @@ export function TryBanner(props: TryBanner) {
         bg="linear-gradient(113.99deg, #D1D4FF 15.75%, #A7ACFC 57.98%, #8588E5 83.82%);"
         borderRadius="md"
         pos="relative"
-        p={[8, 8, 16, 16, 120]}>
+        p={[8, 8, 16, 16, 120]}
+      >
         <picture>
           <source type="image/webp" srcSet="/rocket.webp" />
           <source type="image/png" srcSet="/rocket.png" />
@@ -72,7 +73,8 @@ export function TryBanner(props: TryBanner) {
             fontSize={38}
             fontWeight="semibold"
             color="#8588E5"
-            lineHeight="shorter">
+            lineHeight="shorter"
+          >
             {subheading}
           </Text>
           <Heading
@@ -80,7 +82,8 @@ export function TryBanner(props: TryBanner) {
             fontFamily="landingHeading"
             fontSize={[54, 54, 80]}
             lineHeight={[1.2, 1.2, "83.5px"]}
-            color="landing.almostBlack.500">
+            color="landing.almostBlack.500"
+          >
             {heading}
           </Heading>
           <Text fontSize={22} fontWeight="medium" color="landing.gray">
@@ -93,7 +96,8 @@ export function TryBanner(props: TryBanner) {
               variant="landingSolid"
               fontFamily="landingHeading"
               rel="noreferrer noopener"
-              {...(buttonHrefType === "external" && { href: buttonHref })}>
+              {...(buttonHrefType === "external" && { href: buttonHref })}
+            >
               {buttonText}
             </Button>
           </LinkOrFragment>

@@ -20,7 +20,11 @@ export function FooterLink({ type = "internal", href = "", ...props }: Props) {
 
   return (
     <Wrapper>
-      <Text as={type === "text" ? "p" : "a"} color="landing.gray" {...(type === "external" && { href })}>
+      <Text
+        as={type === "text" ? "p" : "a"}
+        color="landing.gray"
+        {...(type === "external" && { href })}
+      >
         {props.title}
       </Text>
     </Wrapper>

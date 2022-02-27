@@ -11,9 +11,9 @@ import {
 import TeamFooter from "./TeamFooter.js";
 
 function Footer() {
-  const newPurple = "#6868F7";
   const newPColor = "rgba(36,31,71,0.8)";
   const newInputAreaBG = "rgba(36,31,71,0.05)";
+
   return (
     <>
       <Box

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const iconPaths = {
-  'active-groups': {
-    viewBox: '0 0 48 48',
+  "active-groups": {
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -323,7 +323,7 @@ const iconPaths = {
     ),
   },
   slipping: {
-    viewBox: '0 0 48 48',
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -404,8 +404,8 @@ const iconPaths = {
       </svg>
     ),
   },
-  'power-users': {
-    viewBox: '0 0 48 48',
+  "power-users": {
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -522,8 +522,8 @@ const iconPaths = {
       </svg>
     ),
   },
-  'active-users': {
-    viewBox: '0 0 48 48',
+  "active-users": {
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -802,8 +802,8 @@ const iconPaths = {
       </svg>
     ),
   },
-  'feature-usage': {
-    viewBox: '0 0 48 48',
+  "feature-usage": {
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -864,7 +864,7 @@ const iconPaths = {
   },
 
   retention: {
-    viewBox: '0 0 48 48',
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -918,7 +918,7 @@ const iconPaths = {
   },
 
   funnel: {
-    viewBox: '0 0 48 48',
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -1001,7 +1001,7 @@ const iconPaths = {
     ),
   },
   audit: {
-    viewBox: '0 0 48 48',
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"
@@ -1045,7 +1045,7 @@ const iconPaths = {
     ),
   },
   engagement: {
-    viewBox: '0 0 48 48',
+    viewBox: "0 0 48 48",
     path: (
       <svg
         width="48"

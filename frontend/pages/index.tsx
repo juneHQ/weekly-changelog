@@ -26,11 +26,18 @@ const Home = ({ articles, homepage, global }) => {
         </>
       </Head>
       <Layout>
-        <Seo seo={homepage.seo} defaultSeo={global.defaultSeo} siteName={global.siteName} />
+        <Seo
+          seo={homepage.seo}
+          defaultSeo={global.defaultSeo}
+          siteName={global.siteName}
+        />
         <>
           <Navbar />
           <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
-            <ArticlesSection _wrapper={pageStyles.firstSection}  articles={articles} />
+            <ArticlesSection
+              _wrapper={pageStyles.firstSection}
+              articles={articles}
+            />
             <TryBanner _wrapper={pageStyles.middleSection} />
             <FooterV2 _wrapper={pageStyles.lastSection} />
           </Box>

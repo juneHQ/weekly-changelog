@@ -5,7 +5,9 @@
  * @param desktopValue value for desktop sizes
  * @returns array of responsive values
  */
-export const defaultPx = (desktopValue: number | string | (string | number)[]) => {
+export const defaultPx = (
+  desktopValue: number | string | (string | number)[]
+) => {
   let newValues = [];
   if (typeof desktopValue === "string" || typeof desktopValue === "number") {
     newValues = [desktopValue];
