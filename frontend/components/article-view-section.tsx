@@ -14,7 +14,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { PageHeader } from "components/core/page-header";
-import { WindowMockBox } from "components/core/window-mock-box";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import { getStrapiMedia } from "lib/media";
@@ -153,31 +152,16 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
               <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000">
                 {article.title}
               </Heading>
-              <Box
+              <Image
+                src={getStrapiMedia(article.image)}
+                alt={article.title}
+                objectFit="cover"
+                objectPosition="50% 50%"
                 w="full"
-                // Overflowing window effect
-                minW={["110vw", "110vw", "unset"]}
                 h={["300px", "300px", "unset"]}
-                px={6}
-                pt={6}
-                bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
-                filter="drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.05))"
                 borderRadius="10px"
-                overflow="hidden"
-              >
-                <WindowMockBox
-                  _wrapper={{
-                    h: "full",
-                    borderBottomRadius: 0,
-                  }}
-                >
-                  <Image
-                    objectFit="cover"
-                    height="368px"
-                    src={getStrapiMedia(article.image)}
-                  />
-                </WindowMockBox>
-              </Box>
+                shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+              />
             </VStack>
           </GridItem>
         </Grid>
