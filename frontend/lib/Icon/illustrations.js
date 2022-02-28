@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const iconPaths = {
   emptyEventsPlaceholder: {
@@ -298,7 +298,7 @@ const iconPaths = {
         </defs>
       </svg>
     ),
-    viewBox: '0 0 179 160',
+    viewBox: "0 0 179 160",
   },
   emptyContactsPlaceholder: {
     path: (
@@ -472,7 +472,7 @@ const iconPaths = {
         </defs>
       </svg>
     ),
-    viewBox: '0 0 160 166',
+    viewBox: "0 0 160 166",
   },
   eventSetupPlaceholderIllustration: {
     path: (
@@ -566,7 +566,7 @@ const iconPaths = {
         </defs>
       </svg>
     ),
-    viewBox: '0 0 432 176',
+    viewBox: "0 0 432 176",
   },
   cohortSetupPlaceholderIllustration: {
     path: (
@@ -692,7 +692,7 @@ const iconPaths = {
         </defs>
       </svg>
     ),
-    viewBox: '0 0 432 176',
+    viewBox: "0 0 432 176",
   },
   activeUsersArrowIncrease: {
     path: (
@@ -710,7 +710,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 24 24',
+    viewBox: "0 0 24 24",
   },
   activeUsersArrowDecrease: {
     path: (
@@ -728,7 +728,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 24 24',
+    viewBox: "0 0 24 24",
   },
   insightTrendFlat: {
     path: (
@@ -748,7 +748,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightTrendNotFlat: {
     path: (
@@ -768,7 +768,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightAboveTwenty: {
     path: (
@@ -799,7 +799,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightBelowTwenty: {
     path: (
@@ -830,7 +830,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightBenchmarkAboveAvg: {
     path: (
@@ -855,7 +855,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightBenchmarkBelowAvg: {
     path: (
@@ -880,7 +880,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightBenchmarkGood: {
     path: (
@@ -905,7 +905,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightBenchmarkGreat: {
     path: (
@@ -930,7 +930,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightFeatureAuditCore: {
     path: (
@@ -969,7 +969,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightFeatureAuditClutter: {
     path: (
@@ -1008,7 +1008,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightFeatureAuditLowFrequency: {
     path: (
@@ -1047,7 +1047,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
   insightFeatureAuditLowPopularity: {
     path: (
@@ -1086,7 +1086,7 @@ const iconPaths = {
         />
       </svg>
     ),
-    viewBox: '0 0 192 96',
+    viewBox: "0 0 192 96",
   },
 };
 

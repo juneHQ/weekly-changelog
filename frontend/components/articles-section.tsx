@@ -3,7 +3,6 @@ import {
   Button,
   Container,
   ContainerProps,
-  Flex,
   Heading,
   HStack,
   Image,
@@ -18,7 +17,6 @@ import Link from "next/link";
 import React from "react";
 import { defaultPx } from "../lib/utils/default-container-px";
 import { PageHeader } from "./core/page-header";
-import { WindowMockBox } from "./core/window-mock-box";
 
 interface ArticlesSectionProps {
   articles: Article[];

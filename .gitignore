@@ -116,3 +116,5 @@ build
 .next
 .env.*
 !.env.example
+
+frontend/out/*

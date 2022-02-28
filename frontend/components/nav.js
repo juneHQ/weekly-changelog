@@ -6,14 +6,15 @@ import Icon from "../lib/Icon";
 
 const MotionFlex = motion(Flex);
 
+const newPColor = "rgba(36,31,71,0.8)";
+const mobileMenu = "rgba(36,31,71,1)";
+const fSize = 16;
+const fWeight = 600;
+
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  const newPColor = "rgba(36,31,71,0.8)";
-  const mobileMenu = "rgba(36,31,71,1)";
-  const fSize = 16;
-  const fWeight = 600;
   return (
     <>
       {/* mobile menu */}
@@ -22,7 +23,8 @@ const Nav = () => {
         zIndex={15}
         maxWidth="100vw"
         position="absolute"
-        display={["block", "block", "none"]}>
+        display={["block", "block", "none"]}
+      >
         <Flex direction="column">
           <Flex align="center" justify="space-between">
             <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
@@ -51,13 +53,15 @@ const Nav = () => {
         animate={{
           y: 0,
           opacity: 1,
-        }}>
+        }}
+      >
         <Flex width="100%" direction="column" h="40%" justify="space-between">
           <Flex
             align="center"
             as="a"
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
-            style={{ textDecoration: "none" }}>
+            style={{ textDecoration: "none" }}
+          >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
               Templates
             </Text>
@@ -67,7 +71,8 @@ const Nav = () => {
             align="center"
             as="a"
             href="https://changelog.june.so/"
-            style={{ textDecoration: "none" }}>
+            style={{ textDecoration: "none" }}
+          >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
               Changelog
             </Text>
@@ -77,7 +82,8 @@ const Nav = () => {
             align="center"
             as="a"
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
-            style={{ textDecoration: "none" }}>
+            style={{ textDecoration: "none" }}
+          >
             <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
               Pricing
             </Text>
@@ -86,7 +92,8 @@ const Nav = () => {
           <Flex
             align="center"
             as="a"
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}>
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
+          >
             <Flex>
               <Text fontSize="4xl" fontWeight="bold" color={mobileMenu}>
                 Manifesto{" "}
@@ -101,7 +108,8 @@ const Nav = () => {
           colorScheme="templatePurple"
           h={50}
           borderRadius={6}
-          bg="#6868F7">
+          bg="#6868F7"
+        >
           Sign up for free
         </Button>
       </MotionFlex>
@@ -113,12 +121,14 @@ const Nav = () => {
         overflowX="hidden"
         display={["none", "none", "block"]}
         maxWidth="100vw"
-        mb={8}>
+        mb={8}
+      >
         <Flex px="5vw" py={6} direction="row" justify="space-between">
           <Flex
             as="a"
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}`}
-            display={["none", "none", "block"]}>
+            display={["none", "none", "block"]}
+          >
             <Image h={12} src="/June-logo.svg" />
           </Flex>
           <Flex justify="center" align="center">
@@ -128,13 +138,15 @@ const Nav = () => {
                 align="center"
                 as="a"
                 href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
-                style={{ textDecoration: "none" }}>
+                style={{ textDecoration: "none" }}
+              >
                 <Text
                   fontWeight={fWeight}
                   fontSize={fSize}
                   color={newPColor}
                   textAlign="center"
-                  _hover={{ color: "#000000" }}>
+                  _hover={{ color: "#000000" }}
+                >
                   Templates
                 </Text>
               </Flex>
@@ -144,13 +156,15 @@ const Nav = () => {
                 align="center"
                 as="a"
                 href="https://changelog.june.so"
-                style={{ textDecoration: "none" }}>
+                style={{ textDecoration: "none" }}
+              >
                 <Text
                   fontWeight={fWeight}
                   fontSize={fSize}
                   color={newPColor}
                   textAlign="center"
-                  _hover={{ color: "#000000" }}>
+                  _hover={{ color: "#000000" }}
+                >
                   Changelog
                 </Text>
               </Flex>
@@ -160,13 +174,15 @@ const Nav = () => {
                 align="center"
                 as="a"
                 href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
-                style={{ textDecoration: "none" }}>
+                style={{ textDecoration: "none" }}
+              >
                 <Text
                   fontWeight={fWeight}
                   fontSize={fSize}
                   color={newPColor}
                   textAlign="center"
-                  _hover={{ color: "#000000" }}>
+                  _hover={{ color: "#000000" }}
+                >
                   Pricing
                 </Text>
               </Flex>
@@ -175,14 +191,16 @@ const Nav = () => {
                 px={4}
                 align="center"
                 as="a"
-                href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}>
+                href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/manifesto`}
+              >
                 <Flex>
                   <Text
                     fontWeight={fWeight}
                     fontSize={fSize}
                     color={newPColor}
                     textAlign="center"
-                    _hover={{ color: "#000000" }}>
+                    _hover={{ color: "#000000" }}
+                  >
                     Manifesto
                   </Text>
                 </Flex>
@@ -194,7 +212,8 @@ const Nav = () => {
                   href="https://app.june.so/login"
                   fontWeight={fWeight}
                   fontSize={fSize}
-                  color={newPColor}>
+                  color={newPColor}
+                >
                   Log in
                 </Button>
 
@@ -205,7 +224,8 @@ const Nav = () => {
                   fontWeight={fWeight}
                   fontSize={fSize}
                   colorScheme="templatePurple"
-                  bg="#6868F7">
+                  bg="#6868F7"
+                >
                   Sign up
                 </Button>
               </Flex>
