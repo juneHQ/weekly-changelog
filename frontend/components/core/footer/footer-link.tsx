@@ -1,11 +1,13 @@
-import { Text } from "@chakra-ui/react";
-import React from "react";
+import { Text, TextProps } from "@chakra-ui/react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 
 type Props = {
-  title: string;
+  title: string | ReactNode;
   href?: string;
-  type?: "internal" | "external" | "text";
+  type?: "internal" | "external" | "text" | "node";
+  style?: TextProps;
+  mode?: "light" | "dark";
 };
 
 export function FooterLink({ type = "internal", href = "", ...props }: Props) {
@@ -20,13 +22,18 @@ export function FooterLink({ type = "internal", href = "", ...props }: Props) {
 
   return (
     <Wrapper>
-      <Text
-        as={type === "text" ? "p" : "a"}
-        color="landing.gray"
-        {...(type === "external" && { href })}
-      >
-        {props.title}
-      </Text>
+      {typeof props.title === "string" ? (
+        <Text
+          as={type === "text" ? "p" : "a"}
+          color={props.mode === "dark" ? "white" : "landing.gray"}
+          {...(type === "external" && { href })}
+          {...props.style}
+        >
+          {props.title}
+        </Text>
+      ) : (
+        props.title
+      )}
     </Wrapper>
   );
 }

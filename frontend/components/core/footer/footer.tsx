@@ -1,5 +1,6 @@
 import {
   Box,
+  chakra,
   Container,
   ContainerProps,
   Grid,
@@ -44,7 +45,7 @@ export function FooterV2(props: Props) {
         </GridItem>
         <GridItem gridArea="solution">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Solution</FooterTitle>
+            <FooterTitle>Explore</FooterTitle>
             <FooterLink
               title="Overview"
               type="external"
@@ -62,6 +63,11 @@ export function FooterV2(props: Props) {
             />
             <FooterLink title="Changelog" href="/" />
             <FooterLink
+              title="Method"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/method`}
+            />
+            <FooterLink
               title="Widget for iOS"
               type="external"
               href="https://widgets.june.so/"
@@ -70,7 +76,7 @@ export function FooterV2(props: Props) {
         </GridItem>
         <GridItem gridArea="for">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>For</FooterTitle>
+            <FooterTitle>Use Cases</FooterTitle>
             <FooterLink
               title="Founders"
               type="external"
@@ -87,14 +93,14 @@ export function FooterV2(props: Props) {
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/engineers`}
             />
             <FooterLink
-              title="Marketers"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/marketers`}
-            />
-            <FooterLink
               title="Customer Success"
               type="external"
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/customer-success`}
+            />
+            <FooterLink
+              title="Marketers"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/marketers`}
             />
             <FooterLink
               title="Designers"
@@ -106,7 +112,7 @@ export function FooterV2(props: Props) {
         <GridItem gridArea="company">
           <VStack align="start" spacing={gap}>
             <FooterTitle>Company</FooterTitle>
-            <FooterLink title="Our story" />
+            {/* <FooterLink title="Our story" /> */}
             <FooterLink
               title="Careers"
               type="external"
@@ -121,6 +127,11 @@ export function FooterV2(props: Props) {
               title="Twitter"
               type="external"
               href="https://twitter.com/JuneDotSo"
+            />
+            <FooterLink
+              title="Blog"
+              type="external"
+              href="https://inside.june.so"
             />
           </VStack>
         </GridItem>
@@ -137,7 +148,85 @@ export function FooterV2(props: Props) {
               type="external"
               href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
             />
+            <VStack align="start">
+              <FooterLink
+                style={{ display: ["none", "none", "block"] }}
+                title="Backed by"
+                type="text"
+              />
+              <FooterLink
+                type="node"
+                title={
+                  <Image
+                    src="/yc-orange-logo.png"
+                    alt="y-combinator logo"
+                    height={6}
+                    w="auto"
+                    display={["none", "none", "block"]}
+                  />
+                }
+              />
+            </VStack>
+            <FooterLink
+              type="node"
+              title={
+                <chakra.a
+                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
+                  target="_blank"
+                  rel="noreferrer"
+                  display={["none", "none", "block"]}
+                >
+                  <Image
+                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
+                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
+                    htmlWidth="250"
+                    htmlHeight="54"
+                    width="250px"
+                    height="54px"
+                  />
+                </chakra.a>
+              }
+            />
             <FooterLink title="Copyright © 2022 June" type="text" />
+          </VStack>
+        </GridItem>
+        <GridItem display={["block", "block", "none"]}>
+          <VStack align="start">
+            <FooterLink title="Backed by" type="text" />
+            <FooterLink
+              type="node"
+              title={
+                <Image
+                  src="/yc-orange-logo.png"
+                  alt="y-combinator logo"
+                  height={6}
+                  w="auto"
+                />
+              }
+            />
+          </VStack>
+        </GridItem>
+        <GridItem display={["block", "block", "none"]}>
+          <VStack align="start" spacing={gap}>
+            <FooterLink
+              type="node"
+              title={
+                <a
+                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
+                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
+                    htmlWidth="250"
+                    htmlHeight="54"
+                    width="250px"
+                    height="54px"
+                  />
+                </a>
+              }
+            />
           </VStack>
         </GridItem>
       </Grid>
