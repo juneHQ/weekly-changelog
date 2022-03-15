@@ -1,6 +1,5 @@
 import {
   Box,
-  chakra,
   Container,
   ContainerProps,
   Divider,
@@ -9,6 +8,7 @@ import {
   Heading,
   Image,
   ListItem,
+  OrderedList,
   Stack,
   Text,
   UnorderedList,
@@ -43,6 +43,7 @@ const mdComponents: Components = {
     </Text>
   ),
   ul: ({ node, ...props }) => <UnorderedList spacing={4} {...props} />,
+  ol: ({ node, ...props }) => <OrderedList spacing={4} {...props} />,
   li: ({ node, ...props }) => (
     <ListItem _before={{ content: "unset" }} {...props} />
   ),
