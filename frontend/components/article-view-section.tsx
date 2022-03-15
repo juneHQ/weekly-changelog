@@ -1,5 +1,6 @@
 import {
   Box,
+  chakra,
   Container,
   ContainerProps,
   Divider,
@@ -7,8 +8,10 @@ import {
   GridItem,
   Heading,
   Image,
+  ListItem,
   Stack,
   Text,
+  UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import { PageHeader } from "components/core/page-header";
@@ -38,6 +41,10 @@ const mdComponents: Components = {
     >
       {props.children}
     </Text>
+  ),
+  ul: ({ node, ...props }) => <UnorderedList spacing={4} {...props} />,
+  li: ({ node, ...props }) => (
+    <ListItem _before={{ content: "unset" }} {...props} />
   ),
 };
 
