@@ -47,7 +47,7 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
                 objectFit="cover"
                 objectPosition="50% 50%"
                 w="full"
-                height="368px"
+                height={["288px", "288px", "288px", "368px"]}
                 borderRadius="10px"
                 shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
               />
