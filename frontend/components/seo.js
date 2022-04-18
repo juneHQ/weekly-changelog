@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { getStrapiMedia } from "../lib/media";
 
 const Seo = ({ seo, defaultSeo, siteName }) => {
   const seoWithDefaults = {
@@ -11,7 +10,8 @@ const Seo = ({ seo, defaultSeo, siteName }) => {
     // Add title suffix
     metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
     // Get full image URL
-    shareImage: getStrapiMedia(seoWithDefaults.shareImage),
+    // shareImage: getStrapiMedia(seoWithDefaults.shareImage),
+    shareImage: "https://changelog.june.so/social.png",
   };
 
   return (
