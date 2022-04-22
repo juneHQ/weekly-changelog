@@ -37,7 +37,8 @@ const mdComponents: Components = {
       as="a"
       href={props.href}
       rel="noopener noreferrer"
-      style={{ color: "#6868F7" }}
+      color="#6868F7"
+      fontWeight="bold"
     >
       {props.children}
     </Text>
