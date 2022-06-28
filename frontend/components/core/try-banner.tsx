@@ -32,7 +32,7 @@ export function TryBanner(props: TryBannerProps) {
     ),
     description = "Get instant product analytics reports in seconds not hours.",
     buttonText = "Get started",
-    buttonHref = `${process.env.JUNE_APP_HOST}/start`,
+    buttonHref = `${process.env.NEXT_PUBLIC_APP_HOST}/start`,
     buttonHrefType = "external",
   } = props;
 

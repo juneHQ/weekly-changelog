@@ -11,8 +11,7 @@ export default function CreateAccountSection() {
       justify="center"
       textAlign="center"
       py={16}
-      touchAction="none"
-    >
+      touchAction="none">
       <Flex
         direction={["column", "column", "row"]}
         justify={["center", "space-between"]}
@@ -23,21 +22,18 @@ export default function CreateAccountSection() {
         py={[16, 36]}
         px={[0, 12]}
         overflow="hidden"
-        position="relative"
-      >
+        position="relative">
         <Flex
           zIndex="9"
           margin="0 auto"
           verticalAlign="middle"
-          display="column"
-        >
+          display="column">
           <Text
             fontWeight={700}
             color="#000000"
             fontSize={[32, 52]}
             lineHeight="shorter"
-            px={[8, 0]}
-          >
+            px={[8, 0]}>
             Create an account now
           </Text>
 
@@ -50,8 +46,7 @@ export default function CreateAccountSection() {
                   color={newPColor}
                   fontSize={[16, 20]}
                   px={[8, 0]}
-                  w={["auto", "450px"]}
-                >
+                  w={["auto", "450px"]}>
                   Get an instant and comprehensible product analytics in seconds{" "}
                   not hours.
                 </Text>
@@ -63,13 +58,12 @@ export default function CreateAccountSection() {
                 <Button
                   bg="#6868F7"
                   as="a"
-                  href={`${process.env.JUNE_APP_HOST}/start`}
+                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
                   colorScheme="templatePurple"
                   px={[4, 6]}
                   py={7}
                   textAlign="center"
-                  borderRadius="lg"
-                >
+                  borderRadius="lg">
                   Sign up for free
                 </Button>
               </Flex>
