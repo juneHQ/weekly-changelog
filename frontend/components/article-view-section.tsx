@@ -4,13 +4,13 @@ import React from 'react';
 import { defaultPx } from 'lib/utils/default-container-px';
 import { Article } from 'lib/models/article';
 import { getStrapiMedia } from 'lib/media';
-import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
 import {
   Box,
   Container,
   ContainerProps,
   Divider,
+  Flex,
   Grid,
   GridItem,
   Heading,
@@ -23,8 +23,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Contributor from './Contributor';
-
-const MotionBox = motion(Box);
 
 const mdComponents: Components = {
   h2: ({ node, ...props }) => (
@@ -60,36 +58,40 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
   const markdown = article.content.replace(/<br>/gi, "");
 
   return (
-    <MotionBox
-      animate={{
-        x: 0,
-        width: "100vw",
-        height: "100%",
-      }}
-      exit={{
-        x: 100,
-        width: "100%",
-        height: "100%",
-      }}>
+    <Flex w="full" justify={"center"} align={"center"}>
       <Container
-        maxW="landingMax"
-        pl={defaultPx(32)}
-        pr={defaultPx(96)}
-        {...props._wrapper}>
+        maxW={isHome ? "4xl" : "4xl"}
+        px={isHome ? 0 : defaultPx(32)}
+        pt={isHome ? 0 : defaultPx(16)}
+        justifyContent="center">
         <Grid
-          gridTemplateColumns={["1fr", "1fr", "1fr 3fr"]}
-          gridTemplateAreas={[
-            "'type-date' 'title-thumbnail'",
-            "'type-date' 'title-thumbnail'",
-            "'type-date title-thumbnail'",
-          ]}
-          gap={[4, 4, 0]}>
+          gridTemplateColumns={isHome ? ["1fr", "1fr", "1fr 3fr"] : "1fr"}
+          gridTemplateAreas={
+            isHome
+              ? [
+                  "'type-date' 'title-thumbnail'",
+                  "'type-date' 'title-thumbnail'",
+                  "'type-date title-thumbnail'",
+                ]
+              : "'type-date' 'title-thumbnail'"
+          }
+          gap={4}>
           <GridItem gridArea="type-date">
             <Stack
-              direction={["row", "row", "column"]}
-              align={["center", "center", "start"]}>
+              pt={[0, 0, 3]}
+              pr={[0, 0, 3]}
+              direction={isHome ? ["row", "row", "column"] : "row"}
+              align={
+                isHome
+                  ? ["center", "center", "end"]
+                  : ["center", "center", "start"]
+              }>
               <Text fontSize="sm" color="landing.gray">
-                {dayjs(article.publishedAt).format("MMM Do, YYYY")}
+                {isHome ? (
+                  <>{dayjs(article.publishedAt).format("MMM DD")}</>
+                ) : (
+                  <>{dayjs(article.publishedAt).format("MMM Do YYYY")}</>
+                )}
               </Text>
             </Stack>
           </GridItem>
@@ -99,6 +101,7 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
                 {article.title}
               </Heading>
               <Image
+                borderRadius={"md"}
                 src={getStrapiMedia(article.image)}
                 alt={article.title}
                 w="full"
@@ -106,7 +109,9 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
             </VStack>
           </GridItem>
         </Grid>
-        <Grid gridTemplateColumns={["1fr", "1fr", "1fr 3fr"]}>
+        <Grid
+          gridTemplateColumns={isHome ? ["1fr", "1fr", "1fr 3fr"] : "1fr"}
+          px={6}>
           <GridItem />
           <GridItem mt={[0, 0, 10]}>
             <Box
@@ -120,6 +125,7 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
                 {markdown}
               </ReactMarkdown>
             </Box>
+
             <Divider mt={16} mb={8} />
             <Grid
               gap={4}
@@ -136,6 +142,6 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
           </GridItem>
         </Grid>
       </Container>
-    </MotionBox>
+    </Flex>
   );
 };

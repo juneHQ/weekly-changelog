@@ -4,7 +4,6 @@ import { Article } from 'lib/models/article';
 import { pageStyles } from 'components/core/page-styles';
 import { ArticleViewSection } from 'components/article-view-section';
 import { Button, Container, ContainerProps, HStack, SimpleGrid, VStack } from '@chakra-ui/react';
-import { defaultPx } from '../lib/utils/default-container-px';
 
 interface ArticlesSectionProps {
   articles: Article[];
@@ -14,13 +13,8 @@ interface ArticlesSectionProps {
 
 export const ArticlesSection = (props: ArticlesSectionProps) => {
   return (
-    <Container maxW="landingMax" px={defaultPx(32)}>
-      <SimpleGrid
-        maxW="2xl"
-        columns={1}
-        columnGap={4}
-        rowGap={4}
-        mb={[6, 6, 16]}>
+    <Container maxW="landingMax" pt={[24, 24, 32, 32]}>
+      <SimpleGrid columns={1} columnGap={4} rowGap={4} mb={[6, 6, 16]}>
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" cursor="pointer">
