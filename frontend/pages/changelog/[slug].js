@@ -42,7 +42,7 @@ const ArticlePage = ({ article, global }) => {
         <>
           <Navbar />
           <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
-            <Box mt={[8, 8, 10]} mb={[6, 6, 16]}>
+            <Box mt={[16, 16, 8]} mb={[6, 6, 16]}>
               <ArticleViewSection
                 _wrapper={pageStyles.firstSection}
                 article={article}

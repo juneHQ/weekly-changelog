@@ -1,15 +1,15 @@
-import { Box } from "@chakra-ui/react";
-import Head from "next/head";
-import { createContext } from "react";
-import { ArticlesSection } from "../components/articles-section";
-import { FooterV2 } from "../components/core/footer/footer";
-import { Navbar } from "../components/core/navbar/navbar";
-import { pageStyles } from "../components/core/page-styles";
-import { TryBanner } from "../components/core/try-banner";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import { fetchAPI } from "../lib/api";
-import { getStrapiMedia } from "../lib/media";
+import { createContext } from 'react';
+import Head from 'next/head';
+import { Box } from '@chakra-ui/react';
+import { getStrapiMedia } from '../lib/media';
+import { fetchAPI } from '../lib/api';
+import Seo from '../components/seo';
+import Layout from '../components/layout';
+import { TryBanner } from '../components/core/try-banner';
+import { pageStyles } from '../components/core/page-styles';
+import { Navbar } from '../components/core/navbar/navbar';
+import { FooterV2 } from '../components/core/footer/footer';
+import { ArticlesSection } from '../components/articles-section';
 
 export const GlobalContext = createContext({});
 
@@ -33,7 +33,7 @@ const Home = ({ articles, homepage, global }) => {
         />
         <>
           <Navbar />
-          <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
+          <Box w="100%">
             <ArticlesSection
               _wrapper={pageStyles.firstSection}
               articles={articles}
