@@ -60,32 +60,20 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
   return (
     <Flex w="full" justify={"center"} align={"center"}>
       <Container
-        maxW={isHome ? "4xl" : "4xl"}
+        maxW={isHome ? "2xl" : "4xl"}
         px={isHome ? 0 : defaultPx(32)}
         pt={isHome ? 0 : defaultPx(16)}
         justifyContent="center">
         <Grid
-          gridTemplateColumns={isHome ? ["1fr", "1fr", "1fr 3fr"] : "1fr"}
-          gridTemplateAreas={
-            isHome
-              ? [
-                  "'type-date' 'title-thumbnail'",
-                  "'type-date' 'title-thumbnail'",
-                  "'type-date title-thumbnail'",
-                ]
-              : "'type-date' 'title-thumbnail'"
-          }
+          gridTemplateColumns={"1fr"}
+          gridTemplateAreas={"'type-date' 'title-thumbnail'"}
           gap={4}>
           <GridItem gridArea="type-date">
             <Stack
               pt={[0, 0, 3]}
               pr={[0, 0, 3]}
               direction={isHome ? ["row", "row", "column"] : "row"}
-              align={
-                isHome
-                  ? ["center", "center", "end"]
-                  : ["center", "center", "start"]
-              }>
+              align={["center", "center", "start"]}>
               <Text fontSize="sm" color="landing.gray">
                 {isHome ? (
                   <>{dayjs(article.publishedAt).format("MMM DD")}</>
@@ -109,9 +97,7 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
             </VStack>
           </GridItem>
         </Grid>
-        <Grid
-          gridTemplateColumns={isHome ? ["1fr", "1fr", "1fr 3fr"] : "1fr"}
-          px={6}>
+        <Grid gridTemplateColumns={"1fr"} px={6}>
           <GridItem />
           <GridItem mt={[0, 0, 10]}>
             <Box

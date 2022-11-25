@@ -10,7 +10,6 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import { fetchAPI } from "../../lib/api";
 import { getStrapiMedia } from "../../lib/media";
-import { PageHeader } from "components/core/page-header";
 
 export const GlobalContext = createContext({});
 
