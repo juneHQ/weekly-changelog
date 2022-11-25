@@ -1,9 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { Article } from 'lib/models/article';
-import { pageStyles } from 'components/core/page-styles';
 import { ArticleViewSection } from 'components/article-view-section';
-import { Button, Container, ContainerProps, HStack, SimpleGrid, VStack } from '@chakra-ui/react';
+import {
+  Button,
+  Container,
+  ContainerProps,
+  Divider,
+  Flex,
+  HStack,
+  SimpleGrid,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 
 interface ArticlesSectionProps {
   articles: Article[];
@@ -15,14 +24,20 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
   return (
     <Container maxW="landingMax" pt={[24, 24, 32, 32]}>
       <SimpleGrid columns={1} columnGap={4} rowGap={4} mb={[6, 6, 16]}>
+        <Flex direction={"column"} align="center">
+          <Text fontSize="5xl" fontWeight="bold">
+            Changelog
+          </Text>
+          <Text fontSize="xl" color="gray.600">
+            How June gets better, every week
+          </Text>
+          <Divider mt={16} mb={8} />
+        </Flex>
+
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" cursor="pointer">
-              <ArticleViewSection
-                _wrapper={pageStyles.firstSection}
-                article={article}
-                isHome={true}
-              />
+              <ArticleViewSection article={article} isHome={true} />
             </VStack>
           </Link>
         ))}
