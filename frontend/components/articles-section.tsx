@@ -1,22 +1,10 @@
-import {
-  Box,
-  Button,
-  Container,
-  ContainerProps,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import dayjs from "dayjs";
-import { getStrapiMedia } from "lib/media";
-import { Article } from "lib/models/article";
-import Link from "next/link";
-import React from "react";
-import { defaultPx } from "../lib/utils/default-container-px";
-import { PageHeader } from "./core/page-header";
+import React from 'react';
+import Link from 'next/link';
+import { Article } from 'lib/models/article';
+import { pageStyles } from 'components/core/page-styles';
+import { ArticleViewSection } from 'components/article-view-section';
+import { Button, Container, ContainerProps, HStack, SimpleGrid, VStack } from '@chakra-ui/react';
+import { defaultPx } from '../lib/utils/default-container-px';
 
 interface ArticlesSectionProps {
   articles: Article[];
@@ -26,43 +14,21 @@ interface ArticlesSectionProps {
 
 export const ArticlesSection = (props: ArticlesSectionProps) => {
   return (
-    <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
-      <PageHeader
-        title="What's new?"
-        description="New updates and improvements to June."
-      />
+    <Container maxW="landingMax" px={defaultPx(32)}>
       <SimpleGrid
-        columns={[1, 1, 2]}
-        columnGap={6}
-        rowGap={8}
-        mt={[8, 8, 10]}
-        mb={[6, 6, 16]}
-      >
+        maxW="2xl"
+        columns={1}
+        columnGap={4}
+        rowGap={4}
+        mb={[6, 6, 16]}>
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
-            <VStack align="start" spacing={4} cursor="pointer">
-              <Image
-                src={getStrapiMedia(article.image)}
-                alt={article.title}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                w="full"
-                height={["288px", "288px", "288px", "368px"]}
-                borderRadius="10px"
-                shadow="0px 4px 12px rgba(0, 0, 0, 0.15)"
+            <VStack align="start" cursor="pointer">
+              <ArticleViewSection
+                _wrapper={pageStyles.firstSection}
+                article={article}
+                isHome={true}
               />
-              <HStack>
-                <Text fontWeight="bold" fontSize="sm" color="primary">
-                  Feature
-                </Text>
-                <Box h={3} w="1px" bg="landing.gray" />
-                <Text fontSize="sm" color="landing.gray">
-                  {dayjs(article.publishedAt).format("MMM Do, YYYY")}
-                </Text>
-              </HStack>
-              <Heading as="h3" fontSize="2xl" color="landing.black">
-                {article.title}
-              </Heading>
             </VStack>
           </Link>
         ))}

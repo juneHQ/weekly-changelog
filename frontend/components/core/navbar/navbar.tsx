@@ -1,55 +1,33 @@
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  HStack,
-  Image,
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-  Portal,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import React, { useState } from "react";
-import { defaultPx } from "../../../lib/utils/default-container-px";
-import { ChatAltIcon } from "../custom-icons/chat-alt-icon";
-import { CloseIcon } from "../custom-icons/close-icon";
-import { DiamondIcon } from "../custom-icons/diamond-icon";
-import { HamburgerMenu } from "../custom-icons/hamburger-icon";
-import { LightningBoltIcon } from "../custom-icons/lightning-bolt-icon";
-import { PaintBurhsIcon } from "../custom-icons/paint-brush-icon";
-import { ThoughtBubbleIcon } from "../custom-icons/thought-bubble-icon";
-import { defaultNavItemStyle, DesktopNavItem } from "./desktop-nav-item";
-import { DesktopNavMenuItem } from "./desktop-nav-menu-item";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { DesktopNavItem } from './desktop-nav-item';
+import { HamburgerMenu } from '../custom-icons/hamburger-icon';
+import { CloseIcon } from '../custom-icons/close-icon';
+import { defaultPx } from '../../../lib/utils/default-container-px';
 
 const MOBILE_MENU_COLOR = "#241f47";
 const MOBILE_FONT_WEIGHT = 600;
 
 const ROUTES = [
   {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates",
-    title: "Templates",
-    type: "external-link",
-  },
-  {
     href: "/",
     title: "Changelog",
     type: "internal-link",
   },
   {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
-    title: "Pricing",
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/customer-stories",
+    title: "Customers",
     type: "external-link",
   },
   {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/vision",
-    title: "Vision",
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates",
+    title: "Templates",
+    type: "external-link",
+  },
+  {
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
+    title: "Pricing",
     type: "external-link",
   },
 ] as const;
@@ -118,16 +96,6 @@ export function Navbar(props: Props) {
         overflowY="hidden"
         display={isOpen ? "block" : "none"}>
         <Flex width="100%" direction="column" h="40%" justify="space-between">
-          <Link
-            prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
-            passHref>
-            <Flex align="center" style={{ textDecoration: "none" }}>
-              <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-                Templates
-              </Text>
-            </Flex>
-          </Link>
           <Flex
             align="center"
             as="a"
@@ -139,6 +107,24 @@ export function Navbar(props: Props) {
           </Flex>
           <Link
             prefetch={false}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/customer-stories`}>
+            <Flex align="center" style={{ textDecoration: "none" }}>
+              <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
+                Customers
+              </Text>
+            </Flex>
+          </Link>
+          <Link
+            prefetch={false}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}>
+            <Flex align="center" style={{ textDecoration: "none" }}>
+              <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
+                Templates
+              </Text>
+            </Flex>
+          </Link>
+          <Link
+            prefetch={false}
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             passHref>
             <Flex
@@ -148,21 +134,6 @@ export function Navbar(props: Props) {
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Pricing
               </Text>
-            </Flex>
-          </Link>
-          <Link
-            prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/vision`}
-            passHref>
-            <Flex align="center" _hover={{ cursor: "pointer" }}>
-              <Flex>
-                <Text
-                  fontSize="4xl"
-                  fontWeight="bold"
-                  color={MOBILE_MENU_COLOR}>
-                  Vision{" "}
-                </Text>{" "}
-              </Flex>
             </Flex>
           </Link>
         </Flex>
@@ -210,92 +181,6 @@ export function Navbar(props: Props) {
           </Link>
           {/* Navigation items */}
           <HStack spacing={[0, 0, 8, 16, 100]} align="center">
-            {/* Solution tab with popup menu */}
-            <Popover trigger="hover">
-              <PopoverTrigger>
-                <Text {...defaultNavItemStyle}>Use cases</Text>
-              </PopoverTrigger>
-              <Portal>
-                <PopoverContent
-                  boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15);"
-                  borderRadius="10px"
-                  overflow="hidden">
-                  <PopoverArrow />
-                  <Box p={10}>
-                    <Text
-                      color="landing.almostBlack.500"
-                      fontFamily="landingHeading"
-                      fontWeight="bold"
-                      fontSize="lg"
-                      lineHeight="30px"
-                      ml={2}>
-                      By role
-                    </Text>
-                    <VStack align="start" mt={2}>
-                      <DesktopNavMenuItem
-                        href={
-                          process.env.NEXT_PUBLIC_MARKETING_HOST +
-                          "/personas/founders"
-                        }
-                        icon={LightningBoltIcon}
-                        text="Founders"
-                      />
-                      <DesktopNavMenuItem
-                        href={
-                          process.env.NEXT_PUBLIC_MARKETING_HOST +
-                          "/personas/product"
-                        }
-                        icon={ThoughtBubbleIcon}
-                        text="Product Managers"
-                      />
-                      <DesktopNavMenuItem
-                        href={
-                          process.env.NEXT_PUBLIC_MARKETING_HOST +
-                          "/personas/success"
-                        }
-                        icon={ChatAltIcon}
-                        text="Success"
-                      />
-                      <DesktopNavMenuItem
-                        href={
-                          process.env.NEXT_PUBLIC_MARKETING_HOST +
-                          "/personas/marketing"
-                        }
-                        icon={DiamondIcon}
-                        text="Marketing"
-                      />
-                      <DesktopNavMenuItem
-                        href={
-                          process.env.NEXT_PUBLIC_MARKETING_HOST +
-                          "/personas/design"
-                        }
-                        icon={PaintBurhsIcon}
-                        text="Design"
-                      />
-                    </VStack>
-                  </Box>
-                  <Box p={10} bg="gray.50">
-                    <Link
-                      href={
-                        process.env.NEXT_PUBLIC_MARKETING_HOST + "/templates"
-                      }
-                      passHref>
-                      <Button
-                        leftIcon={<ArrowForwardIcon />}
-                        variant="link"
-                        color="landing.almostBlack.500"
-                        fontFamily="landingHeading"
-                        fontSize="lg"
-                        fontWeight="bold"
-                        _hover={{ color: "purple.500" }}
-                        _active={{ color: "purple.600" }}>
-                        Discover 15+ templates
-                      </Button>
-                    </Link>
-                  </Box>
-                </PopoverContent>
-              </Portal>
-            </Popover>
             {/* Rest of routes */}
             {ROUTES.map((route) => (
               <DesktopNavItem

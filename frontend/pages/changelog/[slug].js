@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import Head from "next/head";
 import { createContext } from "react";
 import { ArticleViewSection } from "../../components/article-view-section";
@@ -10,6 +10,7 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import { fetchAPI } from "../../lib/api";
 import { getStrapiMedia } from "../../lib/media";
+import { PageHeader } from "components/core/page-header";
 
 export const GlobalContext = createContext({});
 
@@ -41,10 +42,12 @@ const ArticlePage = ({ article, global }) => {
         <>
           <Navbar />
           <Box w="100%" maxW="100vw" overflow="hidden" zIndex="docked">
-            <ArticleViewSection
-              _wrapper={pageStyles.firstSection}
-              article={article}
-            />
+            <Box mt={[8, 8, 10]} mb={[6, 6, 16]}>
+              <ArticleViewSection
+                _wrapper={pageStyles.firstSection}
+                article={article}
+              />
+            </Box>
             <TryBanner _wrapper={pageStyles.middleSection} />
             <FooterV2 _wrapper={pageStyles.lastSection} />
           </Box>
