@@ -1,15 +1,15 @@
-import { createContext } from 'react';
-import Head from 'next/head';
-import { Box } from '@chakra-ui/react';
-import { getStrapiMedia } from '../lib/media';
-import { fetchAPI } from '../lib/api';
-import Seo from '../components/seo';
-import Layout from '../components/layout';
-import { TryBanner } from '../components/core/try-banner';
-import { pageStyles } from '../components/core/page-styles';
-import { Navbar } from '../components/core/navbar/navbar';
-import { FooterV2 } from '../components/core/footer/footer';
-import { ArticlesSection } from '../components/articles-section';
+import { createContext } from "react";
+import Head from "next/head";
+import { Box } from "@chakra-ui/react";
+import { getStrapiMedia } from "../lib/media";
+import { fetchAPI } from "../lib/api";
+import Seo from "../components/seo";
+import Layout from "../components/layout";
+import { TryBanner } from "../components/core/try-banner";
+import { pageStyles } from "../components/core/page-styles";
+import { Navbar } from "../components/core/navbar/navbar";
+import { Footer } from "../components/core/footer/footer";
+import { ArticlesSection } from "../components/articles-section";
 
 export const GlobalContext = createContext({});
 
@@ -39,7 +39,7 @@ const Home = ({ articles, homepage, global }) => {
               articles={articles}
             />
             <TryBanner _wrapper={pageStyles.middleSection} />
-            <FooterV2 _wrapper={pageStyles.lastSection} />
+            <Footer _wrapper={pageStyles.lastSection} />
           </Box>
         </>
       </Layout>

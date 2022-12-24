@@ -1,10 +1,10 @@
-import remarkGfm from 'remark-gfm';
-import ReactMarkdown, { Components } from 'react-markdown';
-import React from 'react';
-import { defaultPx } from 'lib/utils/default-container-px';
-import { Article } from 'lib/models/article';
-import { getStrapiMedia } from 'lib/media';
-import dayjs from 'dayjs';
+import remarkGfm from "remark-gfm";
+import ReactMarkdown, { Components } from "react-markdown";
+import React from "react";
+import { defaultPx } from "lib/utils/default-container-px";
+import { Article } from "lib/models/article";
+import { getStrapiMedia } from "lib/media";
+import dayjs from "dayjs";
 import {
   Box,
   Container,
@@ -21,8 +21,8 @@ import {
   Text,
   UnorderedList,
   VStack,
-} from '@chakra-ui/react';
-import Contributor from './Contributor';
+} from "@chakra-ui/react";
+import Contributor from "./Contributor";
 
 const mdComponents: Components = {
   h2: ({ node, ...props }) => (
@@ -35,7 +35,8 @@ const mdComponents: Components = {
       href={props.href}
       rel="noopener noreferrer"
       color="#6868F7"
-      fontWeight="bold">
+      fontWeight="bold"
+    >
       {props.children}
     </Text>
   ),
@@ -63,17 +64,20 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
         maxW={isHome ? "2xl" : "4xl"}
         px={isHome ? 0 : defaultPx(32)}
         pt={isHome ? 0 : defaultPx(16)}
-        justifyContent="center">
+        justifyContent="center"
+      >
         <Grid
           gridTemplateColumns={"1fr"}
           gridTemplateAreas={"'type-date' 'title-thumbnail'"}
-          gap={4}>
+          gap={4}
+        >
           <GridItem gridArea="type-date">
             <Stack
               pt={[0, 0, 3]}
               pr={[0, 0, 3]}
               direction={isHome ? ["row", "row", "column"] : "row"}
-              align={["center", "center", "start"]}>
+              align={["center", "center", "start"]}
+            >
               <Text fontSize="sm" color="landing.gray">
                 {isHome ? (
                   <>{dayjs(article.publishedAt).format("MMM DD")}</>
@@ -103,11 +107,13 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
             <Box
               fontSize="lg"
               lineHeight="32px"
-              color="landing.almostBlack.500">
+              color="landing.almostBlack.500"
+            >
               <ReactMarkdown
                 skipHtml
                 remarkPlugins={[remarkGfm]}
-                components={mdComponents}>
+                components={mdComponents}
+              >
                 {markdown}
               </ReactMarkdown>
             </Box>
@@ -119,10 +125,16 @@ export const ArticleViewSection = (props: ArticleViewSectionProps) => {
               templateColumns={[
                 "100%",
                 "repeat(auto-fill, minmax(300px, 1fr))",
-              ]}>
+              ]}
+            >
               {!isHome &&
                 article.authors.map((author) => (
-                  <Contributor key={author.id} author={author} />
+                  <Contributor
+                    key={author.id}
+                    name={author.name}
+                    description={author.bio}
+                    avatarUrl={author.picture.url}
+                  />
                 ))}
             </Grid>
           </GridItem>

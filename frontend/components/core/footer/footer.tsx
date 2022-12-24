@@ -19,7 +19,7 @@ interface Props {
   _wrapper?: ContainerProps;
 }
 
-export function FooterV2(props: Props) {
+export function Footer(props: Props) {
   return (
     <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
       <Grid

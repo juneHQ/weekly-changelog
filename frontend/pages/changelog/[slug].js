@@ -2,7 +2,7 @@ import { Box, Grid, GridItem } from "@chakra-ui/react";
 import Head from "next/head";
 import { createContext } from "react";
 import { ArticleViewSection } from "../../components/article-view-section";
-import { FooterV2 } from "../../components/core/footer/footer";
+import { Footer } from "../../components/core/footer/footer";
 import { Navbar } from "../../components/core/navbar/navbar";
 import { pageStyles } from "../../components/core/page-styles";
 import { TryBanner } from "../../components/core/try-banner";
@@ -48,7 +48,7 @@ const ArticlePage = ({ article, global }) => {
               />
             </Box>
             <TryBanner _wrapper={pageStyles.middleSection} />
-            <FooterV2 _wrapper={pageStyles.lastSection} />
+            <Footer _wrapper={pageStyles.lastSection} />
           </Box>
         </>
       </Layout>
