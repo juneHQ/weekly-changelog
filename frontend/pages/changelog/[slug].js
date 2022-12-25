@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import { createContext } from "react";
 import { ArticleViewSection } from "../../components/article-view-section";
@@ -14,6 +14,8 @@ import { getStrapiMedia } from "../../lib/media";
 export const GlobalContext = createContext({});
 
 const ArticlePage = ({ article, global }) => {
+  console.log(`global`, global);
+
   const seo = {
     metaTitle: article.title,
     metaDescription: article.description,

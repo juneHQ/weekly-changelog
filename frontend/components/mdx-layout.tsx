@@ -1,24 +1,25 @@
 import {
   Box,
+  Divider,
   Heading,
+  Image,
   ListItem,
   OrderedList,
   Text,
   UnorderedList,
   VStack,
-  Image,
-  Divider,
 } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
 import { ReactNode } from "@mdx-js/react/lib";
+import Contributor from "components/Contributor";
 import { Footer } from "components/core/footer/footer";
 import { Navbar } from "components/core/navbar/navbar";
 import { TryBanner } from "components/core/try-banner";
 import dayjs from "dayjs";
+import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
 import type { MDXComponents } from "mdx/types";
-import { MdxMeta } from "lib/models/mdx-meta";
-import Contributor from "components/Contributor";
+import Head from "next/head";
 
 const components: MDXComponents = {
   h1: (props) => (
@@ -55,8 +56,29 @@ export interface MdxLayoutProps {
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
+  const title = `${props.meta.title} | June Changelog`;
+  const description = "Discover new updates and improvements to June.";
+  const url = "https://changelog.june.so";
+
   return (
     <MDXProvider components={components}>
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="image" content={props.meta.headerImage} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={props.meta.headerImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={props.meta.headerImage} />
+      </Head>
       <Box>
         <Navbar />
         <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
