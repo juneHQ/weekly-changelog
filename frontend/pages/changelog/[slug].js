@@ -14,8 +14,6 @@ import { getStrapiMedia } from "../../lib/media";
 export const GlobalContext = createContext({});
 
 const ArticlePage = ({ article, global }) => {
-  console.log(`global`, global);
-
   const seo = {
     metaTitle: article.title,
     metaDescription: article.description,
