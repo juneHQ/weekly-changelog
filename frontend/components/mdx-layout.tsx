@@ -53,13 +53,59 @@ const components: MDXComponents = {
 export interface MdxLayoutProps {
   meta: MdxMeta;
   children: ReactNode;
+  showArticleOnly?: boolean;
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
+  console.log(`props`, props)
   const title = `${props.meta.title} | June Changelog`;
   const description = "Discover new updates and improvements to June.";
   const url = "https://changelog.june.so";
 
+  function renderArticle() {
+    return (
+      <Box mt={[86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
+        {/* Article header */}
+        <VStack align="start" spacing={[4, 4, 6]}>
+          <VStack align="start">
+            <Text fontSize="sm" color="landing.gray">
+              {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
+            </Text>
+            <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000">
+              {props.meta.title}
+            </Heading>
+          </VStack>
+          <Image
+            borderRadius="md"
+            src={props.meta.headerImage}
+            alt={props.meta.title}
+            w="full"
+          />
+        </VStack>
+        {/* Article content */}
+        <Box
+          px={[6]}
+          pt={[10]}
+          fontSize="lg"
+          lineHeight="32px"
+          color="landing.almostBlack.500"
+        >
+          {props.children}
+        </Box>
+        {/* Article authors */}
+        <Divider mt={16} mb={8} />
+        <VStack px={[6]} align="start" spacing={4}>
+          {props.meta.authors.map((author) => (
+            <Contributor key={author.name} {...author} />
+          ))}
+        </VStack>
+      </Box>
+    );
+  }
+
+  if (props.showArticleOnly) {
+    return renderArticle();
+  }
   return (
     <MDXProvider components={components}>
       <Head>
@@ -82,42 +128,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
       <Box>
         <Navbar />
         <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
-          <Box mt={[86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
-            {/* Article header */}
-            <VStack align="start" spacing={[4, 4, 6]}>
-              <VStack align="start">
-                <Text fontSize="sm" color="landing.gray">
-                  {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-                </Text>
-                <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000">
-                  {props.meta.title}
-                </Heading>
-              </VStack>
-              <Image
-                borderRadius="md"
-                src={props.meta.headerImage}
-                alt={props.meta.title}
-                w="full"
-              />
-            </VStack>
-            {/* Article content */}
-            <Box
-              px={[6]}
-              pt={[10]}
-              fontSize="lg"
-              lineHeight="32px"
-              color="landing.almostBlack.500"
-            >
-              {props.children}
-            </Box>
-            {/* Article authors */}
-            <Divider mt={16} mb={8} />
-            <VStack px={[6]} align="start" spacing={4}>
-              {props.meta.authors.map((author) => (
-                <Contributor key={author.name} {...author} />
-              ))}
-            </VStack>
-          </Box>
+          {renderArticle()}
           <TryBanner _wrapper={{ my: [50, 50, 120] }} />
           <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
         </Box>

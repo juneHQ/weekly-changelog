@@ -1,62 +1,66 @@
-import { createContext } from "react";
-import Head from "next/head";
 import { Box } from "@chakra-ui/react";
-import { getStrapiMedia } from "../lib/media";
-import { fetchAPI } from "../lib/api";
-import Seo from "../components/seo";
-import Layout from "../components/layout";
-import { TryBanner } from "../components/core/try-banner";
-import { pageStyles } from "../components/core/page-styles";
-import { Navbar } from "../components/core/navbar/navbar";
+import { getArticles } from "lib/get-articles";
+import Head from "next/head";
+import { createContext } from "react";
+
 import { Footer } from "../components/core/footer/footer";
-import { ArticlesSection } from "../components/articles-section";
+import { Navbar } from "../components/core/navbar/navbar";
+import { pageStyles } from "../components/core/page-styles";
+import { TryBanner } from "../components/core/try-banner";
+import Layout from "../components/layout";
 
 export const GlobalContext = createContext({});
 
-const Home = ({ articles, homepage, global }) => {
+const Home = () => {
   return (
     <>
       <Head>
-        <>
-          {global && global.favicon ? (
-            <>
-              <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
-            </>
-          ) : undefined}
-        </>
+        <title>June Changelog</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="title" content="June Changelog" />
+        <meta
+          name="description"
+          content="Discover new updates and improvements to June."
+        />
+        <meta name="image" content="https://changelog.june.so/social.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://changelog.june.so" />
+        <meta property="og:title" content="June Changelog" />
+        <meta
+          property="og:description"
+          content="Discover new updates and improvements to June."
+        />
+        <meta
+          property="og:image"
+          content="https://changelog.june.so/social.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://changelog.june.so" />
+        <meta name="twitter:title" content="June Changelog" />
+        <meta
+          name="twitter:description"
+          content="Discover new updates and improvements to June."
+        />
+        <meta
+          name="twitter:image"
+          content="https://changelog.june.so/social.png"
+        />
       </Head>
       <Layout>
-        <Seo
-          seo={homepage.seo}
-          defaultSeo={global.defaultSeo}
-          siteName={global.siteName}
-        />
-        <>
-          <Navbar />
-          <Box w="100%">
-            <ArticlesSection
-              _wrapper={pageStyles.firstSection}
-              articles={articles}
-            />
-            <TryBanner _wrapper={pageStyles.middleSection} />
-            <Footer _wrapper={pageStyles.lastSection} />
-          </Box>
-        </>
+        <Navbar />
+        <Box w="100%">
+          <TryBanner _wrapper={pageStyles.middleSection} />
+          <Footer _wrapper={pageStyles.lastSection} />
+        </Box>
       </Layout>
     </>
   );
 };
 
 export async function getStaticProps() {
-  const [articles, categories, homepage, global] = await Promise.all([
-    fetchAPI("/articles?status=published&_limit=4&_sort=publishedAt:DESC"),
-    fetchAPI("/categories"),
-    fetchAPI("/homepage"),
-    fetchAPI("/global"),
-  ]);
-
+  const articles = getArticles();
   return {
-    props: { articles, categories, homepage, global },
+    props: {},
     revalidate: 1,
   };
 }

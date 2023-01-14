@@ -2,7 +2,7 @@ import axios from "axios";
 import { exec } from "child_process";
 import fs from "fs";
 
-const OUTPUT_FOLDER = `../pages/generated`;
+const OUTPUT_FOLDER = `../pages/changelogs`;
 
 /**
  * Fetches articles from strapi and converts them to MDX files
@@ -22,23 +22,22 @@ async function strapiToMdx() {
     const articles = response.data;
 
     const promises = articles.map((article) => {
-      const authors = article.authors.map(
-        (author) =>
-          `\t\t{ name: "${author.name}", description: "${author.bio}", avatarUrl: "${author.picture.url}" }`
-      );
+      const meta = {
+        publishedAt: article.publishedAt,
+        title: article.title,
+        headerImage: article.image.url,
+        authors: article.authors.map((author) => ({
+          name: author.name,
+          description: author.bio,
+          avatarUrl: author.picture.url,
+        })),
+      };
 
       const content = [
         'import { VStack, Heading, Image } from "@chakra-ui/react";',
         'import { MdxLayout } from "components/mdx-layout.tsx";',
         "",
-        "export const meta = {",
-        `\tpublishedAt: "${article.publishedAt}",`,
-        `\ttitle: "${article.title}",`,
-        `\theaderImage: "${article.image.url}",`,
-        `\tauthors: [`,
-        `${authors.join(",\n")}`,
-        `\t],`,
-        "};",
+        `export const meta = ${JSON.stringify(meta)}`,
         "",
       ];
 
