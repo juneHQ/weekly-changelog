@@ -88,7 +88,7 @@ const Page = ({ slugs }) => {
             ))}
             <VStack align={["stretch", "stretch", "center"]}>
               {page === 0 ? (
-                <Link href="/alt/1">
+                <Link href="/page/1">
                   <Button variant="landingOutline" size="landingLg">
                     Load more
                   </Button>
@@ -96,13 +96,13 @@ const Page = ({ slugs }) => {
               ) : (
                 <HStack justifyContent="center" spacing={4}>
                   {page > 0 && (
-                    <Link href={`/alt/${page - 1}`}>
+                    <Link href={`/page/${page - 1}`}>
                       <Button variant="landingOutline" size="landingLg">
                         Previous page
                       </Button>
                     </Link>
                   )}
-                  <Link href={`/alt/${page + 1}`}>
+                  <Link href={`/page/${page + 1}`}>
                     <Button variant="landingOutline" size="landingLg">
                       Next page
                     </Button>
@@ -123,6 +123,7 @@ export async function getStaticPaths() {
   const slugs = getArticleSlugs();
   const articlesLength = Math.floor(slugs.length / ARTICLES_PER_PAGE);
   const numbers = Array.from(Array(articlesLength), (x, i) => i);
+
   return {
     paths: numbers.map((number) => ({
       params: {
@@ -134,7 +135,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(`params`, params);
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(

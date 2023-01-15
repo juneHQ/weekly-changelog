@@ -8,6 +8,20 @@ const nextConfig = {
     NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
     NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/page/0",
+        permanent: true,
+      },
+      {
+        source: "/page",
+        destination: "/page/0",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withMDX = require("@next/mdx")({
