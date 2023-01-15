@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "goals",
   publishedAt: "2021-02-12T11:00:00.000Z",
   title: "Goals",
   headerImage:
@@ -52,4 +52,8 @@ You can pick a goal for one of your key metrics to motivate your team. Once you 
 - Funnel design shows you the completion rate at each step. You can also zoom in on the users that dropped off at each step
 - We added delightful empty states on user and event list, as well as a nice onboarding video
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

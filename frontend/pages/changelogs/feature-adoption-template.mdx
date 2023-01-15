@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-adoption-template",
   publishedAt: "2021-07-19T10:00:00.000Z",
   title: "Feature adoption template",
   headerImage:
@@ -42,4 +42,8 @@ This week we added a new feature adoption insight to our existing feature usage 
 - We've fixed a bug with how we display when there is no data in our feature retention and user retention templates.
 - We now show articles for our templates.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

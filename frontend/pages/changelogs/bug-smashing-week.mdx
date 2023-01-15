@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "bug-smashing-week",
   publishedAt: "2021-10-01T10:00:00.000Z",
   title: "Bug smashing week",
   headerImage:
@@ -63,4 +63,8 @@ The chances are that their behavior in your app or a conversation with them will
 These are the questions that you can answer with a power users analysis:
 [https://june.so/template/power-users](https://june.so/template/power-users)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

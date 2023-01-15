@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "duplicate-reports",
   publishedAt: "2021-12-20T15:00:00.000Z",
   title: "Duplicate reports",
   headerImage:
@@ -70,4 +70,8 @@ You can now search for users by email, or by any other trait or event. In additi
 - Feature adoption can now be filtered by time range
 - You can now copy a user email on its contact page
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

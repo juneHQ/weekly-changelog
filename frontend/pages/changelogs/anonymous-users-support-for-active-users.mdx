@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "anonymous-users-support-for-active-users",
   publishedAt: "2021-12-31T16:00:00.000Z",
   title: "Anonymous users support for Active Users",
   headerImage:
@@ -67,4 +67,8 @@ It's the last week of the year so the team also took some well deserved time off
 
 Happy New Year!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

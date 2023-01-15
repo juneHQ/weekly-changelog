@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "june-first-retreat",
   publishedAt: "2021-10-29T10:00:00.000Z",
   title: "June's first retreat",
   headerImage:
@@ -58,4 +58,8 @@ To keep you waiting, we've put together a really nice [playbook on activation](h
 
 ![IMG_8194_png.png](https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_8194_png_c68dd36154.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "event-activity",
   publishedAt: "2021-10-15T10:00:00.000Z",
   title: "Event activity",
   headerImage:
@@ -25,4 +25,8 @@ Head to the activity section in the left panel menu to pick the track event you 
   ![Capture d’écran 2021-10-20 à 08.52.46.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_10_20_a_08_52_46_de44affe55.png)
 - Feature audit: cleaner UI, legend, bar chart, and colors palette
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

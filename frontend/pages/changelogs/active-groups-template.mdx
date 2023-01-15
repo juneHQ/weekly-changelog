@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "active-groups-template",
   publishedAt: "2021-02-05T11:00:00.000Z",
   title: "Active Groups template",
   headerImage:
@@ -45,4 +45,8 @@ We redesigned the single user page with a better event feed and header.
 - And there are confirmation toasts when you save things!
 - We also fixed the funnel template and learned about a subtle difference in list slices between Python and Ruby, with lots of small fixes and improvements across the app
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

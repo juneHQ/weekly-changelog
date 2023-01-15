@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "clear-navigation",
   publishedAt: "2021-07-30T10:00:00.000Z",
   title: "Clear navigation",
   headerImage:
@@ -44,4 +44,8 @@ If you prefer, you can also use this breadcrumb to navigate the product.
 - New menu switcher: it is easier than ever to switch workspaces and access your settings.
   ![Capture d’écran 2021-08-02 à 15.40.35.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_08_02_a_15_40_35_78894d50ab.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

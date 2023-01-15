@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "new-company-page",
   publishedAt: "2022-03-11T11:00:00.000Z",
   title: "New company page",
   headerImage:
@@ -35,4 +35,8 @@ We're thrilled to share the [June Method](https://june.so/method) with the world
 - June _SDK_ is in alpha. If you want to give it a try, reply to this email :)
 - We've also been writing Guides on "how June uses June". We can't wait to share them with you! 🔜
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

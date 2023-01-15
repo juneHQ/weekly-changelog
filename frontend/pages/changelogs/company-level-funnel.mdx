@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "company-level-funnel",
   publishedAt: "2022-07-22T10:00:00.000Z",
   title: "Company level funnel",
   headerImage:
@@ -65,4 +65,8 @@ So in this week's update, we introduced Company level funnels to help you measur
 - We added an insight card on the new users report to show you how many sign-ups you're getting from each source
 - We implemented one-click authentication from our homepage using Google One Tap
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

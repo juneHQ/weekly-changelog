@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "rip-templates",
   publishedAt: "2022-12-09T11:00:00.000Z",
   title: "RIP Templates",
   headerImage:
@@ -122,4 +122,8 @@ Let us know what you think of these changes.
 - We improved the data in our demo workspaces
 - We fixed a bug in our onboarding that made people skip steps in it
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "most-engaged-companies",
   publishedAt: "2022-07-08T10:00:00.000Z",
   title: "Most engaged companies",
   headerImage:
@@ -59,4 +59,8 @@ Once the report is generated you can click on a company to get the detailed brea
 - You can share graph from your feature release reports
 - We added back the current period in grey on the active user report
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

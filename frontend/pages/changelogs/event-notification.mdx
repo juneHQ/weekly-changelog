@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "event-notification",
   publishedAt: "2021-07-23T10:00:00.000Z",
   title: "Celebrate events",
   headerImage:
@@ -53,4 +53,8 @@ This is what a notification looks like:
 - The Slack notification for the Slipping away report does not show "null" names anymore
 - June color palette just got much bigger! No more black legends ⚫️
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

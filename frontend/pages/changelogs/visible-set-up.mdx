@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "visible-set-up",
   publishedAt: "2022-05-13T10:00:00.000Z",
   title: "Visible set up",
   headerImage:
@@ -66,4 +66,8 @@ A visible setup makes sure everyone clearly understands what they are looking at
 - CSV exports on the user list had a bug with some filters - we fixed it!
 - We also clarified when to use group id in event context which created some confusion.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

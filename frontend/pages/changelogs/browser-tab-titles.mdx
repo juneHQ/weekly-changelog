@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "browser-tab-titles",
   publishedAt: "2022-07-15T10:00:00.000Z",
   title: "Browser tab titles",
   headerImage:
@@ -67,4 +67,8 @@ All the information is visible at a glance.
 - We progressed on SOC II ground work 🔐
 - We fixed a bug where audience filters on the Slack alerts didn't work
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

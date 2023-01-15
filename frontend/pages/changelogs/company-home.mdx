@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "company-home",
   publishedAt: "2022-03-18T11:00:00.000Z",
   title: "Company level Home",
   headerImage:
@@ -64,4 +64,8 @@ All you need to access the company home is to click the switch in the top right 
 - We improved the trait picking in the audience selection component
 - Milestones and June SDK are in alpha! Ping us if you'd like to try them out 😃
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "differentiate-between-users-and-visitors",
   publishedAt: "2021-09-10T10:00:00.000Z",
   title: "Differentiate between users and visitors",
   headerImage:
@@ -56,4 +56,8 @@ We also worked hard to provide you with **<a href="https://june.so/template/rete
 
 ![report_type.png](https://june-changelog.s3.eu-central-1.amazonaws.com/report_type_0134819932.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

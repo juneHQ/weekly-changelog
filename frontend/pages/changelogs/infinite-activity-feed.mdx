@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "infinite-activity-feed",
   publishedAt: "2021-04-30T10:00:00.000Z",
   title: "Infinite activity",
   headerImage:
@@ -33,4 +33,8 @@ You can now load as many user activities as you need, and go way further back in
 
 - An individual user page loads a lot faster ⚡️
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

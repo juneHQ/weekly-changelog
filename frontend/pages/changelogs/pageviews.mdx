@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "pageviews",
   publishedAt: "2021-03-19T11:00:00.000Z",
   title: "Pageviews",
   headerImage:
@@ -38,4 +38,8 @@ We added support for analyzing your pageviews! We do this by ingesting [Segment 
 - A more prominent button for your turning on Slack notifications for your reports!
 - Some bug fixes across the app
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

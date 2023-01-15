@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "search-on-drilldowns",
   publishedAt: "2022-09-09T10:00:00.000Z",
   title: "Search on drilldowns",
   headerImage:
@@ -63,4 +63,8 @@ For this reason, we've added a search bar on each of our drill-downs. This allow
 - Some of our report insights were timing out when event filters contained "less than"
 - The new users report top card drill-down didn't show any users, we fixed it now!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "freshpaint-integration",
   publishedAt: "2022-04-29T10:00:00.000Z",
   title: "Freshpaint integration",
   headerImage:
@@ -67,4 +67,8 @@ Read the full announcement [here](https://www.june.so/blog/freshpaint-x-june).
 - Fixed a bug when drilling down on property filters in the funnel
 - Add tabbed drill down with new and returning users on active user reports (beta)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

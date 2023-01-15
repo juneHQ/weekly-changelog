@@ -1,7 +1,3 @@
-import React from 'react';
-import Link from 'next/link';
-import { Article } from 'lib/models/article';
-import { ArticleViewSection } from 'components/article-view-section';
 import {
   Button,
   Container,
@@ -12,7 +8,10 @@ import {
   SimpleGrid,
   Text,
   VStack,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
+import { ArticleViewSection } from "components/article-view-section";
+import { Article } from "lib/models/article";
+import Link from "next/link";
 
 interface ArticlesSectionProps {
   articles: Article[];
@@ -28,12 +27,11 @@ export const ArticlesSection = (props: ArticlesSectionProps) => {
           <Text fontSize="5xl" fontWeight="bold">
             Changelog
           </Text>
-          <Text fontSize="xl" color="gray.600">
+          <Text fontSize="xl" color="landing.gray">
             How June gets better, every week
           </Text>
           <Divider mt={16} mb={8} />
         </Flex>
-
         {props.articles.map((article) => (
           <Link key={article.slug} href={`/changelog/${article.slug}`} passHref>
             <VStack align="start" cursor="pointer">

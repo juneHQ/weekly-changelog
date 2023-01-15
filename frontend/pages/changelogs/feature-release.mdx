@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-release",
   publishedAt: "2022-05-12T10:00:00.000Z",
   title: "Feature release",
   headerImage:
@@ -68,4 +68,8 @@ For quick access to your features, we also added them to your Home.
 - Add tabbed drill down with new and returning users on active user reports
 - Fixed a bug where last seen date on the user list was using the last identify, but not the user profile
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "hack-week",
   publishedAt: "2022-10-07T11:00:00.000Z",
   title: "Hack week",
   headerImage:
@@ -68,4 +68,8 @@ Here is what came out from it:
 If you're around and want to meet in person, reply to this email. Coffee is on us ☕️**
 ![Group 2495.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Group_2495_be7d4dcf9e.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

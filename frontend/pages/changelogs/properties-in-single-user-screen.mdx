@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "properties-in-single-user-screen",
   publishedAt: "2021-05-21T11:00:00.000Z",
   title: "Properties in single user screen",
   headerImage:
@@ -40,4 +40,8 @@ Now you can also sort reports by name! In addition to these, we worked on a bunc
 - Events and Pageviews are now grouped together in the Activity section of the sidebar
 - And we also did some database query optimizations
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

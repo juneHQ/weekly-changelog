@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "the-june-weekly",
   publishedAt: "2021-04-16T10:00:00.000Z",
   title: "The June weekly",
   headerImage:
@@ -40,4 +40,8 @@ Starting next week you'll receive your weekly workspace update on Monday, withou
 - Right after you sign up we offer you a first automatically set up report ⚡️
 - We are mapping each of your tracking events to their exact sources. This is a baseline to show you the environment that each of your event comes from 🔜
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

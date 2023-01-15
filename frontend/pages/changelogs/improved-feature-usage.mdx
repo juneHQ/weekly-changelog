@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "improved-feature-usage",
   publishedAt: "2021-03-05T11:00:00.000Z",
   title: "Improved feature usage ",
   headerImage:
@@ -22,4 +22,8 @@ We also added goals to it so you can set engagement goals at a single feature le
 - L30 (average number of days a month your users engage with your product) is available on the [power user template](https://june.so/template/power-users)
   ![Capture d’écran 2021-03-08 à 09.29.48.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_03_08_a_09_29_48_389f2dd0e5.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

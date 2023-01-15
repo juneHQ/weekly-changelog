@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "save-your-audiences",
   publishedAt: "2022-11-18T11:00:00.000Z",
   title: "Save your audiences",
   headerImage:
@@ -91,4 +91,8 @@ You can enable this by heading to the Settings & Integrations section of the pro
 
 ![Screenshot 2022-12-01 at 11.12.25.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2022_12_01_at_11_12_25_a17b5f8a95.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

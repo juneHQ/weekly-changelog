@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-adoption",
   publishedAt: "2022-04-15T16:00:00.000Z",
   title: "Feature adoption",
   headerImage:
@@ -68,4 +68,8 @@ Want to change a report set up, its name, or find out who has adopted it? Just c
 - The active users in the last 30 minutes cards on the home now use your active users' report setup
 - You can split new users and recurring users in the active users reports (beta)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

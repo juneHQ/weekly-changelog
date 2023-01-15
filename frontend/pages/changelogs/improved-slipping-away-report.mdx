@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "improved-slipping-away-report",
   publishedAt: "2021-06-11T10:00:00.000Z",
   title: "Improved slipping away report",
   headerImage:
@@ -44,4 +44,8 @@ As quick customer support and tailored onboardings become table stakes for most 
 - Improved the UI on the side panel when zooming in on individual users
 - Added missing loaders on some reports, to make it obvious when data is getting (re)loaded
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

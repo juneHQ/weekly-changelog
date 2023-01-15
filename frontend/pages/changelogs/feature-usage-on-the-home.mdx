@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-usage-on-the-home",
   publishedAt: "2022-06-10T10:00:00.000Z",
   title: "Feature usage on the home",
   headerImage:
@@ -71,4 +71,8 @@ The new feature usage card includes information about:
 - The audience filters on the users list now look like the ones inside the report setup (they don’t overflow the screen and you can pick values)
 - Each small insight in the product is now redesigned and has a rounded gray background
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

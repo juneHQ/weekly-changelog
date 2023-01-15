@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "save-your-audiences-alpha-release",
   publishedAt: "2022-10-28T11:00:00.000Z",
   title: "Save your audiences - Alpha release",
   headerImage:
@@ -73,4 +73,8 @@ If you want to try out the feature reach out to us.
 
 This week, Enzo and Ferruccio from the team will be at Web Summit in Lisbon. If you want to meet in person and chat about building great products, reply to this email!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

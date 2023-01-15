@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "event-digest",
   publishedAt: "2022-02-04T11:00:00.000Z",
   title: "Event digest",
   headerImage:
@@ -32,4 +32,8 @@ This is what a daily alert looks like:
 - We let you know during your onboarding if you are sending the right kind of data to use June
 - We fixed a bug where multiple audience filters were conflicting
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "new-template-set-up",
   publishedAt: "2021-11-12T11:00:00.000Z",
   title: "New template set up",
   headerImage:
@@ -61,4 +61,8 @@ The new template setup is out. This new editor should be a lot better. It lets y
 - New design for the template list should help pick the right template 🎨
 - We improved the product quality with a bug bashing session 🐞
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

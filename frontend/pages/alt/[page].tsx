@@ -1,35 +1,42 @@
 import {
   Box,
+  Button,
   Container,
   Divider,
   Heading,
+  HStack,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Footer } from "components/core/footer/footer";
+import { Navbar } from "components/core/navbar/navbar";
+import { pageStyles as styles } from "components/core/page-styles";
+import { TryBanner } from "components/core/try-banner";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import { defaultPx } from "lib/utils/default-container-px";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { createContext } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { Footer } from "../components/core/footer/footer";
-import { Navbar } from "../components/core/navbar/navbar";
-import { pageStyles } from "../components/core/page-styles";
-import { TryBanner } from "../components/core/try-banner";
+const ARTICLES_PER_PAGE = 4;
 
-export const GlobalContext = createContext({});
+const Page = ({ slugs }) => {
+  const router = useRouter();
+  const page = parseInt(router.query.page as string);
 
-const Home = ({ slugs }) => {
+  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
+
   const Articles = slugs.map((slug) =>
-    dynamic(() => import(`./changelogs/${slug}.mdx`))
+    dynamic(() => import(`../changelogs/${slug}.mdx`))
   );
 
   return (
     <>
       <Head>
-        <title>June Changelog</title>
+        <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="title" content="June Changelog" />
+        <meta name="title" content={metaTitle} />
         <meta
           name="description"
           content="Discover new updates and improvements to June."
@@ -37,7 +44,7 @@ const Home = ({ slugs }) => {
         <meta name="image" content="https://changelog.june.so/social.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://changelog.june.so" />
-        <meta property="og:title" content="June Changelog" />
+        <meta property="og:title" content={metaTitle} />
         <meta
           property="og:description"
           content="Discover new updates and improvements to June."
@@ -48,7 +55,7 @@ const Home = ({ slugs }) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://changelog.june.so" />
-        <meta name="twitter:title" content="June Changelog" />
+        <meta name="twitter:title" content={metaTitle} />
         <meta
           name="twitter:description"
           content="Discover new updates and improvements to June."
@@ -79,44 +86,59 @@ const Home = ({ slugs }) => {
                 hideAuthors={true}
               />
             ))}
-          </VStack>
-          {/* <VStack align={["stretch", "stretch", "center"]}>
-            {props.currentPage === undefined ? (
-              <Link href="/page/1">
-                <Button variant="landingOutline" size="landingLg">
-                  Load more
-                </Button>
-              </Link>
-            ) : (
-              <HStack justifyContent="center" spacing={4}>
-                {props.currentPage > 0 && (
-                  <Link href={`/page/${props.currentPage - 1}`}>
-                    <Button variant="landingOutline" size="landingLg">
-                      Previous page
-                    </Button>
-                  </Link>
-                )}
-                <Link href={`/page/${props.currentPage + 1}`}>
+            <VStack align={["stretch", "stretch", "center"]}>
+              {page === 0 ? (
+                <Link href="/alt/1">
                   <Button variant="landingOutline" size="landingLg">
-                    Next page
+                    Load more
                   </Button>
                 </Link>
-              </HStack>
-            )}
-          </VStack> */}
+              ) : (
+                <HStack justifyContent="center" spacing={4}>
+                  {page > 0 && (
+                    <Link href={`/alt/${page - 1}`}>
+                      <Button variant="landingOutline" size="landingLg">
+                        Previous page
+                      </Button>
+                    </Link>
+                  )}
+                  <Link href={`/alt/${page + 1}`}>
+                    <Button variant="landingOutline" size="landingLg">
+                      Next page
+                    </Button>
+                  </Link>
+                </HStack>
+              )}
+            </VStack>
+          </VStack>
         </Container>
-        <TryBanner _wrapper={pageStyles.middleSection} />
-        <Footer _wrapper={pageStyles.lastSection} />
+        <TryBanner _wrapper={styles.middleSection} />
+        <Footer _wrapper={styles.lastSection} />
       </Box>
     </>
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const slugs = getArticleSlugs();
+  const articlesLength = Math.floor(slugs.length / ARTICLES_PER_PAGE);
+  const numbers = Array.from(Array(articlesLength), (x, i) => i);
+  return {
+    paths: numbers.map((number) => ({
+      params: {
+        page: number.toString(),
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  console.log(`params`, params);
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(
-    slugs.map((slug) => import(`./changelogs/${slug}.mdx`))
+    slugs.map((slug) => import(`../changelogs/${slug}.mdx`))
   );
 
   const meta = results
@@ -129,8 +151,9 @@ export async function getStaticProps() {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Get two most recent article slugs
-  const recents = meta.slice(0, 2).map((item) => item.slug);
+  const start = parseInt(params.page) * ARTICLES_PER_PAGE;
+  const end = start + ARTICLES_PER_PAGE;
+  const recents = meta.slice(start, end).map((item) => item.slug);
 
   return {
     props: { slugs: recents },
@@ -138,4 +161,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default Page;

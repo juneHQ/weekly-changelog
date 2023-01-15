@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "companies",
   publishedAt: "2021-03-12T11:00:00.000Z",
   title: "Companies",
   headerImage:
@@ -41,4 +41,8 @@ You can now access **companies** using your product directly from the main menu.
 - We have a brand [new site](https://june.so/)
 - We spent some time doing some bug fixes across the app and upgrading our infrastructure - this work is reducing the loading times for your charts
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

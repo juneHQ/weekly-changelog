@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "and-or",
   publishedAt: "2021-09-17T10:00:00.000Z",
   title: "AND/OR ",
   headerImage:
@@ -55,4 +55,8 @@ In case you are using numbers as users' trait values, you can also use compariso
 - We added a time picker for your WAU and MAU
 - You can sort users who are slipping away by their volume of activity
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

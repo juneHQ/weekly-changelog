@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "finding-product-market-fit-using-june",
   publishedAt: "2022-05-27T10:00:00.000Z",
   title: "Finding Product-Market fit using June",
   headerImage:
@@ -91,4 +91,8 @@ In this week's update, we're introducing a new insight into the Retention report
 - We updated the retention card on the home to show the cohort table instead of the retention line chart
 - The templates list has a new illustration design
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-retention-template",
   publishedAt: "2021-05-28T11:00:00.000Z",
   title: "Feature retention template",
   headerImage:
@@ -50,4 +50,8 @@ In addition to the above, we worked a bunch of improvements and bugfixes:
 
 This week we also sent out weekly email digests for the first time! Let us know if you like them and how we can improve.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

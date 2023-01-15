@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "accurate-grouping",
   publishedAt: "2022-02-11T11:00:00.000Z",
   title: "Accurate companies",
   headerImage:
@@ -72,4 +72,8 @@ The accurate company tracking works with the [active companies template.](https:
 - We added a one-line summary at the top of all Slack digests
 - We're being explicit about what comes in the free and paid plan :)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

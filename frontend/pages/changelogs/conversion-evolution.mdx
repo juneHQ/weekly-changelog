@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "conversion-evolution",
   publishedAt: "2021-03-26T12:00:00.000Z",
   title: "Conversion evolution ",
   headerImage:
@@ -51,4 +51,8 @@ This means that you don't need to tweak the time range on the report anymore to 
 - You can load a funnel graph for a very large number of tracking events
 - No one likes to see 404 pages, if it happens we'll let you know in a friendly way 💜
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

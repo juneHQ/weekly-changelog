@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "understand-what-users-do",
   publishedAt: "2022-07-01T10:00:00.000Z",
   title: "Understand what your users are doing",
   headerImage:
@@ -71,4 +71,8 @@ This makes it a lot easier to read through the data and even supports many custo
 - We now allow the value picker for event properties and user traits to display up to 25 values
 - Added a card to the Power users report showing the power users count week over week
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

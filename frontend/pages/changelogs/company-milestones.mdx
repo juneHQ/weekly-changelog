@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "company-milestones",
   publishedAt: "2022-04-22T10:00:00.000Z",
   title: "Company milestones",
   headerImage:
@@ -60,4 +60,8 @@ Once you've created your milestones, you can click on each milestone to see whic
 - Metrics for which the time frame is in progress are clearly laid out in grey
   ![Screenshot 2022-04-27 at 14.54.34.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2022_04_27_at_14_54_34_3ec5414e9d.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

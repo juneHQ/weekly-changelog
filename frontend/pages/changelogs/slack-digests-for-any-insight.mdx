@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "slack-digests-for-any-insight",
   publishedAt: "2022-01-28T11:00:00.000Z",
   title: "Slack digests for any graph",
   headerImage:
@@ -66,4 +66,8 @@ Click on the Slack icon at the top right of a graph card, and configure your cus
 - Fixed a bug showing property values with trailing whitespace as different properties from the ones without a trailing whitespace
 - We added a skeleton loader for the reports list
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "redesigned-reports",
   publishedAt: "2021-05-14T10:00:00.000Z",
   title: "Redesigned reports",
   headerImage:
@@ -30,4 +30,8 @@ This week we focused on improving the UI of your reports list. We made it easier
 
 🎯 Fix goals to have a better experience when setting one up and expiring it
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

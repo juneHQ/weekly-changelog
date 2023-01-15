@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "company-milestones-revamp",
   publishedAt: "2022-09-02T10:00:00.000Z",
   title: "Company milestones revamp",
   headerImage:
@@ -62,4 +62,8 @@ As part of this redesign, we also added a time picker to milestones, so you can 
 
 This week we started conducting our yearly penetration test to improve our security. Over the next week or so we'll be monitoring and fixing any findings!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

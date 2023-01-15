@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "funnel-breakdowns",
   publishedAt: "2022-08-05T10:00:00.000Z",
   title: "Funnel Breakdowns",
   headerImage:
@@ -57,4 +57,8 @@ An example of how to get the most out of this feature is if you have a trait for
 - We shipped a Mixpanel importer within our onboarding flow, you can now import your historical data from Mixpanel. Give it a try!
 - Lots of bug fixes and stability improvements
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

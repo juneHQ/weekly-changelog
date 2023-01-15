@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "user-traits-schema-beta",
   publishedAt: "2021-04-02T10:00:00.000Z",
   title: "User traits schema beta",
   headerImage:
@@ -38,4 +38,8 @@ We're working on a new feature currently in beta, to allow you to define the sch
 - We improved the discovery of the Slack integration by making it easier to find after setting up a report
   ![Capture d’écran 2021-04-05 à 10.32.28.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_04_05_a_10_32_28_e7927c1981.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

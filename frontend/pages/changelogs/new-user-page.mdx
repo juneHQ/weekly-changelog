@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "new-user-page",
   publishedAt: "2022-03-04T11:00:00.000Z",
   title: "New user page",
   headerImage:
@@ -65,4 +65,8 @@ Last week we improved the user page header to include:
 - Company-level reports are automatically generated (available on the Growth plan)
 - June milestones are in alpha, ping us if you wish to give it a try :)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "shared-graph",
   publishedAt: "2021-11-05T14:00:00.000Z",
   title: "Shared graphs",
   headerImage:
@@ -69,4 +69,8 @@ So that you can have a smoother experience, quality and polish still remain a hi
 - We added better loading states for the company and users list
 - We fixed a bug with the drill down in the Active companies report
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

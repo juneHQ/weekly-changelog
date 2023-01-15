@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "choose-the-right-properties-and-traits",
   publishedAt: "2021-11-30T11:00:00.000Z",
   title: "Property and trait value suggestions",
   headerImage:
@@ -67,4 +67,8 @@ Similarly, with user traits, you can now see which user trait values are availab
 - Finally, we added a checklist to help you get started with June, right in the side menu.
   ![Screenshot 2021-11-30 at 13.20.22.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2021_11_30_at_13_20_22_3cee19814a.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

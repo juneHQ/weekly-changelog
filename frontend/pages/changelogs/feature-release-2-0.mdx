@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-release-2-0",
   publishedAt: "2022-09-23T10:00:00.000Z",
   title: "Feature release 2.0",
   headerImage:
@@ -59,4 +59,8 @@ Head to your feature release report to find this new section.
 - The funnel performance is improved by 5x. This will make it load faster for larger workspaces (up to 100k MAU)
 - Activation milestones are now displayed on company pages, and user profiles, and other bug fixing on edge cases with their setup
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

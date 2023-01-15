@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "product-metrics-benchmarks",
   publishedAt: "2022-11-11T11:00:00.000Z",
   title: "Product metrics benchmarks",
   headerImage:
@@ -94,4 +94,8 @@ If you have a digital product, then benchmarks are for you
 
 - We fixed some bugs with some of our Mixpanel data imports failing
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

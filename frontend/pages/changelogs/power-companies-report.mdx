@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "power-companies-report",
   publishedAt: "2022-02-18T11:00:00.000Z",
   title: "Power companies report",
   headerImage:
@@ -61,4 +61,8 @@ Set up the new Power companies report to find out. With this report, you can now
 - We fixed as bug that was opening by default the property selector in the report setup
 - We fixed a bug where the company cohort best cohort changed when clicking on "Load more.."
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

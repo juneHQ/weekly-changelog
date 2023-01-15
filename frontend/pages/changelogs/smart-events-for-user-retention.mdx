@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "smart-events-for-user-retention",
   publishedAt: "2021-11-19T14:30:00.000Z",
   title: "Smart events for User Retention",
   headerImage:
@@ -68,4 +68,8 @@ What's more? Based on these smart events, we're now showing your number of new u
 - We fixed some bugs that came up from the [new template setup](https://changelog.june.so/changelog/new-template-set-up) release from last week.
 - Fixed a bug that was making the slipping away template setup crash by [safely navigating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) some Javascript code.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

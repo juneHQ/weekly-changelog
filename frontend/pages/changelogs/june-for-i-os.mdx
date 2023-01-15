@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "june-for-i-os",
   publishedAt: "2021-12-03T11:00:00.000Z",
   title: "Company Retention",
   headerImage:
@@ -69,4 +69,8 @@ The iOS widget is a great way to take a quick look at your metrics and help you 
 
 **[Ready to try it?](https://widgets.june.so/)**
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

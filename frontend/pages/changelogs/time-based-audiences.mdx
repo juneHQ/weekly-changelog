@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "time-based-audiences",
   publishedAt: "2021-06-04T10:00:00.000Z",
   title: "Time-based audiences",
   headerImage:
@@ -19,4 +19,8 @@ Other improvements:
 - AND you can remove week end to avoid spammy notifications over the weekend
 - We fixed the date range rounding issue when you pick a custom date ;)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "new-users",
   publishedAt: "2022-01-17T11:00:00.000Z",
   title: "New users",
   headerImage:
@@ -69,4 +69,8 @@ By selecting **today** option on your daily graph, you get an hourly overview of
 - We fixed the display of events name on user profiles, so long event names can be displayed properly.
 - Our audience filters are now properly closing.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

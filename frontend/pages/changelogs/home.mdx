@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "home",
   publishedAt: "2021-10-22T10:00:00.000Z",
   title: "Home",
   headerImage:
@@ -69,4 +69,8 @@ It's also a place to find your way in case you haven't got started with analyzin
   ![Capture d’écran 2021-10-27 à 01.07.03.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_10_27_a_01_07_03_5fc62b9360.png)
 - You can read event names properties instead of indexes in the funnel 😉
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

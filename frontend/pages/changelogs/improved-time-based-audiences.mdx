@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "improved-time-based-audiences",
   publishedAt: "2021-06-18T10:00:00.000Z",
   title: "Improved time-based audiences",
   headerImage:
@@ -37,4 +37,8 @@ Other improvements:
 - The single-user screen now automatically opens in a new tab when you click on a user with the drill-downs in your reports. This helps you keep the focus.
 - In addition to these, we worked on database/infrastructure upgrades, app should feel faster!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -2,7 +2,7 @@ import axios from "axios";
 import { exec } from "child_process";
 import fs from "fs";
 
-const OUTPUT_FOLDER = `../pages/changelogs`;
+export const MDX_OUTPUT_FOLDER = `../pages/changelogs`; // in relative path
 
 /**
  * Fetches articles from strapi and converts them to MDX files
@@ -23,6 +23,7 @@ async function strapiToMdx() {
 
     const promises = articles.map((article) => {
       const meta = {
+        slug: article.slug,
         publishedAt: article.publishedAt,
         title: article.title,
         headerImage: article.image.url,
@@ -34,7 +35,6 @@ async function strapiToMdx() {
       };
 
       const content = [
-        'import { VStack, Heading, Image } from "@chakra-ui/react";',
         'import { MdxLayout } from "components/mdx-layout.tsx";',
         "",
         `export const meta = ${JSON.stringify(meta)}`,
@@ -43,16 +43,17 @@ async function strapiToMdx() {
 
       const markdown = article.content.replace(/<br>/gi, "");
       content.push(markdown);
+      content.push("");
       content.push(
-        "\nexport default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;"
+        "export default ({ children, ...rest }) => <MdxLayout meta={meta} {...rest}>{children}</MdxLayout>;"
       );
       content.push("");
 
-      if (!fs.existsSync(OUTPUT_FOLDER)) {
-        fs.mkdirSync(OUTPUT_FOLDER);
+      if (!fs.existsSync(MDX_OUTPUT_FOLDER)) {
+        fs.mkdirSync(MDX_OUTPUT_FOLDER);
       }
 
-      const outputPath = `${OUTPUT_FOLDER}/${article.slug}.mdx`;
+      const outputPath = `${MDX_OUTPUT_FOLDER}/${article.slug}.mdx`;
 
       return new Promise((resolve, reject) => {
         fs.writeFile(outputPath, content.join("\n"), (error) => {
@@ -71,9 +72,12 @@ async function strapiToMdx() {
     });
     console.log("\nDone!");
     console.log("\nFormatting result with prettier...");
-    exec(`npx prettier --write ${OUTPUT_FOLDER}`, (error, stdout, stderr) => {
-      console.log(stdout);
-    });
+    exec(
+      `npx prettier --write ${MDX_OUTPUT_FOLDER}`,
+      (error, stdout, stderr) => {
+        console.log(stdout);
+      }
+    );
   }
 }
 

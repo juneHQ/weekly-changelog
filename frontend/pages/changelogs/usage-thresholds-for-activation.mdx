@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "usage-thresholds-for-activation",
   publishedAt: "2022-10-14T10:00:00.000Z",
   title: "Usage thresholds for Activation",
   headerImage:
@@ -65,4 +65,8 @@ In plain english you can now consider as activated customers that perform and ev
 - The active companies report now supports CSV exports
 - Besides these improvements we also fixed 8 bugs that you reported in Intercom like "CMD K doesn't load a report on the second time you select a report with it" and "Activation milestones not always showing in the user profiles"
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

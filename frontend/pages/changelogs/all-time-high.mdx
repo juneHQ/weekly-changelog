@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "all-time-high",
   publishedAt: "2022-09-16T10:00:00.000Z",
   title: "All time high",
   headerImage:
@@ -73,4 +73,8 @@ Connect your report to your Slack account to receive a nice gif celebration live
 - Fixed some minor issues on the Company Activation report release to all
 - Turned your User Milestones reports into a report you can find in your user list. As a reminder you can now create multiples milestones, they're called "User activation" and "Company activation" reports
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

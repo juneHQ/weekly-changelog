@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "better-funnels",
   publishedAt: "2022-04-08T19:00:00.000Z",
   title: "Better funnels",
   headerImage:
@@ -69,4 +69,8 @@ Also, the period in progress is greyed out now to avoid any confusion.
 - We fixed the issue with the power companies chart going to zero when Group Context is enabled
 - You can search through event properties when selecting an event for a report
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

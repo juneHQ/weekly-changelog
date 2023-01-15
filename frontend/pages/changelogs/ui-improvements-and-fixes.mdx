@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "ui-improvements-and-fixes",
   publishedAt: "2021-04-09T11:00:00.000Z",
   title: "UI improvements and fixes",
   headerImage:
@@ -34,4 +34,8 @@ We improved UI components like buttons and headings across the app. In addition 
 - Fixed a bug on the cohort table where we weren't calculating cohorts for calendar intervals
 - Fixed the funnel template to handle long event names in the template setup and bar chart
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

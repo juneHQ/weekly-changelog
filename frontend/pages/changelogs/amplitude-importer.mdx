@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "amplitude-importer",
   publishedAt: "2021-09-24T10:00:00.000Z",
   title: "Amplitude importer",
   headerImage:
@@ -52,4 +52,8 @@ Have your historical data in Amplitude? We have some good news, you can now impo
 - We made the main menu always open when you’re on the home
 - You can now set 1 year as the time range for the Retention report. We also fixed the report for long time ranges so you can always read the labels and the line chart isn't just a lot of dots
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

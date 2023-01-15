@@ -7,4 +7,5 @@ export interface MdxMeta {
     description: string;
     avatarUrl: string;
   }[];
+  slug: string;
 }

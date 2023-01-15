@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "new-reports-page",
   publishedAt: "2021-02-19T11:00:00.000Z",
   title: "New reports page",
   headerImage:
@@ -43,4 +43,8 @@ We redesigned our report pages. This update brings your numbers front and center
 - Tens of small bug fixes and tweaks across the app
 - We redesigned most of [our website](http://june.so/)!
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

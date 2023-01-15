@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "event-frequency",
   publishedAt: "2022-01-10T11:00:00.000Z",
   title: "Event frequency",
   headerImage:
@@ -58,4 +58,8 @@ Have you ever looked at your track events unsure of whether they're being trigge
 - Our public templates page also had some issues which are fixed now.
 - A lot of UI polish. We hope that June is a little more pleasing to the eye.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

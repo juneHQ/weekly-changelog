@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "feature-release-insights",
   publishedAt: "2022-05-23T09:00:00.000Z",
   title: "Feature release insights",
   headerImage:
@@ -63,4 +63,8 @@ Whenever you set up a feature release report you can now dive deep into your use
 - We added a Daily/Weekly/Monthly time picker on the company activity chart (as requested by
   Yassine @ [Manatal](https://www.manatal.com/))
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

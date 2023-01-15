@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "june-sdk",
   publishedAt: "2022-12-02T11:00:00.000Z",
   title: "New June SDKs and documentation",
   headerImage:
@@ -93,4 +93,8 @@ Our SDKs include React, Node, Ruby, Python and an HTTP API if you use any other 
 
 We hope the June SDKs make your first step into the world of analytics delightful
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

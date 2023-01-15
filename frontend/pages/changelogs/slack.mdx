@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "slack",
   publishedAt: "2021-01-15T11:00:00.000Z",
   title: "Slack",
   headerImage:
@@ -37,4 +37,8 @@ Activate the app on your favorite templates. Then receive alerts in Slack for an
 **Other improvements**
 <br />— Active user, Slipping away & Power user templates design polished 💅
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "automatic-sign-up-enrichment-and-qualification",
   publishedAt: "2022-12-16T11:00:00.000Z",
   title: "Automatic sign up enrichment and qualification",
   headerImage:
@@ -102,4 +102,8 @@ We think that building and supporting this kind of specific workflows is the key
 
 Over the coming weeks we'll keep fine tuning the results we return and add more fields to enrich. We'll be also start to send this enrichement data into your June user and company pages - and even allow you to send this data to Hubspot using our integration.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

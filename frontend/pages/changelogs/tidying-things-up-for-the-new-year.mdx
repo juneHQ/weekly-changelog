@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "tidying-things-up-for-the-new-year",
   publishedAt: "2021-12-24T11:00:00.000Z",
   title: "Tidying things up for the New Year",
   headerImage:
@@ -55,4 +55,8 @@ We redesigned the product charts, home and summary card components. Added intera
 - Fixed a bug that caused reports to reload every time the June window went into focus
 - Fixed a bug that always displayed a load more button on the event feed of a single user
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

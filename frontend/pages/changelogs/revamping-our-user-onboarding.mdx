@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "revamping-our-user-onboarding",
   publishedAt: "2022-11-04T11:00:00.000Z",
   title: "Revamping our user onboarding",
   headerImage:
@@ -100,4 +100,8 @@ Some of these steps like starting to send product data to June are blocking - ot
 
 We improved the saved audiences feature to allow users to edit their audiences. The next step is enabling uses to select audiences in the report setup.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

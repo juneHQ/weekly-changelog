@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "user-milestones",
   publishedAt: "2022-04-01T10:00:00.000Z",
   title: "User milestones",
   headerImage:
@@ -66,4 +66,8 @@ Other improvements
 - We fixed a bug that caused active users and power users reports not to reload if you changed the audience filters
 - We fixed a bug where the company-level home showed data even if you did not have a group call implemented
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "export-everything-as-a-csv",
   publishedAt: "2022-03-25T11:00:00.000Z",
   title: "Export everything as a CSV",
   headerImage:
@@ -69,4 +69,8 @@ We also worked on a lot of improvements to the product:
 - We fixed a bug that caused us not to support events with a `:` in their name
 - And a lot more small bug fixes
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

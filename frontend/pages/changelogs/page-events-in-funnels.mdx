@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "page-events-in-funnels",
   publishedAt: "2021-08-20T10:00:00.000Z",
   title: "Page events in funnels",
   headerImage:
@@ -58,4 +58,8 @@ As a side note, in the funnel, the page views we'll consider are only the ones t
 
 ![130128867-d1f110be-56df-4f5c-80c5-d71a93c48857.png](https://june-changelog.s3.eu-central-1.amazonaws.com/130128867_d1f110be_56df_4f5c_80c5_d71a93c48857_461859c4da.png)
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

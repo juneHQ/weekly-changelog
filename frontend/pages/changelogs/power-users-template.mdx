@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "power-users-template",
   publishedAt: "2021-01-29T11:00:00.000Z",
   title: "Power Users template",
   headerImage:
@@ -50,4 +50,8 @@ We added a new WAU Slack digest. We also improved events notifications to allow 
 - We redesigned our bar chart component
 - Added DAU/MAU ratio graph
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

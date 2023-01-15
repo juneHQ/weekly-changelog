@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "remove-noisy-events",
   publishedAt: "2022-08-19T10:00:00.000Z",
   title: "Remove noisy events",
   headerImage:
@@ -70,4 +70,8 @@ Here is how it works: [https://guides.june.so/mixpanel-importer](https://guides.
 - We fixed an issue with user and company searches
 - We fixed an issue with audience filters not always working within Slack notification
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

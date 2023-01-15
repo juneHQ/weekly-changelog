@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "shared-reports",
   publishedAt: "2021-08-06T10:00:00.000Z",
   title: "Shared reports",
   headerImage:
@@ -52,4 +52,8 @@ A great use case for these links is investor updates. We're curious to see how y
 - We improved the design of our public [template](https://june.so/templates) pages
 - The changelog is now paginated, so not all changes will be loaded at once
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

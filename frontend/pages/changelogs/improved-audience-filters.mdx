@@ -1,7 +1,7 @@
-import { VStack, Heading, Image } from "@chakra-ui/react";
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
+  slug: "improved-audience-filters",
   publishedAt: "2021-08-13T10:00:00.000Z",
   title: "Improved audience filters",
   headerImage:
@@ -42,4 +42,8 @@ We've also started adding support for pageviews in templates, starting with the 
 
 We also worked on adding a search bar on the reports list to improve discoverability for reports, and started showing error messages on public reports to make them work more smoothly, for example when access is denied.
 
-export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>;
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
