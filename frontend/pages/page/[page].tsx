@@ -18,6 +18,7 @@ import Navbar from "components/core/navbar";
 import { TryBanner } from "components/core/try-banner";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import { defaultPx } from "lib/utils/default-container-px";
+
 const ARTICLES_PER_PAGE = 4;
 
 const Page = ({ slugs }) => {
