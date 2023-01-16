@@ -8,17 +8,16 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Footer } from "components/core/footer/footer";
-import { Navbar } from "components/core/navbar/navbar";
-import { pageStyles as styles } from "components/core/page-styles";
-import { TryBanner } from "components/core/try-banner";
-import { getArticleSlugs } from "lib/get-articles-slugs";
-import { defaultPx } from "lib/utils/default-container-px";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import Footer from "components/core/footer";
+import Navbar from "components/core/navbar";
+import { TryBanner } from "components/core/try-banner";
+import { getArticleSlugs } from "lib/get-articles-slugs";
+import { defaultPx } from "lib/utils/default-container-px";
 const ARTICLES_PER_PAGE = 4;
 
 const Page = ({ slugs }) => {
@@ -112,8 +111,8 @@ const Page = ({ slugs }) => {
             </VStack>
           </VStack>
         </Container>
-        <TryBanner _wrapper={styles.middleSection} />
-        <Footer _wrapper={styles.lastSection} />
+        <TryBanner _wrapper={{ my: [50, 50, 120] }} />
+        <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
       </Box>
     </>
   );

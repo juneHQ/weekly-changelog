@@ -8,10 +8,10 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
-import { defaultPx } from "../../../lib/utils/default-container-px";
-import { FooterLink } from "./footer-link";
-import { FooterTitle } from "./footer-title";
+
+import { FooterLink } from "components/core/footer/footer-link";
+import { FooterTitle } from "components/core/footer/footer-title";
+import { defaultPx } from "lib/utils/default-container-px";
 
 const gap = [2, 2, 8];
 
@@ -19,7 +19,7 @@ interface Props {
   _wrapper?: ContainerProps;
 }
 
-export function Footer(props: Props) {
+export default function Footer(props: Props) {
   return (
     <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
       <Grid

@@ -11,16 +11,17 @@ import {
 } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
 import { ReactNode } from "@mdx-js/react/lib";
-import Contributor from "components/Contributor";
-import { Footer } from "components/core/footer/footer";
-import { Navbar } from "components/core/navbar/navbar";
-import { TryBanner } from "components/core/try-banner";
 import dayjs from "dayjs";
-import { MdxMeta } from "lib/models/mdx-meta";
-import { defaultPx } from "lib/utils/default-container-px";
 import type { MDXComponents } from "mdx/types";
 import Head from "next/head";
 import Link from "next/link";
+
+import { Contributor } from "components/contributor";
+import Footer from "components/core/footer";
+import Navbar from "components/core/navbar";
+import { TryBanner } from "components/core/try-banner";
+import { MdxMeta } from "lib/models/mdx-meta";
+import { defaultPx } from "lib/utils/default-container-px";
 
 const components: MDXComponents = {
   h1: (props) => (
