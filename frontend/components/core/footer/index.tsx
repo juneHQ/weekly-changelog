@@ -1,3 +1,6 @@
+import { defaultPx } from 'lib/utils/default-container-px';
+import { FooterTitle } from 'components/core/footer/footer-title';
+import { FooterLink } from 'components/core/footer/footer-link';
 import {
   Box,
   chakra,
@@ -7,11 +10,7 @@ import {
   GridItem,
   Image,
   VStack,
-} from "@chakra-ui/react";
-
-import { FooterLink } from "components/core/footer/footer-link";
-import { FooterTitle } from "components/core/footer/footer-title";
-import { defaultPx } from "lib/utils/default-container-px";
+} from '@chakra-ui/react';
 
 const gap = [2, 2, 8];
 
@@ -29,8 +28,7 @@ export default function Footer(props: Props) {
           "'logo logo' 'solution for' 'company legal'",
           "'logo logo' 'solution for' 'company legal'",
           "'logo solution for company legal'",
-        ]}
-      >
+        ]}>
         <GridItem gridArea="logo">
           <Box flexShrink={0}>
             <Image
@@ -52,21 +50,11 @@ export default function Footer(props: Props) {
               href={process.env.NEXT_PUBLIC_MARKETING_HOST}
             />
             <FooterLink
-              title="Templates"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}
-            />
-            <FooterLink
               title="Pricing"
               type="external"
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             />
             <FooterLink title="Changelog" href="/" />
-            <FooterLink
-              title="Method"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/method`}
-            />
             <FooterLink
               title="Widget for iOS"
               type="external"
@@ -76,36 +64,16 @@ export default function Footer(props: Props) {
         </GridItem>
         <GridItem gridArea="for">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Use Cases</FooterTitle>
+            <FooterTitle>Alternatives</FooterTitle>
             <FooterLink
-              title="Founders"
+              title="June vs Amplitude"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/founders`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-amplitude`}
             />
             <FooterLink
-              title="Product Managers"
+              title="June vs Mixpanel"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/product-managers`}
-            />
-            <FooterLink
-              title="Engineers"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/engineers`}
-            />
-            <FooterLink
-              title="Customer Success"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/customer-success`}
-            />
-            <FooterLink
-              title="Marketers"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/marketers`}
-            />
-            <FooterLink
-              title="Designers"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/personas/designers`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-mixpanel`}
             />
           </VStack>
         </GridItem>
@@ -174,8 +142,7 @@ export default function Footer(props: Props) {
                   href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
                   target="_blank"
                   rel="noreferrer"
-                  display={["none", "none", "block"]}
-                >
+                  display={["none", "none", "block"]}>
                   <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
                     alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
@@ -187,7 +154,7 @@ export default function Footer(props: Props) {
                 </chakra.a>
               }
             />
-            <FooterLink title="Copyright © 2022 June" type="text" />
+            <FooterLink title="Copyright © 2023 June" type="text" />
           </VStack>
         </GridItem>
         <GridItem display={["block", "block", "none"]}>
@@ -214,8 +181,7 @@ export default function Footer(props: Props) {
                 <a
                   href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
                   target="_blank"
-                  rel="noreferrer"
-                >
+                  rel="noreferrer">
                   <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
                     alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
