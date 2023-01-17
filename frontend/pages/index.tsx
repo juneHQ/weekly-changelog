@@ -111,7 +111,7 @@ export async function getStaticProps() {
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(
-    slugs.map((slug) => import(`../changelogs/${slug}.mdx`))
+    slugs.map((slug) => import(`./changelogs/${slug}.mdx`))
   );
 
   const meta = results
