@@ -3,7 +3,7 @@ import React, { SVGProps } from "react";
 import Link from "next/link";
 
 interface Props {
-  icon: React.ComponentType<SVGProps<SVGSVGElement>>;
+  Icon: React.NamedExoticComponent<SVGProps<SVGSVGElement>>;
   text: string;
   href: string;
 }
@@ -19,7 +19,7 @@ export const DesktopNavMenuItem = (props: Props) => {
         _hover={{ bg: "#F47D831A" }}
         sx={{ ":hover svg": { color: "#F47D83" } }}
       >
-        <props.icon color="#ADB5BD" />
+        <props.Icon color="#ADB5BD" />
         <Text
           fontWeight="medium"
           color="#030334"
