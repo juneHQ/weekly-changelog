@@ -16,7 +16,7 @@ const Page = ({ slugs }) => {
   const metaTitle = `June Changelog`;
 
   const Articles = slugs.map((slug) =>
-    dynamic(() => import(`../changelogs/${slug}.mdx`))
+    dynamic(() => import(`./changelogs/${slug}.mdx`))
   );
 
   return (
