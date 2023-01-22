@@ -20,11 +20,7 @@ export const DesktopNavMenuItem = (props: Props) => {
         sx={{ ":hover svg": { color: "#F47D83" } }}
       >
         <props.Icon color="#ADB5BD" />
-        <Text
-          fontWeight="medium"
-          color="#030334"
-          _groupHover={{ color: "#F47D83" }}
-        >
+        <Text fontWeight="medium" color="#030334" _groupHover={{ color: "#F47D83" }}>
           {props.text}
         </Text>
       </HStack>
