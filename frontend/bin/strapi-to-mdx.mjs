@@ -72,12 +72,9 @@ async function strapiToMdx() {
     });
     console.log("\nDone!");
     console.log("\nFormatting result with prettier...");
-    exec(
-      `npx prettier --write ${MDX_OUTPUT_FOLDER}`,
-      (error, stdout, stderr) => {
-        console.log(stdout);
-      }
-    );
+    exec(`npx prettier --write ${MDX_OUTPUT_FOLDER}`, (error, stdout, stderr) => {
+      console.log(stdout);
+    });
   }
 }
 

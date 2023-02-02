@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Heading,
-  HStack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
@@ -27,9 +18,7 @@ const Page = ({ slugs }) => {
 
   const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
 
-  const Articles = slugs.map((slug) =>
-    dynamic(() => import(`../changelogs/${slug}.mdx`))
-  );
+  const Articles = slugs.map((slug) => dynamic(() => import(`../changelogs/${slug}.mdx`)));
 
   return (
     <>
@@ -37,33 +26,18 @@ const Page = ({ slugs }) => {
         <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={metaTitle} />
-        <meta
-          name="description"
-          content="Discover new updates and improvements to June."
-        />
+        <meta name="description" content="Discover new updates and improvements to June." />
         <meta name="image" content="https://changelog.june.so/social.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://changelog.june.so" />
         <meta property="og:title" content={metaTitle} />
-        <meta
-          property="og:description"
-          content="Discover new updates and improvements to June."
-        />
-        <meta
-          property="og:image"
-          content="https://changelog.june.so/social.png"
-        />
+        <meta property="og:description" content="Discover new updates and improvements to June." />
+        <meta property="og:image" content="https://changelog.june.so/social.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://changelog.june.so" />
         <meta name="twitter:title" content={metaTitle} />
-        <meta
-          name="twitter:description"
-          content="Discover new updates and improvements to June."
-        />
-        <meta
-          name="twitter:image"
-          content="https://changelog.june.so/social.png"
-        />
+        <meta name="twitter:description" content="Discover new updates and improvements to June." />
+        <meta name="twitter:image" content="https://changelog.june.so/social.png" />
       </Head>
       <Navbar />
       <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
@@ -79,12 +53,7 @@ const Page = ({ slugs }) => {
           <Divider my={16} />
           <VStack spacing={16} divider={<Divider />}>
             {Articles.map((Article, index) => (
-              <Article
-                key={index}
-                hideLayout={true}
-                hideHead={true}
-                hideAuthors={true}
-              />
+              <Article key={index} hideLayout={true} hideHead={true} hideAuthors={true} />
             ))}
             <VStack align={["stretch", "stretch", "center"]}>
               {page === 0 ? (

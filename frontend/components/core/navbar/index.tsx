@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { defaultPx } from 'lib/utils/default-container-px';
-import { DesktopNavItem } from 'components/core/navbar/desktop-nav-item';
-import { HamburgerMenu } from 'components/core/custom-icons/hamburger-icon';
-import { CloseIcon } from 'components/core/custom-icons/close-icon';
-import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { useState } from "react";
+import Link from "next/link";
+import { defaultPx } from "lib/utils/default-container-px";
+import { DesktopNavItem } from "components/core/navbar/desktop-nav-item";
+import { HamburgerMenu } from "components/core/custom-icons/hamburger-icon";
+import { CloseIcon } from "components/core/custom-icons/close-icon";
+import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
 
 const MOBILE_MENU_COLOR = "#241f47";
 const MOBILE_FONT_WEIGHT = 600;
@@ -49,7 +49,8 @@ export default function Navbar(props: Props) {
           maxWidth="100vw"
           position="fixed"
           zIndex="overlay"
-          display={["block", "block", "none"]}>
+          display={["block", "block", "none"]}
+        >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
@@ -64,11 +65,7 @@ export default function Navbar(props: Props) {
           </Flex>
         </Box>
       ) : (
-        <Box
-          w="100%"
-          zIndex="overlay"
-          display={["block", "block", "none"]}
-          position="absolute">
+        <Box w="100%" zIndex="overlay" display={["block", "block", "none"]} position="absolute">
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
@@ -94,29 +91,30 @@ export default function Navbar(props: Props) {
         direction="column"
         justify="space-between"
         overflowY="hidden"
-        display={isOpen ? "block" : "none"}>
+        display={isOpen ? "block" : "none"}
+      >
         <Flex width="100%" direction="column" h="40%" justify="space-between">
           <Flex
             align="center"
             as="a"
             href="https://changelog.june.so/"
-            style={{ textDecoration: "none" }}>
+            style={{ textDecoration: "none" }}
+          >
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Changelog
             </Text>
           </Flex>
           <Link
             prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/customer-stories`}>
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/customer-stories`}
+          >
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Customers
               </Text>
             </Flex>
           </Link>
-          <Link
-            prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}>
+          <Link prefetch={false} href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}>
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Templates
@@ -126,11 +124,9 @@ export default function Navbar(props: Props) {
           <Link
             prefetch={false}
             href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
-            passHref>
-            <Flex
-              align="center"
-              style={{ textDecoration: "none" }}
-              _hover={{ cursor: "pointer" }}>
+            passHref
+          >
+            <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
                 Pricing
               </Text>
@@ -144,7 +140,8 @@ export default function Navbar(props: Props) {
             as="a"
             href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
             borderRadius={6}
-            fontWeight={MOBILE_FONT_WEIGHT}>
+            fontWeight={MOBILE_FONT_WEIGHT}
+          >
             Log in
           </Button>
           <Button
@@ -154,7 +151,8 @@ export default function Navbar(props: Props) {
             as="a"
             href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
             borderRadius={6}
-            fontWeight={MOBILE_FONT_WEIGHT}>
+            fontWeight={MOBILE_FONT_WEIGHT}
+          >
             Sign up
           </Button>
         </Stack>
@@ -168,13 +166,11 @@ export default function Navbar(props: Props) {
         zIndex={15}
         overflowX="hidden"
         display={["none", "none", "block"]}
-        px={defaultPx(32)}>
+        px={defaultPx(32)}
+      >
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
-          <Link
-            href={process.env.NEXT_PUBLIC_MARKETING_HOST}
-            passHref
-            prefetch={false}>
+          <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST} passHref prefetch={false}>
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={12} src="/June-logo.svg" alt="june-logo" />
             </Flex>
@@ -196,14 +192,16 @@ export default function Navbar(props: Props) {
               as="a"
               size="landingMd"
               variant="landingOutline"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}>
+              href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
+            >
               Login
             </Button>
             <Button
               as="a"
               size="landingMd"
               variant="landingSolid"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}>
+              href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
+            >
               Sign up
             </Button>
           </HStack>

@@ -24,26 +24,11 @@ import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
 
 const components: MDXComponents = {
-  h1: (props) => (
-    <Heading
-      as="h1"
-      fontSize={["2xl", "2xl", "32px"]}
-      color="#000"
-      {...props}
-    />
-  ),
-  h2: (props) => (
-    <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />
-  ),
+  h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
+  h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
   p: (props) => <Text my={6} {...props} />,
   a: (props) => (
-    <Text
-      as="a"
-      href={props.href}
-      rel="noopener noreferrer"
-      color="#6868F7"
-      fontWeight="bold"
-    >
+    <Text as="a" href={props.href} rel="noopener noreferrer" color="#6868F7" fontWeight="bold">
       {props.children}
     </Text>
   ),
@@ -89,12 +74,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
       <Box>
         {!props.hideLayout && <Navbar />}
         <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
-          <Box
-            mt={!props.hideLayout && [86, 86, 140]}
-            maxW="4xl"
-            mx="auto"
-            px={defaultPx(32)}
-          >
+          <Box mt={!props.hideLayout && [86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
             {/* Article header */}
             <VStack align="start" spacing={[4, 4, 6]}>
               <VStack align="start">
@@ -123,13 +103,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
               />
             </VStack>
             {/* Article content */}
-            <Box
-              px={[6]}
-              pt={[10]}
-              fontSize="lg"
-              lineHeight="32px"
-              color="landing.almostBlack.500"
-            >
+            <Box px={[6]} pt={[10]} fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
               {props.children}
             </Box>
             {/* Article authors */}

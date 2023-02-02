@@ -1,6 +1,6 @@
-import { defaultPx } from 'lib/utils/default-container-px';
-import { FooterTitle } from 'components/core/footer/footer-title';
-import { FooterLink } from 'components/core/footer/footer-link';
+import { defaultPx } from "lib/utils/default-container-px";
+import { FooterTitle } from "components/core/footer/footer-title";
+import { FooterLink } from "components/core/footer/footer-link";
 import {
   Box,
   chakra,
@@ -10,7 +10,7 @@ import {
   GridItem,
   Image,
   VStack,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 const gap = [2, 2, 8];
 
@@ -28,7 +28,8 @@ export default function Footer(props: Props) {
           "'logo logo' 'solution for' 'company legal'",
           "'logo logo' 'solution for' 'company legal'",
           "'logo solution for company legal'",
-        ]}>
+        ]}
+      >
         <GridItem gridArea="logo">
           <Box flexShrink={0}>
             <Image
@@ -55,11 +56,7 @@ export default function Footer(props: Props) {
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             />
             <FooterLink title="Changelog" href="/" />
-            <FooterLink
-              title="Widget for iOS"
-              type="external"
-              href="https://widgets.june.so/"
-            />
+            <FooterLink title="Widget for iOS" type="external" href="https://widgets.june.so/" />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
@@ -86,21 +83,9 @@ export default function Footer(props: Props) {
               type="external"
               href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
             />
-            <FooterLink
-              title="Contact"
-              type="external"
-              href="mailto:enzo@june.so"
-            />
-            <FooterLink
-              title="Twitter"
-              type="external"
-              href="https://twitter.com/JuneDotSo"
-            />
-            <FooterLink
-              title="Blog"
-              type="external"
-              href="https://inside.june.so"
-            />
+            <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
+            <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
+            <FooterLink title="Blog" type="external" href="https://inside.june.so" />
           </VStack>
         </GridItem>
         <GridItem gridArea="legal">
@@ -142,7 +127,8 @@ export default function Footer(props: Props) {
                   href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
                   target="_blank"
                   rel="noreferrer"
-                  display={["none", "none", "block"]}>
+                  display={["none", "none", "block"]}
+                >
                   <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
                     alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
@@ -163,12 +149,7 @@ export default function Footer(props: Props) {
             <FooterLink
               type="node"
               title={
-                <Image
-                  src="/yc-orange-logo.png"
-                  alt="y-combinator logo"
-                  height={6}
-                  w="auto"
-                />
+                <Image src="/yc-orange-logo.png" alt="y-combinator logo" height={6} w="auto" />
               }
             />
           </VStack>
@@ -181,7 +162,8 @@ export default function Footer(props: Props) {
                 <a
                   href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
                     alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
